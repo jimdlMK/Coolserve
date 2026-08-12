@@ -1,0 +1,109 @@
+.gform_wrapper {
+    margin-top: 20px;
+    .gform-body {
+        margin: 0;
+          .gfield {
+            position: relative;
+              .gfield_label {
+                display: block;
+                font-size: 15px;
+                font-weight: 400;
+                position: absolute;
+                top: 26px;
+                left: 20px;
+                transition: 0.3s;
+                line-height: 0em;
+                .gfield_required_text {
+                    font-size: 0px;
+                    &::before {
+                        content: "*";
+                        font-size: 15px;
+                        color: #E13510;
+                        padding-left: 2px;
+                    }
+                }
+            }
+            input[type="text"], input[type="email"],input[type="tel"], textarea {
+                width: 100%;
+                padding: 25px 20px 9px 20px;
+                border-radius: 15px;
+                font-size: 15px;
+                transition: 0.2s ease;
+                background: rgba(255, 255, 255, 0.2);
+                border: 0px;
+                color: $color-primary;
+                font-family: $font-family-standard-font;
+                border: 1px solid $color-primary;
+                &:focus {
+                    outline: none;
+                }
+            }
+            &.is-active .gfield_label,
+            &.is-filled .gfield_label {
+                top: 12px;
+                font-size: 12px;
+                transition: 0.3s;
+            }
+        }
+    }
+    .gform_fields {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 15px;
+        .gfield:not(.gfield--width-half) {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+    }
+    .gform-footer {
+        margin-top: 10px;
+        .gform_button {
+            font-size: 15px;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 7px;
+            display: flex;
+            width: fit-content;
+            transition: 0.3s;
+            color: white;
+            background-color: $color-primary;
+            outline: none;
+            cursor: pointer;
+            border: 0px;
+            &:hover {
+                background-color: darken($color-primary, 8%);
+            }
+        }
+    }
+}
+
+// ERROR MESSAGE //
+.gform_wrapper {
+    .gform_validation_errors {
+        margin-bottom: 10px;
+        h2.gform_submission_error {
+            font-size: $h4-font-size;
+            color: #E13510;
+        }
+    }
+    .gfield_error {
+        .gfield_validation_message {
+            font-size: 15px;
+            color: #E13510;
+        }
+    }
+}
+
+@media screen and (max-width: 740px) {
+    .gform-body {
+        .gform_fields {
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 15px 0px;
+            .gfield--width-half {
+                grid-column-start: 1;
+                grid-column-end: 2;
+            }
+        }
+    }
+}

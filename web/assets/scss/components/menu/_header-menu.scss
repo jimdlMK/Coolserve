@@ -1,0 +1,75 @@
+.mk-nav-main {
+    .menu-hoofdmenu-container {
+        #menu-hoofdmenu {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            list-style: none;
+            justify-content: end;
+            gap: 40px;
+            li {
+                position: relative;
+                &::marker {
+                    content: "";
+                    display: none;
+                    width: 0;
+                    height: 0;
+                    opacity: 0;
+                    visibility: hidden;
+                }
+                a {
+                    font: normal normal bold 21px/32px $font-family-standard-font;
+                    letter-spacing: 0px;
+                    color: $color-primary;
+                    text-decoration: none;
+                    display: inline-flex;
+                    align-items: center;
+                }
+
+                &.menu-item-has-children {
+                    > a::after {
+                        content: "";
+                        display: inline-block;
+                        width: 8px;
+                        height: 8px;
+                        margin-left: 8px;
+                        border-right: 2px solid currentColor;
+                        border-bottom: 2px solid currentColor;
+                        transform: rotate(45deg) translateY(-2px);
+                    }
+                }
+
+                &.current-menu-item > a,
+                &.current-menu-ancestor > a,
+                &.current_page_item > a {
+                    color: $color-accent;
+                }
+
+                // Laatste menu-item (Contact) als primary button
+                &:last-child {
+                    > a {
+                        background: $button-gradient;
+                        box-shadow: $button-shadow;
+                        border-radius: $button-radius;
+                        color: $color-white;
+                        padding: 8px 24px;
+
+                        &::after {
+                            display: none;
+                        }
+                    }
+
+                    &.current-menu-item > a {
+                        color: $color-white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .mk-nav-main {
+        display: none;
+    }
+}

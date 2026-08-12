@@ -1,0 +1,43 @@
+.contact-info,
+.location-info {
+    text-align: left;
+
+    h5 {
+        margin-bottom: 12px;
+    }
+
+    p,
+    span,
+    a:not(.btn) {
+        display: block;
+        font: normal normal 400 16px/24px $font-family-standard-font;
+        letter-spacing: 0px;
+        color: $color-primary;
+        text-decoration: none;
+        text-align: left;
+    }
+}
+
+.location-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    h5 {
+        margin-bottom: 0;
+    }
+}
+
+.contact-info {
+    &__numbers {
+        margin: 12px 0 20px;
+
+        span {
+            margin-bottom: 0;
+        }
+    }
+
+    .btn {
+        margin-top: 8px;
+    }
+}

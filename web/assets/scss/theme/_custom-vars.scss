@@ -1,0 +1,24 @@
+// Handmatige huisstijl-variabelen die niet uit theme.json gegenereerd kunnen worden
+// (gradients, box-shadows, labels, button-tokens)
+
+// Labels
+$label-orange-text: #C2410C;
+$label-orange-bg: #FFF7ED;
+$label-blue-text: #12B7E7;
+$label-blue-bg: #DFF3FE;
+$label-radius: 5px;
+
+// Primary button (oranje gradient)
+$button-gradient: linear-gradient(270deg, #EA580C 0%, #FFBD4B 100%, #FFBC03 100%);
+$button-shadow: 2px 11px 15px #FF990029;
+$button-radius: 5px;
+$button-font-size: 19px;
+$button-line-height: 38px;
+
+// Secondary button
+$button-secondary-bg: #DFF3FE;
+$button-secondary-text: #12B7E7;
+
+// Links
+$link-orange: #C2410C;
+$link-white: #FFFFFF;

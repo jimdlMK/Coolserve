@@ -1,0 +1,189 @@
+{
+  "version": 2,
+  "settings": {
+    "color": {
+      "palette": [
+        {
+          "name": "Donkerblauw",
+          "slug": "primary",
+          "color": "#072F55"
+        },
+        {
+          "name": "Lichtblauw",
+          "slug": "secondary",
+          "color": "#12B7E7"
+        },
+        {
+          "name": "Blauw (USP's)",
+          "slug": "usp",
+          "color": "#004A99"
+        },
+        {
+          "name": "Oranje",
+          "slug": "accent",
+          "color": "#F0731D"
+        },
+        {
+          "name": "Wit",
+          "slug": "white",
+          "color": "#FFFFFF"
+        },
+        {
+          "name": "Label oranje tekst",
+          "slug": "label-orange-text",
+          "color": "#C2410C"
+        },
+        {
+          "name": "Label oranje achtergrond",
+          "slug": "label-orange-bg",
+          "color": "#FFF7ED"
+        },
+        {
+          "name": "Label lichtblauw tekst",
+          "slug": "label-blue-text",
+          "color": "#12B7E7"
+        },
+        {
+          "name": "Label lichtblauw achtergrond",
+          "slug": "label-blue-bg",
+          "color": "#DFF3FE"
+        },
+        {
+          "name": "Button gradient start",
+          "slug": "gradient-orange-start",
+          "color": "#EA580C"
+        },
+        {
+          "name": "Button gradient midden",
+          "slug": "gradient-orange-mid",
+          "color": "#FFBD4B"
+        },
+        {
+          "name": "Button gradient eind",
+          "slug": "gradient-orange-end",
+          "color": "#FFBC03"
+        },
+        {
+          "name": "Secondary button achtergrond",
+          "slug": "button-secondary-bg",
+          "color": "#DFF3FE"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "fontFamily": "'Montserrat', sans-serif",
+          "slug": "standard-font",
+          "name": "Montserrat"
+        }
+      ],
+      "fontSizes": [
+        {
+          "name": "Klein",
+          "slug": "small",
+          "size": "0.875rem",
+          "lineHeight": "1.4",
+          "fontWeight": 400,
+          "fontColor": "#3c3c3c"
+        },
+        {
+          "name": "Body",
+          "slug": "normal",
+          "size": "clamp(1rem, 0.93rem + 0.32vw, 1.125rem)",
+          "lineHeight": "1.83",
+          "fontWeight": 400,
+          "fontColor": "#3c3c3c"
+        },
+        {
+          "name": "Grote tekst",
+          "slug": "large",
+          "size": "clamp(1.25rem, 1.11rem + 0.65vw, 1.5625rem)",
+          "lineHeight": "1.64",
+          "fontWeight": 600,
+          "fontColor": "#072F55"
+        }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "em", "rem", "%"]
+    },
+    "layout": {
+      "contentSize": "1400px",
+      "wideSize": "1700px",
+      "maxwidth": "90%",
+      "blockSpacing": "30px"
+    }
+  },
+  "styles": {
+    "typography": {
+      "fontFamily": "'Montserrat', sans-serif",
+      "fontSize": "clamp(1rem, 0.93rem + 0.32vw, 1.125rem)",
+      "lineHeight": "1.83"
+    },
+    "color": {
+      "text": "#3c3c3c"
+    },
+    "elements": {
+      "h1": {
+        "typography": {
+          "fontSize": "clamp(2.25rem, 1.44rem + 3.61vw, 4rem)",
+          "fontWeight": "700",
+          "lineHeight": "1.22",
+          "color": "#072F55",
+          "fontFamily": "'Montserrat', sans-serif"
+        }
+      },
+      "h2": {
+        "typography": {
+          "fontSize": "clamp(1.875rem, 1.27rem + 2.71vw, 3.125rem)",
+          "fontWeight": "700",
+          "lineHeight": "1.22",
+          "color": "#072F55",
+          "fontFamily": "'Montserrat', sans-serif"
+        }
+      },
+      "h3": {
+        "typography": {
+          "fontSize": "clamp(1.625rem, 1.12rem + 2.19vw, 2.5rem)",
+          "fontWeight": "700",
+          "lineHeight": "1.25",
+          "color": "#072F55",
+          "fontFamily": "'Montserrat', sans-serif"
+        }
+      },
+      "h4": {
+        "typography": {
+          "fontSize": "clamp(1.375rem, 0.98rem + 1.71vw, 2rem)",
+          "fontWeight": "700",
+          "lineHeight": "1.3",
+          "color": "#072F55",
+          "fontFamily": "'Montserrat', sans-serif"
+        }
+      },
+      "h5": {
+        "typography": {
+          "fontSize": "clamp(1.25rem, 1.09rem + 0.65vw, 1.5625rem)",
+          "fontWeight": "700",
+          "lineHeight": "1.2",
+          "color": "#072F55",
+          "fontFamily": "'Montserrat', sans-serif"
+        }
+      },
+      "h6": {
+        "typography": {
+          "fontSize": "clamp(1.125rem, 0.98rem + 0.59vw, 1.375rem)",
+          "fontWeight": "700",
+          "lineHeight": "1.3",
+          "color": "#072F55",
+          "fontFamily": "'Montserrat', sans-serif"
+        }
+      },
+      "link": {
+        "color": {
+          "text": "#12B7E7"
+        }
+      }
+    }
+  }
+}

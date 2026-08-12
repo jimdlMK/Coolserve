@@ -1,0 +1,96 @@
+.mk-footer {
+    &__container {
+        background-color: #F8FAFC;
+
+        &__inner {
+            max-width: $layout-content-size;
+            width: $layout-maxwidth;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px 60px;
+            padding: 60px 0;
+
+            @media screen and (max-width: 980px) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @media screen and (max-width: 600px) {
+                grid-template-columns: 1fr;
+            }
+        }
+    }
+
+    &__bottom {
+        position: relative;
+        background: transparent linear-gradient(93deg, #004A99 0%, #004F9D 19%, #0078BD 71%, #008ACB 90%, #00ABE5 100%) 0% 0% no-repeat padding-box;
+
+        &__inner {
+            max-width: $layout-content-size;
+            width: $layout-maxwidth;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 24px 0;
+        }
+
+        &__left {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        &__logo img {
+            width: clamp(8.125rem, 7rem + 4vw, 12.6875rem);
+            height: auto;
+        }
+
+        &__legal {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+
+            &__links {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 4px 20px;
+
+                a {
+                    font: normal normal 400 16px/28px Arial, sans-serif;
+                    letter-spacing: 0px;
+                    color: $color-white;
+                    text-decoration: underline;
+                }
+            }
+
+            &__copyright {
+                font: normal normal 400 16px/28px Arial, sans-serif;
+                letter-spacing: 0px;
+                color: $color-white;
+            }
+        }
+
+        &__right {
+            display: flex;
+            align-items: center;
+        }
+
+        &__totop {
+            position: absolute;
+            top: 50%;
+            right: 20px;
+            transform: translateY(-50%);
+            display: block;
+
+            svg {
+                display: block;
+                width: 35px;
+                height: 35px;
+            }
+        }
+    }
+}

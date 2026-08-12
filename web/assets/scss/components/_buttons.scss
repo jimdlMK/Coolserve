@@ -1,0 +1,56 @@
+.btn {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    border-radius: $button-radius;
+    font: normal normal 600 #{$button-font-size}/#{$button-line-height} $font-family-standard-font;
+    letter-spacing: 0px;
+    padding: 8px 24px;
+    width: fit-content;
+    transition: box-shadow 0.2s ease;
+
+    svg {
+        flex-shrink: 0;
+        width: 14px;
+        height: auto;
+        transition: transform 0.2s ease;
+    }
+
+    &:hover svg {
+        transform: translateX(4px);
+    }
+
+    &--primary {
+        background: $button-gradient;
+        box-shadow: $button-shadow;
+        color: $color-white !important;
+
+        svg path {
+            fill: $color-white;
+        }
+        span {
+            color: $color-white !important;
+            font-weight: 700 !important;
+        }
+
+        &:hover {
+            box-shadow: 2px 14px 20px #FF990052;
+        }
+    }
+
+    &--secondary {
+        background-color: $button-secondary-bg;
+        color: $button-secondary-text !important;
+
+        svg path {
+            fill: $button-secondary-text;
+        }
+
+        &:hover {
+            box-shadow: 0px 8px 16px rgba(18, 183, 231, 0.25);
+        }
+    }
+
+}

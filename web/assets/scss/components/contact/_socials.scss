@@ -1,0 +1,41 @@
+.social-container {
+    .socials {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+        height: fit-content;
+        a {
+            display: flex;
+            svg {
+                width: 40px;
+            }
+        }
+    }
+}
+
+.mk-footer__bottom__right {
+    .social-container {
+        h5 {
+            display: none;
+        }
+
+        .socials a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 35px;
+            height: 35px;
+            border-radius: 5px;
+
+            svg {
+                width: 100%;
+                height: auto;
+                fill: $color-white;
+
+                path {
+                    fill: $color-white;
+                }
+            }
+        }
+    }
+}
