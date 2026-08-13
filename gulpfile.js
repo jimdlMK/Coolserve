@@ -5,7 +5,8 @@ const projectName = "mediakanjers";
 //Gulp requirements
 const { src, dest, series, parallel, watch } = require("gulp");
 const sass = require("gulp-sass")(require('sass'));
-const uglifycss = require("gulp-uglifycss");
+const postcss = require("gulp-postcss");
+const cssnano = require("cssnano");
 
 let autoprefixer;
 import('gulp-autoprefixer').then((module) => {
@@ -56,7 +57,7 @@ async function css() {
 				cascade: false,
 			})
 		)
-		.pipe(uglifycss())
+		.pipe(postcss([cssnano()]))
 		.pipe(dest(`${distPath}/css/`))
 		.pipe(livereload());
 }
@@ -223,6 +224,8 @@ function watchFiles() {
 	watch('web/theme.json', extractThemeJson); // toegevoegd
 	watch(["**"], livereload); 
 }
+
+exports.css = css;
 
 exports.default = series(
 	cleantask,

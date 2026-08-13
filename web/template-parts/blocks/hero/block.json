@@ -1,0 +1,14 @@
+{
+  "name": "mk/hero",
+  "title": "Hero",
+  "description": "Hero met achtergrond afbeelding/video, titel, tekst, knop en optionele cijfers of contactinformatie",
+  "category": "mediakanjers",
+  "icon": "cover-image",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

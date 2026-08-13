@@ -4,6 +4,11 @@
         register_nav_menu('top_menu', 'Topmenu');
     });
 
+    // Editor-only comfort styling (witruimte rond ACF-blokken in Gutenberg)
+    add_action('after_setup_theme', function() {
+        add_editor_style('assets/css/editor.css');
+    });
+
     // Topmenu aanmaken indien niet aanwezig — alleen in de admin, niet op de frontend
     add_action('admin_init', function() {
         $menus    = wp_get_nav_menus();
