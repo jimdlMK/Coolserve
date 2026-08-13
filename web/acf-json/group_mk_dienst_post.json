@@ -1,0 +1,40 @@
+{
+    "key": "group_mk_dienst_post",
+    "title": "Dienst instellingen",
+    "fields": [
+        {
+            "key": "field_mk_dienst_icoon",
+            "label": "Icoon",
+            "name": "icoon",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Wit lijn-icoon, getoond op het diensten-overzicht (archief/homepage-blok).",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "dienst"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "side",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786700400
+}

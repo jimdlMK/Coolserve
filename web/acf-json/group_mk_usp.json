@@ -1,0 +1,58 @@
+{
+    "key": "group_mk_usp",
+    "title": "USP's block",
+    "fields": [
+        {
+            "key": "field_mk_usp_items",
+            "label": "USP's",
+            "name": "usps",
+            "type": "repeater",
+            "button_label": "USP toevoegen",
+            "layout": "table",
+            "min": 1,
+            "sub_fields": [
+                {
+                    "key": "field_mk_usp_item_tekst",
+                    "label": "Tekst",
+                    "name": "tekst",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/usp"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786700000
+}

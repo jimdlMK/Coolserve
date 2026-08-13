@@ -118,6 +118,20 @@
             }
         },
         {
+            "key": "field_mk_hero_subtitel",
+            "label": "Subtitel",
+            "name": "subtitel",
+            "type": "text",
+            "instructions": "Toont direct onder de titel, lichtblauw en vetgedrukt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_hero_tekst",
             "label": "Tekst",
             "name": "tekst",

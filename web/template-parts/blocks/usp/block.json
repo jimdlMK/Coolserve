@@ -1,0 +1,14 @@
+{
+  "name": "mk/usp",
+  "title": "USP's",
+  "description": "Rij met USP's (icoon + tekst) over de volledige breedte",
+  "category": "mediakanjers",
+  "icon": "star-filled",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

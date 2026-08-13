@@ -1,0 +1,14 @@
+{
+  "name": "mk/diensten-overzicht",
+  "title": "Diensten overzicht",
+  "description": "Label, titel, tekst en een grid met alle diensten (gradient kaarten), linkt door naar de single-dienst pagina's",
+  "category": "mediakanjers",
+  "icon": "grid-view",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

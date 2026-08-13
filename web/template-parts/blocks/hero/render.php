@@ -2,6 +2,7 @@
     $layout = get_field('layout') ?: 'standaard';
 
     $titel        = get_field('titel');
+    $subtitel     = get_field('subtitel');
     $tekst        = get_field('tekst');
     $knop_type    = get_field('knop_type');
     $knop_link    = get_field('knop_link');
@@ -53,6 +54,10 @@
             <div class="mk-hero__content">
                 <?php if ($titel) : ?>
                     <h1 class="mk-hero__content__title"><?php echo wp_kses($titel, ['span' => []]); ?></h1>
+                <?php endif; ?>
+
+                <?php if ($subtitel) : ?>
+                    <p class="mk-hero__content__subtitel"><?php echo esc_html($subtitel); ?></p>
                 <?php endif; ?>
 
                 <?php if ($tekst) : ?>

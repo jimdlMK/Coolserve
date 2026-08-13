@@ -1,7 +1,11 @@
 .mk-text-block {
     width: 100%;
     margin-bottom: $layout-block-spacing;
-    padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+    padding: 30px 0;
+
+    &.mk-bg-radius {
+        border-radius: 30px;
+    }
 
     &__container {
         &__inner {
@@ -74,12 +78,12 @@
     }
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (min-width: 981px) {
     .mk-text-block {
-        padding: 30px 0;
+        padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
 
         &.mk-bg-radius {
-            border-radius: 30px;
+            border-radius: 60px;
         }
     }
 }

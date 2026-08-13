@@ -1,0 +1,14 @@
+{
+  "name": "mk/systemen",
+  "title": "Systemen",
+  "description": "Label, titel, tekst en een grid van systemen (icoon + titel + wysiwyg-tekst) met knop",
+  "category": "mediakanjers",
+  "icon": "layout",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mk/diensten-sectie",
+  "title": "Diensten sectie",
+  "description": "Label, titel, tekst en een grid van diensten (icoon + titel + tekst + checkmarks)",
+  "category": "mediakanjers",
+  "icon": "screenoptions",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

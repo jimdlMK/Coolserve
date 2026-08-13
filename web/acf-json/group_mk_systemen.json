@@ -1,0 +1,184 @@
+{
+    "key": "group_mk_systemen",
+    "title": "Systemen block",
+    "fields": [
+        {
+            "key": "field_mk_systemen_achtergrond_type",
+            "label": "Achtergrond",
+            "name": "achtergrond_type",
+            "type": "select",
+            "choices": {
+                "wit": "Wit",
+                "grijs": "Lichtgrijs (F8FAFC)",
+                "gradient": "Gradient (donkerblauw naar bruin)"
+            },
+            "default_value": "gradient",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Achtergrondkleur over de volledige breedte van dit blok.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_label",
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_titel",
+            "label": "Titel",
+            "name": "titel",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_tekst",
+            "label": "Tekst",
+            "name": "tekst",
+            "type": "textarea",
+            "rows": 2,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_items",
+            "label": "Systemen",
+            "name": "systemen",
+            "type": "repeater",
+            "button_label": "Systeem toevoegen",
+            "layout": "block",
+            "min": 1,
+            "sub_fields": [
+                {
+                    "key": "field_mk_systemen_item_icoon",
+                    "label": "Icoon",
+                    "name": "icoon",
+                    "type": "image",
+                    "return_format": "array",
+                    "instructions": "62x62px.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_systemen_item_titel",
+                    "label": "Titel",
+                    "name": "titel",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_systemen_item_tekst",
+                    "label": "Tekst",
+                    "name": "tekst",
+                    "type": "wysiwyg",
+                    "tabs": "visual",
+                    "toolbar": "basic",
+                    "media_upload": 0,
+                    "delay": 1,
+                    "instructions": "Gebruik een lijst (- streepje) voor kenmerken.",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_knop_tekst",
+            "label": "Knop tekst",
+            "name": "knop_tekst",
+            "type": "text",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_systemen_knop_url",
+            "label": "Knop URL",
+            "name": "knop_url",
+            "type": "url",
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/systemen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786700200
+}

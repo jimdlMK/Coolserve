@@ -26,6 +26,7 @@
             width: 35px;
             height: 35px;
             border-radius: 5px;
+            transition: transform 0.2s ease, background-color 0.2s ease;
 
             svg {
                 width: 100%;
@@ -35,6 +36,11 @@
                 path {
                     fill: $color-white;
                 }
+            }
+
+            &:hover {
+                transform: translateY(-3px);
+                background-color: rgba(255, 255, 255, 0.15);
             }
         }
     }

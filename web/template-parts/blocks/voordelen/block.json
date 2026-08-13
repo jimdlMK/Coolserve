@@ -1,0 +1,14 @@
+{
+  "name": "mk/voordelen",
+  "title": "Voordelen",
+  "description": "Label, titel, tekst en een grid van voordelen (icoon + titel + tekst)",
+  "category": "mediakanjers",
+  "icon": "yes-alt",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}
