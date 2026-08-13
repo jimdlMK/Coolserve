@@ -1,0 +1,14 @@
+{
+  "name": "mk/text-block",
+  "title": "Tekstblok",
+  "description": "Titel, grote tekst, leestekst en knop met instelbare achtergrond",
+  "category": "mediakanjers",
+  "icon": "text-page",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

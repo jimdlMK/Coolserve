@@ -1,0 +1,228 @@
+{
+    "key": "group_mk_footer_settings",
+    "title": "Footer instellingen",
+    "fields": [
+        {
+            "key": "field_mk_footer_tab_bedrijf",
+            "label": "Bedrijfsgegevens",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_footer_kvk_nummer",
+            "label": "KvK-nummer",
+            "name": "kvk_nummer",
+            "type": "text",
+            "wrapper": {
+                "width": "50"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_footer_btw_nummer",
+            "label": "BTW-nummer",
+            "name": "btw_nummer",
+            "type": "text",
+            "wrapper": {
+                "width": "50"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_footer_contact_pagina",
+            "label": "Contact opnemen — link",
+            "name": "contact_pagina",
+            "type": "page_link",
+            "instructions": "Pagina waar de \"Contact opnemen\" knop in de footer naartoe linkt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_footer_openingstijden",
+            "label": "Openingstijden",
+            "name": "openingstijden",
+            "type": "text",
+            "instructions": "Bijv. \"Ma-Vr: 08:30 - 17:00\"",
+            "wrapper": {
+                "width": "50"
+            },
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_footer_tab_vestigingen",
+            "label": "Vestigingen",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_footer_locaties",
+            "label": "Vestigingen",
+            "name": "locaties",
+            "type": "repeater",
+            "button_label": "Nieuwe vestiging",
+            "layout": "block",
+            "sub_fields": [
+                {
+                    "key": "field_mk_footer_locatie_naam",
+                    "label": "Plaatsnaam (kolomtitel)",
+                    "name": "naam",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0
+                },
+                {
+                    "key": "field_mk_footer_locatie_straat",
+                    "label": "Straat + huisnummer",
+                    "name": "straat",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0
+                },
+                {
+                    "key": "field_mk_footer_locatie_postcode",
+                    "label": "Postcode + plaats",
+                    "name": "postcode_plaats",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0
+                },
+                {
+                    "key": "field_mk_footer_locatie_telefoon",
+                    "label": "Telefoonnummer",
+                    "name": "telefoon",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0
+                },
+                {
+                    "key": "field_mk_footer_locatie_email",
+                    "label": "E-mail",
+                    "name": "email",
+                    "type": "email",
+                    "wrapper": {
+                        "width": "50"
+                    },
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0
+                }
+            ],
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_footer_tab_legal",
+            "label": "Legal links",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_footer_privacyverklaring",
+            "label": "Privacyverklaring",
+            "name": "privacyverklaring",
+            "type": "page_link",
+            "wrapper": {
+                "width": "33"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_footer_voorwaarden_particulier",
+            "label": "Algemene voorwaarden particulier",
+            "name": "voorwaarden_particulier",
+            "type": "page_link",
+            "wrapper": {
+                "width": "33"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_footer_voorwaarden_zakelijk",
+            "label": "Algemene voorwaarden zakelijk",
+            "name": "voorwaarden_zakelijk",
+            "type": "page_link",
+            "wrapper": {
+                "width": "34"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-website-instellingen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786608747
+}

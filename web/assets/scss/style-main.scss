@@ -14,6 +14,7 @@
 
 /* ===== COMPONENTS ===== */
     @import "components/_buttons.scss";
+    @import "components/_block-achtergrond.scss";
     /* === MENU === */
     @import "components/menu/_header-menu.scss";
     @import "components/menu/_footer-menu.scss";
@@ -31,3 +32,4 @@
     @import "blocks/_image-slider.scss";
     @import "blocks/_mk-breadcrumbs.scss";
     @import "blocks/_hero.scss";
+    @import "blocks/_text-block.scss";

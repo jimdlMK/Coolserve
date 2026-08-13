@@ -1,0 +1,61 @@
+{
+    "key": "group_mk_cijfers_settings",
+    "title": "Cijfers",
+    "fields": [
+        {
+            "key": "field_mk_cijfers_jaar_ervaring",
+            "label": "Jaar ervaring",
+            "name": "cijfer_jaar_ervaring",
+            "type": "number",
+            "wrapper": {
+                "width": "33"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_cijfers_tevreden_klanten",
+            "label": "Tevreden klanten",
+            "name": "cijfer_tevreden_klanten",
+            "type": "number",
+            "wrapper": {
+                "width": "33"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        },
+        {
+            "key": "field_mk_cijfers_professionals",
+            "label": "Professionals",
+            "name": "cijfer_professionals",
+            "type": "number",
+            "wrapper": {
+                "width": "34"
+            },
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-website-instellingen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786608747
+}

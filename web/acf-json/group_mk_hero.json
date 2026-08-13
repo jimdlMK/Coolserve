@@ -1,0 +1,324 @@
+{
+    "key": "group_mk_hero",
+    "title": "Hero block",
+    "fields": [
+        {
+            "key": "field_mk_hero_layout",
+            "label": "Layout",
+            "name": "layout",
+            "type": "select",
+            "choices": {
+                "standaard": "Standaard",
+                "split": "2-koloms met media rechts",
+                "contact": "Contact-info"
+            },
+            "default_value": "standaard",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_tab_achtergrond",
+            "label": "Achtergrond",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_layout",
+                        "operator": "!=",
+                        "value": "split"
+                    }
+                ]
+            ],
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_achtergrond_afbeelding",
+            "label": "Achtergrond afbeelding",
+            "name": "achtergrond_afbeelding",
+            "type": "image",
+            "instructions": "Verplicht — dient ook als fallback/poster zolang de video (indien ingesteld) nog laadt.",
+            "required": 1,
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_layout",
+                        "operator": "!=",
+                        "value": "split"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_vimeo_id",
+            "label": "Vimeo video-ID",
+            "name": "vimeo_id",
+            "type": "text",
+            "instructions": "Optioneel. Alleen het ID (bijv. 76979871), geen volledige URL. Video speelt gemuted/loop af als achtergrond; toont ook de \"Bekijk de hele video\" knop.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_layout",
+                        "operator": "!=",
+                        "value": "split"
+                    }
+                ]
+            ],
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_tab_content",
+            "label": "Content",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_titel",
+            "label": "Titel",
+            "name": "titel",
+            "type": "text",
+            "instructions": "Gebruik <span>tekst</span> rond het deel dat lichtblauw moet worden.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_tekst",
+            "label": "Tekst",
+            "name": "tekst",
+            "type": "textarea",
+            "rows": 3,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_knop_type",
+            "label": "Knop",
+            "name": "knop_type",
+            "type": "select",
+            "choices": {
+                "": "Geen knop",
+                "primary": "Primary button",
+                "secondary": "Secondary button",
+                "hyperlink": "Hyperlink"
+            },
+            "default_value": "",
+            "return_format": "value",
+            "allow_null": 1,
+            "ui": 1,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_knop_link",
+            "label": "Knop link",
+            "name": "knop_link",
+            "type": "link",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_knop_type",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_snel_naar",
+            "label": "Snel naar",
+            "name": "snel_naar",
+            "type": "repeater",
+            "button_label": "Link toevoegen",
+            "layout": "table",
+            "sub_fields": [
+                {
+                    "key": "field_mk_hero_snel_naar_label",
+                    "label": "Label",
+                    "name": "label",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "40"
+                    },
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0
+                },
+                {
+                    "key": "field_mk_hero_snel_naar_link",
+                    "label": "Link (URL of #anchor)",
+                    "name": "link",
+                    "type": "text",
+                    "wrapper": {
+                        "width": "60"
+                    },
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0
+                }
+            ],
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_toon_cijfers",
+            "label": "Cijfers tonen",
+            "name": "toon_cijfers",
+            "type": "true_false",
+            "instructions": "Toont de 3 cijfers uit Mediakanjers → Website instellingen → Cijfers, met een optel-animatie.",
+            "ui": 1,
+            "default_value": 0,
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_tab_media",
+            "label": "Media (rechterkolom)",
+            "type": "tab",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_layout",
+                        "operator": "==",
+                        "value": "split"
+                    }
+                ]
+            ],
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_split_afbeelding",
+            "label": "Afbeelding",
+            "name": "split_afbeelding",
+            "type": "image",
+            "return_format": "array",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_layout",
+                        "operator": "==",
+                        "value": "split"
+                    }
+                ]
+            ],
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_split_vimeo_id",
+            "label": "Vimeo video-ID",
+            "name": "split_vimeo_id",
+            "type": "text",
+            "instructions": "Optioneel. Als ingevuld wordt de video getoond in plaats van de afbeelding.",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_layout",
+                        "operator": "==",
+                        "value": "split"
+                    }
+                ]
+            ],
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/hero"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786608747
+}

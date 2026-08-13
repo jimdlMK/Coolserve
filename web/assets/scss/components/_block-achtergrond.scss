@@ -1,0 +1,19 @@
+// Herbruikbare achtergrond-varianten voor blocks
+// Toe te passen op de buitenste block-wrapper (bv. .mk-text-block)
+
+.mk-bg-wit {
+    background-color: $color-white;
+}
+
+.mk-bg-grijs {
+    background-color: #F8FAFC;
+}
+
+.mk-bg-gradient {
+    background: transparent linear-gradient(284deg, #0B1F58 0%, #2D1800 100%) 0% 0% no-repeat padding-box;
+}
+
+.mk-bg-radius {
+    border-radius: 60px;
+    overflow: hidden;
+}

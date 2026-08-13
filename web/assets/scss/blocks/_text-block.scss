@@ -1,0 +1,85 @@
+.mk-text-block {
+    width: 100%;
+    margin-bottom: $layout-block-spacing;
+    padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+
+    &__container {
+        &__inner {
+            max-width: $layout-content-size;
+            width: $layout-maxwidth;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 20px;
+            text-align: left;
+        }
+    }
+
+    &__title {
+        // Erft de globale H2-stijl uit theme.json (styles.elements.h2)
+    }
+
+    &__grote-tekst {
+        font: normal normal 600 clamp(1.125rem, 0.86rem + 1.29vw, 1.5625rem)/clamp(1.9rem, 1.6rem + 1.5vw, 2.5625rem) $font-family-standard-font;
+        letter-spacing: 0px;
+        color: $font-color-normal;
+
+        p {
+            margin: 0 0 1em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        strong,
+        b {
+            font-weight: 600;
+            color: $color-secondary;
+        }
+    }
+
+    &__leestekst {
+        font: normal normal 400 clamp(1rem, 0.91rem + 0.44vw, 1.125rem)/clamp(1.7rem, 1.5rem + 1vw, 2.0625rem) $font-family-standard-font;
+        letter-spacing: 0px;
+        color: $color-primary;
+
+        p {
+            margin: 0 0 1em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        a {
+            color: $color-secondary;
+            text-decoration: underline;
+        }
+    }
+
+    // Donkere gradient-achtergrond: tekst moet leesbaar blijven
+    &.mk-bg-gradient {
+        .mk-text-block__title,
+        .mk-text-block__grote-tekst,
+        .mk-text-block__leestekst {
+            color: $color-white;
+        }
+
+        .mk-text-block__grote-tekst strong,
+        .mk-text-block__grote-tekst b {
+            color: $color-secondary;
+        }
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .mk-text-block {
+        padding: 30px 0;
+
+        &.mk-bg-radius {
+            border-radius: 30px;
+        }
+    }
+}
