@@ -22,6 +22,24 @@
         }
     }
 
+    &-home {
+        display: inline-flex;
+        align-items: center;
+
+        &:hover {
+            text-decoration: none;
+            opacity: 0.75;
+        }
+
+        svg {
+            display: block;
+
+            path {
+                fill: #072F55;
+            }
+        }
+    }
+
     strong,
     span:not(.mk-breadcrumbs-sep) {
         font-weight: 600;

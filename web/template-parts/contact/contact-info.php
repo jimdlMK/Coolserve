@@ -15,7 +15,7 @@
     </div>
 
     <?php if ($contact_page) : ?>
-        <a class="btn btn--primary" href="<?php echo esc_url(get_permalink($contact_page)); ?>">
+        <a class="btn btn--primary" href="/contact">
             <span>Contact opnemen</span>
             <?php echo file_get_contents(get_stylesheet_directory() . '/assets/images/Icon awesome-arrow-right.svg'); ?>
         </a>

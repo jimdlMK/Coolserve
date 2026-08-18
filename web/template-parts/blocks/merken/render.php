@@ -1,5 +1,5 @@
 <?php
-    $achtergrond_type = get_field('achtergrond_type') ?: 'wit';
+    $achtergrond_type = isset($mk_merken_achtergrond_type) ? $mk_merken_achtergrond_type : (get_field('achtergrond_type') ?: 'wit');
     $label            = get_field('merken_label', 'options');
     $titel            = get_field('merken_titel', 'options');
     $merken           = get_field('merken', 'options');

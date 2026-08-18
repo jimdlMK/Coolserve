@@ -1,12 +1,18 @@
 <?php
-    $section_id = isset($mk_contact_formulier_id) ? $mk_contact_formulier_id : '';
-    $label      = isset($mk_contact_formulier_label) ? $mk_contact_formulier_label : get_field('label');
-    $titel      = isset($mk_contact_formulier_titel) ? $mk_contact_formulier_titel : get_field('titel');
-    $tekst      = isset($mk_contact_formulier_tekst) ? $mk_contact_formulier_tekst : get_field('tekst');
-    $form_id    = isset($mk_contact_formulier_form_id) ? $mk_contact_formulier_form_id : get_field('form_id');
+    $section_id        = isset($mk_contact_formulier_id) ? $mk_contact_formulier_id : 'contact';
+    $label             = isset($mk_contact_formulier_label) ? $mk_contact_formulier_label : get_field('label');
+    $titel             = isset($mk_contact_formulier_titel) ? $mk_contact_formulier_titel : get_field('titel');
+    $tekst             = isset($mk_contact_formulier_tekst) ? $mk_contact_formulier_tekst : get_field('tekst');
+    $form_id           = isset($mk_contact_formulier_form_id) ? $mk_contact_formulier_form_id : get_field('form_id');
+    $achtergrond_type  = isset($mk_contact_formulier_achtergrond_type) ? $mk_contact_formulier_achtergrond_type : (get_field('achtergrond_type') ?: 'grijs');
 
     if (!$form_id || !function_exists('gravity_form')) {
         return;
+    }
+
+    $classes = ['mk-contact-formulier', 'mk-bg-' . esc_attr($achtergrond_type)];
+    if ($achtergrond_type === 'gradient') {
+        $classes[] = 'mk-bg-radius';
     }
 
     // Titel: laatste woord automatisch lichtblauw
@@ -28,7 +34,7 @@
     $clock_icon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3.5 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 ?>
 
-<section<?php echo $section_id ? ' id="' . esc_attr($section_id) . '"' : ''; ?> class="mk-contact-formulier">
+<section<?php echo $section_id ? ' id="' . esc_attr($section_id) . '"' : ''; ?> class="<?php echo esc_attr(implode(' ', $classes)); ?>">
     <div class="mk-contact-formulier__container">
         <div class="mk-contact-formulier__container__inner">
 

@@ -65,7 +65,9 @@
                     toggle.classList.add('is-active');
 
                     window.setTimeout(function () {
-                        targetPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                        var offset = 24;
+                        var top = targetPanel.getBoundingClientRect().top + window.pageYOffset - offset;
+                        window.scrollTo({ top: top, behavior: 'smooth' });
                     }, 80);
                 }
             });

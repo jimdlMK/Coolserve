@@ -2,7 +2,10 @@
     width: 100%;
     margin-bottom: $layout-block-spacing;
     padding: 30px 0;
-    background-color: #F8FAFC;
+
+    &.mk-bg-radius {
+        border-radius: 30px;
+    }
 
     &__container {
         &__inner {
@@ -64,7 +67,11 @@
             display: flex;
             align-items: center;
             gap: 14px;
+            padding: 8px;
+            margin: -8px;
+            border-radius: 18px;
             text-decoration: none;
+            transition: background-color 0.2s ease, transform 0.2s ease;
 
             &::before {
                 display: none;
@@ -82,6 +89,21 @@
                 border-radius: 18px;
                 opacity: 1;
                 color: #072F55;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+
+            &:hover {
+                background-color: $color-white;
+                transform: translateY(-2px);
+                box-shadow: 0 10px 24px rgba(7, 47, 85, 0.1);
+
+                .mk-contact-formulier__info__item__icon {
+                    transform: scale(1.08);
+                }
+            }
+
+            &--accent:hover {
+                box-shadow: 0 10px 24px #FF990033;
             }
 
             &__body {
@@ -166,33 +188,6 @@
                 margin-top: 8px;
                 display: flex;
                 justify-content: center;
-
-                input[type="submit"],
-                .gform_button.button {
-                    display: inline-flex;
-                    align-items: center;
-                    gap: 10px;
-                    background: $button-gradient;
-                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.457' height='14.09' viewBox='0 0 14.457 14.09'%3E%3Cpath d='M6.147,3.591l.716-.716a.771.771,0,0,1,1.094,0l6.272,6.269a.771.771,0,0,1,0,1.094L7.957,16.51a.771.771,0,0,1-1.094,0l-.716-.716a.775.775,0,0,1,.013-1.107l3.888-3.7H.774A.773.773,0,0,1,0,10.209V9.176A.773.773,0,0,1,.774,8.4h9.273L6.159,4.7A.77.77,0,0,1,6.147,3.591Z' transform='translate(0 -2.647)' fill='%23fff'/%3E%3C/svg%3E"), $button-gradient;
-                    background-repeat: no-repeat;
-                    background-position: right 24px center, left;
-                    background-size: 14px auto, cover;
-                    box-shadow: $button-shadow;
-                    border: none;
-                    border-radius: $button-radius;
-                    color: $color-white !important;
-                    font: normal normal 600 #{$button-font-size}/#{$button-line-height} $font-family-standard-font;
-                    padding: 8px 46px 8px 24px;
-                    cursor: pointer;
-                    text-decoration: none;
-                    transition: box-shadow 0.2s ease, transform 0.2s ease, background-position 0.2s ease;
-
-                    &:hover {
-                        box-shadow: 2px 14px 20px #FF990052;
-                        transform: translateY(-2px);
-                        background-position: right 20px center, left;
-                    }
-                }
             }
         }
     }
@@ -201,6 +196,10 @@
 @media screen and (min-width: 981px) {
     .mk-contact-formulier {
         padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+
+        &.mk-bg-radius {
+            border-radius: 60px;
+        }
 
         &__container__inner {
             grid-template-columns: 55fr 45fr;

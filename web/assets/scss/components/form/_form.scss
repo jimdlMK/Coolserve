@@ -44,6 +44,18 @@
                 font-size: 12px;
                 transition: 0.3s;
             }
+
+            &.gfield--type-checkbox,
+            &.gfield--type-radio {
+                text-align: left;
+
+                .gfield_label {
+                    position: static;
+                    margin-bottom: 10px;
+                    line-height: 1.4;
+                    text-align: left;
+                }
+            }
         }
     }
     .gform_fields {
@@ -55,24 +67,121 @@
             grid-column-end: 3;
         }
     }
-    .gform-footer {
-        margin-top: 10px;
-        .gform_button {
-            font-size: 15px;
-            text-decoration: none;
-            padding: 10px 25px;
-            border-radius: 7px;
+}
+
+.gform_footer,
+.gform_page_footer {
+    margin-top: 10px;
+
+    input[type="submit"],
+    .gform_button.button {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: $button-gradient;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14.457' height='14.09' viewBox='0 0 14.457 14.09'%3E%3Cpath d='M6.147,3.591l.716-.716a.771.771,0,0,1,1.094,0l6.272,6.269a.771.771,0,0,1,0,1.094L7.957,16.51a.771.771,0,0,1-1.094,0l-.716-.716a.775.775,0,0,1,.013-1.107l3.888-3.7H.774A.773.773,0,0,1,0,10.209V9.176A.773.773,0,0,1,.774,8.4h9.273L6.159,4.7A.77.77,0,0,1,6.147,3.591Z' transform='translate(0 -2.647)' fill='%23fff'/%3E%3C/svg%3E"), $button-gradient;
+        background-repeat: no-repeat;
+        background-position: right 24px center, left;
+        background-size: 14px auto, cover;
+        box-shadow: $button-shadow;
+        border: none;
+        border-radius: $button-radius;
+        color: $color-white !important;
+        font: normal normal 600 #{$button-font-size}/#{$button-line-height} $font-family-standard-font;
+        padding: 8px 46px 8px 24px;
+        cursor: pointer;
+        text-decoration: none;
+        transition: box-shadow 0.2s ease, transform 0.2s ease, background-position 0.2s ease;
+
+        &:hover {
+            box-shadow: 2px 14px 20px #FF990052;
+            transform: translateY(-2px);
+            background-position: right 20px center, left;
+        }
+    }
+}
+
+.gform_wrapper {
+    .gfield_html {
+        text-align: left;
+    }
+
+    .gfield_checkbox,
+    .gfield_radio {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 10px 24px;
+        text-align: left;
+
+        li {
             display: flex;
-            width: fit-content;
-            transition: 0.3s;
-            color: white;
-            background-color: $color-primary;
-            outline: none;
+            align-items: center;
+            margin: 0;
+            text-align: left;
+        }
+
+        input[type="checkbox"],
+        input[type="radio"] {
+            appearance: none;
+            -webkit-appearance: none;
+            flex-shrink: 0;
+            width: 20px;
+            height: 20px;
+            margin: 0 10px 0 0;
+            border: 1px solid $color-primary;
+            border-radius: 4px;
+            background-color: $color-white;
             cursor: pointer;
-            border: 0px;
-            &:hover {
-                background-color: darken($color-primary, 8%);
+            transition: background-color 0.2s ease, border-color 0.2s ease;
+            position: relative;
+
+            &:checked {
+                background: $button-gradient;
+                border-color: transparent;
+
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 3px;
+                    left: 6px;
+                    width: 5px;
+                    height: 10px;
+                    border: solid $color-white;
+                    border-width: 0 2px 2px 0;
+                    transform: rotate(45deg);
+                }
             }
+
+            &:focus {
+                outline: none;
+                box-shadow: 0 0 0 3px rgba(7, 47, 85, 0.15);
+            }
+        }
+
+        input[type="radio"] {
+            border-radius: 50%;
+
+            &:checked::after {
+                top: 5px;
+                left: 5px;
+                width: 8px;
+                height: 8px;
+                border-width: 0;
+                border-radius: 50%;
+                background-color: $color-white;
+                transform: none;
+            }
+        }
+
+        label {
+            font: normal normal 400 15px/1.4 $font-family-standard-font;
+            color: $color-primary;
+            cursor: pointer;
+            text-align: left;
         }
     }
 }
