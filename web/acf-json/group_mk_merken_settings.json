@@ -1,0 +1,101 @@
+{
+    "key": "group_mk_merken_settings",
+    "title": "Merken",
+    "fields": [
+        {
+            "key": "field_mk_merken_settings_label",
+            "label": "Label",
+            "name": "merken_label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_merken_settings_titel",
+            "label": "Titel",
+            "name": "merken_titel",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_merken_items",
+            "label": "Merken",
+            "name": "merken",
+            "type": "repeater",
+            "button_label": "Merk toevoegen",
+            "layout": "table",
+            "min": 1,
+            "sub_fields": [
+                {
+                    "key": "field_mk_merken_item_naam",
+                    "label": "Naam",
+                    "name": "naam",
+                    "type": "text",
+                    "instructions": "Gebruikt als alt-tekst van het logo.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "30",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_merken_item_logo",
+                    "label": "Logo",
+                    "name": "logo",
+                    "type": "image",
+                    "return_format": "array",
+                    "instructions": "170px breed, hoogte automatisch.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "70",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "instructions": "Deze merken worden getoond in het 'Merken' block, overal waar dat op de site geplaatst is.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-website-instellingen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786850000
+}

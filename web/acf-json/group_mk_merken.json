@@ -1,0 +1,62 @@
+{
+    "key": "group_mk_merken",
+    "title": "Merken block",
+    "fields": [
+        {
+            "key": "field_mk_merken_achtergrond_type",
+            "label": "Achtergrond",
+            "name": "achtergrond_type",
+            "type": "select",
+            "choices": {
+                "wit": "Wit",
+                "grijs": "Lichtgrijs (F8FAFC)",
+                "gradient": "Gradient (donkerblauw naar bruin)"
+            },
+            "default_value": "wit",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Achtergrondkleur over de volledige breedte van dit blok.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_merken_editor_note",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Label, titel en merken/logo's beheer je bij Mediakanjers → Website instellingen → Merken.",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/merken"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786850100
+}

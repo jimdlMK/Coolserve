@@ -226,6 +226,7 @@ function watchFiles() {
 }
 
 exports.css = css;
+exports.js = js;
 
 exports.default = series(
 	cleantask,

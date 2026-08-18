@@ -68,6 +68,129 @@
             }
         },
         {
+            "key": "field_mk_systemen_toon_werking",
+            "label": "Werking tonen",
+            "name": "toon_werking",
+            "type": "true_false",
+            "instructions": "Toont een genummerde stappen-sectie (werkingsprincipe) boven de types-grid.",
+            "ui": 1,
+            "default_value": 0,
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_werking_titel",
+            "label": "Werking titel",
+            "name": "werking_titel",
+            "type": "text",
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_systemen_toon_werking",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_werking_stappen",
+            "label": "Stappen",
+            "name": "werking_stappen",
+            "type": "repeater",
+            "button_label": "Stap toevoegen",
+            "layout": "block",
+            "min": 1,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_systemen_toon_werking",
+                        "operator": "==",
+                        "value": "1"
+                    }
+                ]
+            ],
+            "sub_fields": [
+                {
+                    "key": "field_mk_systemen_werking_stap_icoon",
+                    "label": "Icoon",
+                    "name": "icoon",
+                    "type": "image",
+                    "return_format": "array",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_systemen_werking_stap_titel",
+                    "label": "Titel",
+                    "name": "titel",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_systemen_werking_stap_tekst",
+                    "label": "Tekst",
+                    "name": "tekst",
+                    "type": "textarea",
+                    "rows": 2,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "instructions": "",
+            "required": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_systemen_types_titel",
+            "label": "Types titel",
+            "name": "types_titel",
+            "type": "text",
+            "instructions": "Bijv. \"Onze Warmtepomp Types\" — titel boven de types-grid.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_systemen_items",
             "label": "Systemen",
             "name": "systemen",

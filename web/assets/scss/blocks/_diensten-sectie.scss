@@ -28,6 +28,7 @@
         padding: 6px 16px;
         font: normal normal 600 19px/23px $font-family-standard-font;
         letter-spacing: 0px;
+        text-transform: uppercase;
         color: #C2410C;
     }
 
@@ -56,6 +57,10 @@
             padding: 24px;
             display: flex;
             flex-direction: column;
+
+            .mk-bg-grijs & {
+                background-color: $color-white;
+            }
             align-items: flex-start;
             gap: 12px;
             text-align: left;

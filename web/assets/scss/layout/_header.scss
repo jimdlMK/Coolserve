@@ -1,5 +1,6 @@
 .mk-header {
-    overflow: hidden;
+    position: relative;
+    z-index: 200;
 
     // ===== TOPBAR =====
     &__topbar {

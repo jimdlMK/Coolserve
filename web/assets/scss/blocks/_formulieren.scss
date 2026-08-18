@@ -1,0 +1,173 @@
+.mk-formulieren {
+    width: 100%;
+    margin-bottom: $layout-block-spacing;
+    padding: 30px 0;
+
+    &.mk-bg-radius {
+        border-radius: 30px;
+    }
+
+    &__container {
+        &__inner {
+            max-width: $layout-content-size;
+            width: $layout-maxwidth;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 16px;
+            text-align: center;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        background: #DFF3FE 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        opacity: 1;
+        padding: 6px 16px;
+        font: normal normal 600 19px/23px $font-family-standard-font;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        color: #12B7E7;
+    }
+
+    &__title {
+        // Erft de globale H2-stijl uit theme.json
+    }
+
+    &__grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+        margin-top: 20px;
+
+        &__card {
+            position: relative;
+            border: 0.2px solid #70707020;
+            border-radius: 40px;
+            opacity: 1;
+            padding: 32px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
+            text-align: left;
+            font-family: inherit;
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+
+            &--blauw {
+                background: transparent radial-gradient(closest-side at 74% 34%, #B5F7FF80 0%, #FFFFFF1A 100%) 0% 0% no-repeat padding-box;
+            }
+
+            &--oranje {
+                background: transparent radial-gradient(closest-side at 74% 34%, #FFDCB580 0%, #FFFFFF1A 100%) 0% 0% no-repeat padding-box;
+            }
+
+            &__icoon {
+                width: 74px;
+                height: 74px;
+                transition: transform 0.25s ease;
+            }
+
+            &__titel {
+                display: block;
+                font: normal normal bold clamp(1.375rem, 1.2rem + 0.88vw, 1.75rem)/1.2 $font-family-standard-font;
+                letter-spacing: 0px;
+                color: #072F55;
+                opacity: 1;
+            }
+
+            &__tekst {
+                display: block;
+                font: normal normal 400 clamp(1.0625rem, 0.99rem + 0.36vw, 1.25rem)/1.35 $font-family-standard-font;
+                letter-spacing: 0px;
+                color: #404040;
+                opacity: 1;
+            }
+
+            &__link {
+                display: inline-flex;
+                align-items: center;
+                gap: 8px;
+                margin-top: 10px;
+                font: normal normal 600 20px/24px $font-family-standard-font;
+                letter-spacing: 0px;
+                opacity: 1;
+
+                svg {
+                    width: 12px;
+                    height: auto;
+                    transition: transform 0.2s ease;
+                }
+            }
+
+            &--blauw &__link {
+                color: #00ABE5;
+
+                svg path {
+                    fill: #00ABE5;
+                }
+            }
+
+            &--oranje &__link {
+                color: $color-accent;
+
+                svg path {
+                    fill: $color-accent;
+                }
+            }
+
+            &:hover,
+            &.is-active {
+                transform: translateY(-4px);
+                box-shadow: 0 16px 32px rgba(7, 47, 85, 0.12);
+            }
+
+            &:hover &__link svg,
+            &.is-active &__link svg {
+                transform: translateX(4px);
+            }
+
+            &:hover &__icoon,
+            &.is-active &__icoon {
+                transform: rotate(8deg);
+            }
+        }
+    }
+
+    &__panels {
+        width: 100%;
+    }
+
+    &__panel {
+        width: 100%;
+        overflow: hidden;
+        height: 0px;
+        transition: height 0.35s ease;
+
+        &__inner {
+            padding-top: 30px;
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .mk-formulieren {
+        &__grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+@media screen and (min-width: 981px) {
+    .mk-formulieren {
+        padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+
+        &.mk-bg-radius {
+            border-radius: 60px;
+        }
+    }
+}

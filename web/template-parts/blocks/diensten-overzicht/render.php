@@ -20,7 +20,7 @@
     }
 ?>
 
-<section class="<?php echo esc_attr(implode(' ', $classes)); ?>">
+<section id="diensten-overzicht" class="<?php echo esc_attr(implode(' ', $classes)); ?>">
     <div class="mk-diensten-overzicht__container">
         <div class="mk-diensten-overzicht__container__inner">
 

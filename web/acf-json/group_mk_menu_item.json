@@ -1,0 +1,40 @@
+{
+    "key": "group_mk_menu_item",
+    "title": "Menu item instellingen",
+    "fields": [
+        {
+            "key": "field_mk_menu_item_icon",
+            "label": "Menu icon",
+            "name": "menu_icon",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Icoon getoond links van dit item in het mega-menu (alleen zichtbaar bij submenu-items).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "nav_menu_item",
+                "operator": "==",
+                "value": "all"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786950000
+}

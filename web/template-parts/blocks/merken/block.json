@@ -1,0 +1,14 @@
+{
+  "name": "mk/merken",
+  "title": "Merken",
+  "description": "Label en titel met een oneindig lopende merken-slider. Logo's beheer je op de opties-pagina.",
+  "category": "mediakanjers",
+  "icon": "images-alt2",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

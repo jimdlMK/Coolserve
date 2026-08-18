@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 a, abbr, acronym, address, applet, b, big, blockquote, body, center, cite, code, dd, del, dfn, div, dl, dt, em, fieldset, font, form, h1, h2, h3, h4, h5, h6, html, i, iframe, img, ins, kbd, label, legend, li, object, ol, p, pre, q, s, samp, small, span, strike, strong, sub, sup, tt, u, ul, var {
     margin: 0;
     padding: 0;
@@ -25,7 +29,7 @@ body {
     font-weight: $font-weight-normal;
     line-height: $line-height-normal;
     color: $font-color-normal;
-    background-color: #f8fafc;
+    background-color: #ffff;
 }
 
 body.freeze {

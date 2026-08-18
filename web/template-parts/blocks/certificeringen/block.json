@@ -1,0 +1,14 @@
+{
+  "name": "mk/certificeringen",
+  "title": "Certificeringen",
+  "description": "Label en titel met een oneindig lopende certificeringen-slider en navigatiepijltjes. Logo's beheer je op de opties-pagina.",
+  "category": "mediakanjers",
+  "icon": "awards",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

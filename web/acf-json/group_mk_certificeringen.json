@@ -1,0 +1,40 @@
+{
+    "key": "group_mk_certificeringen",
+    "title": "Certificeringen block",
+    "fields": [
+        {
+            "key": "field_mk_certificeringen_editor_note",
+            "label": "",
+            "name": "",
+            "type": "message",
+            "message": "Label, titel en certificeringen/logo's beheer je bij Mediakanjers → Website instellingen → Certificeringen.",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/certificeringen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786900100
+}

@@ -1,0 +1,188 @@
+{
+    "key": "group_mk_formulieren",
+    "title": "Formulieren block",
+    "fields": [
+        {
+            "key": "field_mk_formulieren_achtergrond_type",
+            "label": "Achtergrond",
+            "name": "achtergrond_type",
+            "type": "select",
+            "choices": {
+                "wit": "Wit",
+                "grijs": "Lichtgrijs (F8FAFC)",
+                "gradient": "Gradient (donkerblauw naar bruin)"
+            },
+            "default_value": "wit",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Achtergrondkleur over de volledige breedte van dit blok.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_formulieren_label",
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_formulieren_titel",
+            "label": "Titel",
+            "name": "titel",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_formulieren_items",
+            "label": "Items",
+            "name": "items",
+            "type": "repeater",
+            "button_label": "Item toevoegen",
+            "layout": "block",
+            "min": 1,
+            "sub_fields": [
+                {
+                    "key": "field_mk_formulieren_item_kleur",
+                    "label": "Kleur",
+                    "name": "kleur",
+                    "type": "select",
+                    "choices": {
+                        "blauw": "Blauw",
+                        "oranje": "Oranje"
+                    },
+                    "default_value": "blauw",
+                    "return_format": "value",
+                    "ui": 1,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_formulieren_item_icoon",
+                    "label": "Icoon",
+                    "name": "icoon",
+                    "type": "image",
+                    "return_format": "array",
+                    "instructions": "74x74px.",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_formulieren_item_titel",
+                    "label": "Titel",
+                    "name": "titel",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_formulieren_item_tekst",
+                    "label": "Tekst",
+                    "name": "tekst",
+                    "type": "textarea",
+                    "rows": 3,
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_formulieren_item_link_tekst",
+                    "label": "Link tekst",
+                    "name": "link_tekst",
+                    "type": "text",
+                    "default_value": "Naar contactformulier",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_formulieren_item_form_id",
+                    "label": "Gravity Forms formulier-ID",
+                    "name": "form_id",
+                    "type": "number",
+                    "instructions": "Het ID-nummer van het formulier (te vinden bij Formulieren in het menu).",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "50",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/formulieren"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1786800000
+}

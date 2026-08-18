@@ -1,0 +1,14 @@
+{
+  "name": "mk/formulieren",
+  "title": "Formulieren",
+  "description": "Label, titel en een grid van klikbare contact-items die elk een Gravity Forms formulier uitklappen",
+  "category": "mediakanjers",
+  "icon": "email-alt",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

@@ -11,7 +11,7 @@
     }
 ?>
 
-<section class="<?php echo esc_attr(implode(' ', $classes)); ?>">
+<section id="voordelen" class="<?php echo esc_attr(implode(' ', $classes)); ?>">
     <div class="mk-voordelen__container">
         <div class="mk-voordelen__container__inner">
 

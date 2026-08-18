@@ -109,7 +109,7 @@
       "units": ["px", "em", "rem", "%"]
     },
     "layout": {
-      "contentSize": "1320px",
+      "contentSize": "1300px",
       "wideSize": "1700px",
       "maxwidth": "90%",
       "blockSpacing": "30px"
