@@ -28,17 +28,9 @@
             "key": "field_mk_hero_tab_achtergrond",
             "label": "Achtergrond",
             "type": "tab",
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_mk_hero_layout",
-                        "operator": "!=",
-                        "value": "split"
-                    }
-                ]
-            ],
             "instructions": "",
             "required": 0,
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -50,18 +42,10 @@
             "label": "Achtergrond afbeelding",
             "name": "achtergrond_afbeelding",
             "type": "image",
-            "instructions": "Verplicht — dient ook als fallback/poster zolang de video (indien ingesteld) nog laadt.",
-            "required": 1,
+            "instructions": "Verplicht bij Standaard/Contact-info layout — dient ook als fallback/poster zolang de video (indien ingesteld) nog laadt. Optioneel bij de 2-koloms layout: zonder afbeelding wordt de standaard donkere gradient getoond.",
+            "required": 0,
             "return_format": "array",
-            "conditional_logic": [
-                [
-                    {
-                        "field": "field_mk_hero_layout",
-                        "operator": "!=",
-                        "value": "split"
-                    }
-                ]
-            ],
+            "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",

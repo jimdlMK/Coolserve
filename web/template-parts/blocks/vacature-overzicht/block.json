@@ -1,0 +1,14 @@
+{
+  "name": "mk/vacature-overzicht",
+  "title": "Vacature overzicht",
+  "description": "Label, titel en tekst met een grid van alle openstaande vacatures, linkt door naar de single-vacature pagina's",
+  "category": "mediakanjers",
+  "icon": "businessperson",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

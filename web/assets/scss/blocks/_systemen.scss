@@ -165,8 +165,27 @@
                 color: rgba(255, 255, 255, 0.75);
 
                 ul, ol {
+                    list-style: none;
                     margin: 0;
-                    padding-left: 18px;
+                    padding: 0;
+                }
+
+                li {
+                    position: relative;
+                    padding-left: 22px;
+                    margin-bottom: 6px;
+
+                    &::before {
+                        content: "→";
+                        position: absolute;
+                        left: 0;
+                        color: $color-secondary;
+                        font-weight: 700;
+                    }
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
                 }
 
                 p {

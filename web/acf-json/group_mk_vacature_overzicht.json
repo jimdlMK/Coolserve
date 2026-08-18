@@ -1,0 +1,105 @@
+{
+    "key": "group_mk_vacature_overzicht",
+    "title": "Vacature overzicht block",
+    "fields": [
+        {
+            "key": "field_mk_vacature_overzicht_achtergrond_type",
+            "label": "Achtergrond",
+            "name": "achtergrond_type",
+            "type": "select",
+            "choices": {
+                "wit": "Wit",
+                "grijs": "Lichtgrijs (F8FAFC)",
+                "gradient": "Gradient (donkerblauw naar bruin)"
+            },
+            "default_value": "wit",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Achtergrondkleur over de volledige breedte van dit blok.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_overzicht_label",
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_overzicht_titel",
+            "label": "Titel",
+            "name": "titel",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_overzicht_tekst",
+            "label": "Tekst",
+            "name": "tekst",
+            "type": "textarea",
+            "rows": 2,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_overzicht_leeg_tekst",
+            "label": "Tekst bij geen vacatures",
+            "name": "leeg_tekst",
+            "type": "text",
+            "default_value": "Op dit moment hebben we geen openstaande vacatures.",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/vacature-overzicht"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787100100
+}

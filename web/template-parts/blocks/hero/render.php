@@ -27,7 +27,14 @@
 
 <section class="<?php echo esc_attr(implode(' ', $classes)); ?>">
 
-    <?php if ($layout !== 'split') : ?>
+    <?php if ($layout === 'split') : ?>
+        <div class="mk-hero__media mk-hero__media--split<?php echo $achtergrond_afbeelding ? '' : ' mk-hero__media--fallback'; ?>">
+            <?php if ($achtergrond_afbeelding) : ?>
+                <img class="mk-hero__media__image" src="<?php echo esc_url($achtergrond_afbeelding['url']); ?>" alt="<?php echo esc_attr($achtergrond_afbeelding['alt']); ?>">
+                <div class="mk-hero__media__overlay"></div>
+            <?php endif; ?>
+        </div>
+    <?php else : ?>
         <div class="mk-hero__media">
             <?php if ($achtergrond_afbeelding) : ?>
                 <img class="mk-hero__media__image" src="<?php echo esc_url($achtergrond_afbeelding['url']); ?>" alt="<?php echo esc_attr($achtergrond_afbeelding['alt']); ?>">

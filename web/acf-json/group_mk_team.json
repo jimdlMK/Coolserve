@@ -1,0 +1,106 @@
+{
+    "key": "group_mk_team",
+    "title": "Team block",
+    "fields": [
+        {
+            "key": "field_mk_team_achtergrond_type",
+            "label": "Achtergrond",
+            "name": "achtergrond_type",
+            "type": "select",
+            "choices": {
+                "wit": "Wit",
+                "grijs": "Lichtgrijs (F8FAFC)",
+                "gradient": "Gradient (donkerblauw naar bruin)"
+            },
+            "default_value": "wit",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Achtergrondkleur over de volledige breedte van dit blok.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_team_label",
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "default_value": "Over Coolserve",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_team_titel",
+            "label": "Titel",
+            "name": "titel",
+            "type": "text",
+            "default_value": "Ons team",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_team_tekst",
+            "label": "Tekst",
+            "name": "tekst",
+            "type": "textarea",
+            "rows": 4,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_team_link",
+            "label": "Link",
+            "name": "link",
+            "type": "link",
+            "instructions": "Bijv. \"Bekijk het hele team\" → team-overzichtspagina.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/team"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787000100
+}

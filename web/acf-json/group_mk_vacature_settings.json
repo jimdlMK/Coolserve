@@ -1,0 +1,53 @@
+{
+    "key": "group_mk_vacature_settings",
+    "title": "Vacatures instellingen",
+    "fields": [
+        {
+            "key": "field_mk_vacature_settings_overzicht_pagina",
+            "label": "Werken bij — overzichtspagina",
+            "name": "vacatures_overzicht_pagina",
+            "type": "page_link",
+            "instructions": "Gebruikt als tussenstap in de broodkruimel op elke vacature-pagina.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_settings_form_id",
+            "label": "Sollicitatieformulier — Gravity Forms ID",
+            "name": "sollicitatie_form_id",
+            "type": "number",
+            "instructions": "Het ID-nummer van het formulier (te vinden bij Formulieren in het menu). Wordt onderaan elke vacature-pagina getoond.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-website-instellingen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787300000
+}

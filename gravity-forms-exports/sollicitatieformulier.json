@@ -1,0 +1,121 @@
+{
+    "0": {
+        "title": "Sollicitatieformulier",
+        "description": "",
+        "labelPlacement": "top_label",
+        "descriptionPlacement": "below",
+        "button": {
+            "type": "text",
+            "text": "Verstuur sollicitatie",
+            "imageUrl": ""
+        },
+        "fields": [
+            {
+                "type": "name",
+                "id": 1,
+                "label": "Naam",
+                "isRequired": true,
+                "size": "large",
+                "nameFormat": "advanced",
+                "inputs": [
+                    {
+                        "id": "1.2",
+                        "label": "Prefix",
+                        "name": "",
+                        "isHidden": true
+                    },
+                    {
+                        "id": "1.3",
+                        "label": "Voornaam",
+                        "name": "",
+                        "isHidden": false
+                    },
+                    {
+                        "id": "1.4",
+                        "label": "Tussenvoegsel",
+                        "name": "",
+                        "isHidden": true
+                    },
+                    {
+                        "id": "1.6",
+                        "label": "Achternaam",
+                        "name": "",
+                        "isHidden": false
+                    },
+                    {
+                        "id": "1.8",
+                        "label": "Achtervoegsel",
+                        "name": "",
+                        "isHidden": true
+                    }
+                ]
+            },
+            {
+                "type": "email",
+                "id": 2,
+                "label": "E-mail",
+                "isRequired": true,
+                "size": "large"
+            },
+            {
+                "type": "phone",
+                "id": 3,
+                "label": "Telefoonnummer",
+                "isRequired": true,
+                "size": "large",
+                "phoneFormat": "standard"
+            },
+            {
+                "type": "text",
+                "id": 4,
+                "label": "Sollicitatie voor",
+                "isRequired": true,
+                "size": "large",
+                "description": "Voor welke vacature solliciteer je?"
+            },
+            {
+                "type": "fileupload",
+                "id": 5,
+                "label": "CV en/of motivatie",
+                "isRequired": true,
+                "size": "large",
+                "allowedExtensions": "pdf,doc,docx",
+                "maxFiles": 2,
+                "multipleFiles": true,
+                "description": "Toegestaan: PDF of Word, max. 2 bestanden."
+            },
+            {
+                "type": "textarea",
+                "id": 6,
+                "label": "Extra toelichting (optioneel)",
+                "isRequired": false,
+                "size": "large"
+            }
+        ],
+        "confirmations": [
+            {
+                "id": "sollicitatie_confirmation",
+                "name": "Standaard bevestiging",
+                "isDefault": true,
+                "type": "message",
+                "message": "Bedankt voor je sollicitatie! We nemen zo snel mogelijk contact met je op.",
+                "url": "",
+                "pageId": "",
+                "queryString": ""
+            }
+        ],
+        "notifications": [
+            {
+                "id": "sollicitatie_notification",
+                "isActive": true,
+                "to": "{admin_email}",
+                "name": "Nieuwe sollicitatie",
+                "event": "form_submission",
+                "toType": "email",
+                "subject": "Nieuwe sollicitatie: {Sollicitatie voor:4}",
+                "message": "{all_fields}"
+            }
+        ]
+    },
+    "version": "3.0.2"
+}

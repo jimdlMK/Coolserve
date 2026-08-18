@@ -1,0 +1,39 @@
+{
+    "key": "group_mk_medewerker_post",
+    "title": "Medewerker instellingen",
+    "fields": [
+        {
+            "key": "field_mk_medewerker_functie",
+            "label": "Functie",
+            "name": "functie",
+            "type": "text",
+            "instructions": "Bijv. \"Directeur Coolserve\".",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "medewerker"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787000000
+}

@@ -1,0 +1,279 @@
+// ===== Vacature-kop =====
+// (.mk-breadcrumbs zelf is al gedefinieerd in blocks/_mk-breadcrumbs.scss — hier alleen hergebruikt)
+.mk-vacature-kop {
+    width: 100%;
+    padding: 30px 0 20px;
+
+    &__container__inner {
+        max-width: $layout-content-size;
+        width: $layout-maxwidth;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+        text-align: left;
+
+        // Breedte/centrering van .mk-breadcrumbs (uit blocks/_mk-breadcrumbs.scss) is hier
+        // niet gewenst — deze zit al in een gecentreerde, links-uitgelijnde kolom.
+        .mk-breadcrumbs {
+            max-width: none;
+            width: auto;
+            margin: 0;
+        }
+    }
+
+    &__titel {
+        margin-bottom: 4px;
+    }
+
+    &__sub {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-top: 8px;
+
+        &__tekst {
+            font: normal normal 600 clamp(1rem, 0.91rem + 0.44vw, 1.125rem)/1.5 $font-family-standard-font;
+            color: $color-primary;
+            max-width: 700px;
+        }
+
+        &__cta {
+            flex-shrink: 0;
+        }
+    }
+
+    &__labels {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 4px;
+    }
+}
+
+// Gedeelde label-pill voor uren/locatie/salaris — ook gebruikt in mk/vacature-overzicht
+.mk-vacature-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 26px;
+    padding: 6px 14px;
+    font: normal normal 600 13px/1.4 $font-family-standard-font;
+    letter-spacing: 0px;
+    white-space: nowrap;
+
+    svg {
+        width: 14px;
+        height: auto;
+        flex-shrink: 0;
+    }
+
+    &--blauw {
+        background: #DFF3FE 0% 0% no-repeat padding-box;
+        color: #0E7490;
+    }
+
+    &--grijs {
+        background: #EFF2F5 0% 0% no-repeat padding-box;
+        color: #343434;
+    }
+
+    &--groen {
+        background: #F0FDF4 0% 0% no-repeat padding-box;
+        color: #15803D;
+    }
+}
+
+// ===== Tekst + afbeelding secties (introductie / wat bieden wij) =====
+.mk-vacature-sectie {
+    width: 100%;
+    padding: 30px 0;
+
+    &__container__inner {
+        max-width: $layout-content-size;
+        width: $layout-maxwidth;
+        margin: 0 auto;
+    }
+
+    &__titel {
+        margin-bottom: 16px;
+
+        span {
+            color: $color-secondary;
+        }
+    }
+
+    &__body {
+        font: normal normal 400 clamp(1rem, 0.91rem + 0.44vw, 1.125rem)/1.7 $font-family-standard-font;
+        color: $font-color-normal;
+
+        p {
+            margin: 0 0 1em;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+
+        ul, ol {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            position: relative;
+            padding-left: 26px;
+            margin-bottom: 8px;
+
+            &::before {
+                content: "→";
+                position: absolute;
+                left: 0;
+                color: $color-secondary;
+                font-weight: 700;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    &__media img {
+        border-radius: 16px;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .mk-vacature-sectie--media {
+        .mk-vacature-sectie__container__inner {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+    }
+}
+
+// ===== Wat ga je doen / Wat neem je mee — 2-koloms gradient sectie =====
+.mk-vacature-taken-profiel {
+    width: $layout-maxwidth;
+    max-width: $layout-wide-size;
+    margin: 0 auto $layout-block-spacing;
+    padding: 30px 0;
+    background: transparent linear-gradient(294deg, #0B1F58 0%, #2D1800 100%) 0% 0% no-repeat padding-box;
+    border-radius: 30px;
+
+    &__container__inner {
+        max-width: $layout-content-size;
+        width: $layout-maxwidth;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    &__col {
+        &__titel {
+            color: $color-white;
+            margin-bottom: 16px;
+
+            span {
+                color: $color-secondary;
+            }
+        }
+
+        &__body {
+            font: normal normal 400 clamp(0.9375rem, 0.87rem + 0.32vw, 1.0625rem)/1.7 $font-family-standard-font;
+            color: rgba(255, 255, 255, 0.85);
+
+            ul, ol {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            li {
+                position: relative;
+                padding-left: 26px;
+                margin-bottom: 10px;
+
+                &::before {
+                    content: "→";
+                    position: absolute;
+                    left: 0;
+                    color: $color-secondary;
+                    font-weight: 700;
+                }
+            }
+
+            p {
+                margin: 0 0 1em;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .mk-vacature-taken-profiel {
+        &__container__inner {
+            flex-direction: row;
+            gap: 60px;
+        }
+
+        &__col {
+            flex: 1 1 0;
+        }
+    }
+}
+
+// ===== Solliciteer-sectie =====
+.mk-vacature-solliciteren {
+    width: 100%;
+    padding: 30px 0;
+    background-color: #F8FAFC;
+
+    &__container__inner {
+        max-width: 800px;
+        width: $layout-maxwidth;
+        margin: 0 auto;
+    }
+
+    &__titel {
+        margin-bottom: 20px;
+
+        span {
+            color: $color-secondary;
+        }
+    }
+}
+
+@media screen and (min-width: 981px) {
+    .mk-vacature-kop {
+        padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0 20px;
+    }
+
+    .mk-vacature-sectie {
+        padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+    }
+
+    .mk-vacature-taken-profiel {
+        padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+        border-radius: 60px;
+    }
+
+    .mk-vacature-solliciteren {
+        padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+    }
+}

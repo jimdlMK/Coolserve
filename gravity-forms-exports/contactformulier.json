@@ -1,0 +1,90 @@
+{
+    "0": {
+        "title": "Contactformulier",
+        "description": "",
+        "labelPlacement": "top_label",
+        "descriptionPlacement": "below",
+        "button": {
+            "type": "text",
+            "text": "Verstuur bericht",
+            "imageUrl": ""
+        },
+        "fields": [
+            {
+                "type": "text",
+                "id": 1,
+                "label": "Naam",
+                "isRequired": true,
+                "size": "large"
+            },
+            {
+                "type": "phone",
+                "id": 2,
+                "label": "Telefoon",
+                "isRequired": false,
+                "size": "large",
+                "phoneFormat": "standard"
+            },
+            {
+                "type": "email",
+                "id": 3,
+                "label": "E-mail",
+                "isRequired": true,
+                "size": "large"
+            },
+            {
+                "type": "text",
+                "id": 4,
+                "label": "Adres",
+                "isRequired": false,
+                "size": "large"
+            },
+            {
+                "type": "text",
+                "id": 5,
+                "label": "Woonplaats",
+                "isRequired": false,
+                "size": "large"
+            },
+            {
+                "type": "text",
+                "id": 6,
+                "label": "Onderwerp",
+                "isRequired": true,
+                "size": "large"
+            },
+            {
+                "type": "textarea",
+                "id": 7,
+                "label": "Bericht",
+                "isRequired": true,
+                "size": "large"
+            }
+        ],
+        "confirmations": [
+            {
+                "id": "contact_confirmation",
+                "name": "Standaard bevestiging",
+                "isDefault": true,
+                "type": "message",
+                "message": "Bedankt voor je bericht! We nemen zo snel mogelijk contact met je op.",
+                "url": "",
+                "pageId": "",
+                "queryString": ""
+            }
+        ],
+        "notifications": [
+            {
+                "id": "contact_notification",
+                "isActive": true,
+                "to": "{admin_email}",
+                "name": "Nieuw contactformulier bericht",
+                "event": "form_submission",
+                "toType": "email",
+                "subject": "Nieuw bericht via contactformulier: {Onderwerp:6}",
+                "message": "{all_fields}"
+            }
+        ]
+    },
+    "version": "3.0.2"
+}

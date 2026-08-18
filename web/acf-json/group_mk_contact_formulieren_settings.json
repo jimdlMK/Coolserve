@@ -1,0 +1,39 @@
+{
+    "key": "group_mk_contact_formulieren_settings",
+    "title": "Contactformulieren instellingen",
+    "fields": [
+        {
+            "key": "field_mk_contact_settings_diensten_form_id",
+            "label": "Contactformulier diensten-pagina's — Gravity Forms ID",
+            "name": "diensten_contact_form_id",
+            "type": "number",
+            "instructions": "Wordt onderaan elke dienst-pagina getoond, met als titel \"Klaar voor {dienstnaam}?\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-website-instellingen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787400100
+}

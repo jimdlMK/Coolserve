@@ -1,0 +1,249 @@
+{
+    "key": "group_mk_vacature_post",
+    "title": "Vacature instellingen",
+    "fields": [
+        {
+            "key": "field_mk_vacature_tab_algemeen",
+            "label": "Algemeen",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_introtekst",
+            "label": "Introtekst",
+            "name": "introtekst",
+            "type": "textarea",
+            "rows": 3,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_locatie",
+            "label": "Locatie",
+            "name": "locatie",
+            "type": "text",
+            "instructions": "Meerdere locaties? Scheid met een komma, bijv. \"Haaksbergen, Heerenveen\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "34",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_uren",
+            "label": "Uren",
+            "name": "uren",
+            "type": "text",
+            "instructions": "Bijv. \"Fulltime\" of \"32-40 uur\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_salaris",
+            "label": "Salaris",
+            "name": "salaris",
+            "type": "text",
+            "instructions": "Optioneel, bijv. \"€ 3.876 – € 4.602\".",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "33",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_tab_rol",
+            "label": "Introductie",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_rol_tekst",
+            "label": "Introductie — tekst",
+            "name": "rol_tekst",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "instructions": "Lange introductietekst, getoond naast de afbeelding hieronder. Los van de korte introtekst hierboven.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_rol_afbeelding",
+            "label": "Introductie — afbeelding",
+            "name": "rol_afbeelding",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_tab_taken",
+            "label": "Wat ga je doen",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_taken_tekst",
+            "label": "Wat ga je doen — tekst",
+            "name": "taken_tekst",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "instructions": "Gebruik een lijst (- streepje) voor een opsomming.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_tab_profiel",
+            "label": "Wat neem je mee",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_profiel_tekst",
+            "label": "Wat neem je mee — tekst",
+            "name": "profiel_tekst",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "instructions": "Gebruik een lijst (- streepje) voor een opsomming.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_tab_aanbod",
+            "label": "Wat bieden we jou",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_aanbod_tekst",
+            "label": "Wat bieden we jou — tekst",
+            "name": "aanbod_tekst",
+            "type": "wysiwyg",
+            "tabs": "visual",
+            "toolbar": "basic",
+            "media_upload": 0,
+            "delay": 1,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_vacature_aanbod_afbeelding",
+            "label": "Wat bieden we jou — afbeelding",
+            "name": "aanbod_afbeelding",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "vacature"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787100000
+}

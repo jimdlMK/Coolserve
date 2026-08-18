@@ -1,0 +1,14 @@
+{
+  "name": "mk/contact-formulier",
+  "title": "Contact/sollicitatie formulier",
+  "description": "Label, titel, tekst en contactgegevens links; Gravity Forms formulier rechts",
+  "category": "mediakanjers",
+  "icon": "email-alt2",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

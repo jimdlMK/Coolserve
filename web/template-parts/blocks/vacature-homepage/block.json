@@ -1,0 +1,14 @@
+{
+  "name": "mk/vacature-homepage",
+  "title": "Laatste vacature",
+  "description": "Toont de meest recente openstaande vacature. Rendert niets als er geen vacatures zijn.",
+  "category": "mediakanjers",
+  "icon": "megaphone",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "mk/team",
+  "title": "Team",
+  "description": "Label, titel, tekst en link links; grid met alle medewerkers rechts",
+  "category": "mediakanjers",
+  "icon": "groups",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

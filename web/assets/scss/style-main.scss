@@ -11,6 +11,7 @@
 
 /* ===== TEMPLATE PARTS ===== */
     @import "template-parts/_404.scss";
+    @import "template-parts/_vacature.scss";
 
 /* ===== COMPONENTS ===== */
     @import "components/_buttons.scss";
@@ -41,3 +42,7 @@
     @import "blocks/_formulieren.scss";
     @import "blocks/_merken.scss";
     @import "blocks/_certificeringen.scss";
+    @import "blocks/_team.scss";
+    @import "blocks/_vacature-overzicht.scss";
+    @import "blocks/_vacature-homepage.scss";
+    @import "blocks/_contact-formulier.scss";
