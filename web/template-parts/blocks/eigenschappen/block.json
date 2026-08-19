@@ -1,0 +1,14 @@
+{
+  "name": "mk/eigenschappen",
+  "title": "Eigenschappen",
+  "description": "Label en titel met een grid van 2 kolommen met icoon, titel en tekst per item.",
+  "category": "mediakanjers",
+  "icon": "grid-view",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

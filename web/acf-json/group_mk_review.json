@@ -1,0 +1,68 @@
+{
+    "key": "group_mk_review",
+    "title": "Review",
+    "fields": [
+        {
+            "key": "field_mk_review_tekst",
+            "label": "Review tekst",
+            "name": "tekst",
+            "type": "textarea",
+            "rows": 5,
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_review_naam",
+            "label": "Naam",
+            "name": "naam",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_review_functie",
+            "label": "Functie / bedrijf",
+            "name": "functie",
+            "type": "text",
+            "instructions": "Bijv. 'Medewerker Marketing & Communicatie Coolserve'.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "review"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787121435
+}

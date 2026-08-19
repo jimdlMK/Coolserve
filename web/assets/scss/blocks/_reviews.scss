@@ -1,0 +1,134 @@
+.mk-reviews {
+    width: 95%;
+    margin: 0 auto;
+    margin-bottom: $layout-block-spacing;
+    padding: 30px 0;
+    overflow: hidden;
+
+    &.mk-bg-radius {
+        border-radius: 30px;
+    }
+
+    &__container {
+        &__inner {
+            max-width: $layout-content-size;
+            width: $layout-maxwidth;
+            margin: 0 auto;
+        }
+    }
+
+    &__label {
+        display: inline-block;
+        background: #DFF3FE 0% 0% no-repeat padding-box;
+        border-radius: 5px;
+        opacity: 1;
+        padding: 6px 16px;
+        font: normal normal 600 19px/23px $font-family-standard-font;
+        letter-spacing: 0px;
+        text-transform: uppercase;
+        color: #12B7E7;
+    }
+
+    &__title {
+        margin-top: 16px;
+        font: normal normal bold clamp(1.75rem, 1.3rem + 2.25vw, 3rem)/1.22 $font-family-standard-font;
+        letter-spacing: 0px;
+        color: $color-white;
+    }
+
+    &__slider {
+        margin-top: 24px;
+        width: auto;
+        margin-right: calc((100% - 100vw) / 2);
+        padding-right: 24px;
+        overflow-x: auto;
+        overflow-y: hidden;
+        cursor: grab;
+        scroll-snap-type: x proximity;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        &.is-dragging {
+            cursor: grabbing;
+            scroll-snap-type: none;
+
+            .mk-reviews__card {
+                pointer-events: none;
+            }
+        }
+    }
+
+    &__slider__track {
+        display: flex;
+        align-items: stretch;
+        gap: 20px;
+        width: max-content;
+    }
+
+    &__card {
+        flex: 0 0 auto;
+        width: min(85vw, 340px);
+        scroll-snap-align: start;
+        display: flex;
+        flex-direction: column;
+        background: #F6FDFF 0% 0% no-repeat padding-box;
+        border-radius: 10px;
+        opacity: 1;
+        padding: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
+
+        &__titel {
+            font: normal normal bold 29px/35px $font-family-standard-font;
+            letter-spacing: 0px;
+            color: #2C2C2C;
+            opacity: 1;
+        }
+
+        &__tekst {
+            margin-top: 14px;
+            flex-grow: 1;
+            font: normal normal normal 22px/25px Georgia, serif;
+            letter-spacing: 0px;
+            color: #1E1E1E;
+            opacity: 1;
+        }
+
+        &__auteur {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            letter-spacing: 0px;
+            color: #1E1E1E;
+            opacity: 1;
+
+            &__naam {
+                font: normal normal bold 16px/20px $font-family-standard-font;
+            }
+
+            &__functie {
+                font: normal normal 400 15px/20px $font-family-standard-font;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .mk-reviews {
+        &__card {
+            width: 613px;
+        }
+    }
+}
+
+@media screen and (min-width: 981px) {
+    .mk-reviews {
+        padding: clamp(2.5rem, 2rem + 2.5vw, 4rem) 0;
+
+        &.mk-bg-radius {
+            border-radius: 60px;
+        }
+    }
+}

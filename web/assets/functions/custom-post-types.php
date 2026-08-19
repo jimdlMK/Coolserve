@@ -103,14 +103,49 @@
     add_action('init', 'mk_cpt_vacatures');
 
     /**
+     * Custom Post Type: Reviews
+     * Geen publieke front-end (geen single/archive) — puur databron voor het mk/reviews block.
+     */
+    function mk_cpt_reviews() {
+        register_post_type('review', [
+            'public' => false,
+            'show_ui' => true,
+            'show_in_menu' => true,
+            'has_archive' => false,
+            'publicly_queryable' => false,
+            'exclude_from_search' => true,
+            'rewrite' => false,
+            'labels' => [
+                'name' => 'Reviews',
+                'singular_name' => 'Review',
+                'add_new' => 'Nieuwe review',
+                'add_new_item' => 'Nieuwe review toevoegen',
+                'edit_item' => 'Review bewerken',
+                'new_item' => 'Nieuwe review',
+                'view_item' => 'Review bekijken',
+                'search_items' => 'Reviews zoeken',
+                'not_found' => 'Geen reviews gevonden',
+                'not_found_in_trash' => 'Geen reviews gevonden in prullenbak',
+                'all_items' => 'Alle reviews',
+                'menu_name' => 'Reviews',
+            ],
+            'supports' => ['title', 'page-attributes'],
+            'show_in_rest' => true,
+            'menu_icon' => 'dashicons-format-quote',
+            'menu_position' => 23,
+        ]);
+    }
+    add_action('init', 'mk_cpt_reviews');
+
+    /**
      * Eenmalige permalink-flush na registratie van de Diensten CPT.
      * Geen bestaand flush-mechanisme in dit project — versie-gate voorkomt
      * dat dit bij elke pageload gebeurt.
      */
     add_action('init', function() {
-        if (get_option('mk_diensten_cpt_flushed') !== '4') {
+        if (get_option('mk_diensten_cpt_flushed') !== '5') {
             flush_rewrite_rules();
-            update_option('mk_diensten_cpt_flushed', '4');
+            update_option('mk_diensten_cpt_flushed', '5');
         }
     }, 20);
 ?>

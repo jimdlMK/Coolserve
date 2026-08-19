@@ -1,0 +1,14 @@
+{
+  "name": "mk/reviews",
+  "title": "Reviews",
+  "description": "Label en titel met een sleepbare rij klantreviews.",
+  "category": "mediakanjers",
+  "icon": "format-quote",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}
