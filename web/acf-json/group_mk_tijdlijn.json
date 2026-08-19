@@ -1,9 +1,9 @@
 {
-    "key": "group_mk_eigenschappen",
-    "title": "Eigenschappen block",
+    "key": "group_mk_tijdlijn",
+    "title": "Tijdlijn block",
     "fields": [
         {
-            "key": "field_mk_eigenschappen_achtergrond_type",
+            "key": "field_mk_tijdlijn_achtergrond_type",
             "label": "Achtergrond",
             "name": "achtergrond_type",
             "type": "select",
@@ -26,10 +26,11 @@
             }
         },
         {
-            "key": "field_mk_eigenschappen_label",
+            "key": "field_mk_tijdlijn_label",
             "label": "Label",
             "name": "label",
             "type": "text",
+            "default_value": "Ons verhaal",
             "instructions": "",
             "required": 0,
             "conditional_logic": 0,
@@ -40,10 +41,11 @@
             }
         },
         {
-            "key": "field_mk_eigenschappen_titel",
+            "key": "field_mk_tijdlijn_titel",
             "label": "Titel",
             "name": "titel",
             "type": "text",
+            "default_value": "Hoe het <span>begon</span>",
             "instructions": "Zet <span>...</span> om een deel van de titel lichtblauw te maken.",
             "required": 0,
             "conditional_logic": 0,
@@ -54,12 +56,14 @@
             }
         },
         {
-            "key": "field_mk_eigenschappen_afbeelding",
-            "label": "Afbeelding",
-            "name": "afbeelding",
-            "type": "image",
-            "return_format": "array",
-            "instructions": "Optioneel. Wordt getoond als 2e item in het grid (rechtsboven op desktop).",
+            "key": "field_mk_tijdlijn_tekst",
+            "label": "Tekst",
+            "name": "tekst",
+            "type": "wysiwyg",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "basic",
+            "instructions": "Elke alinea wordt apart getoond.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -69,54 +73,38 @@
             }
         },
         {
-            "key": "field_mk_eigenschappen_items",
-            "label": "Eigenschappen",
-            "name": "eigenschappen",
+            "key": "field_mk_tijdlijn_items",
+            "label": "Tijdlijn",
+            "name": "tijdlijn",
             "type": "repeater",
-            "button_label": "Eigenschap toevoegen",
-            "layout": "block",
+            "button_label": "Jaar toevoegen",
+            "layout": "table",
             "min": 1,
             "sub_fields": [
                 {
-                    "key": "field_mk_eigenschappen_item_icoon",
-                    "label": "Icoon",
-                    "name": "icoon",
-                    "type": "image",
-                    "return_format": "array",
-                    "instructions": "SVG/PNG icoon, wordt getoond op een lichtblauwe ronde achtergrond.",
+                    "key": "field_mk_tijdlijn_item_jaar",
+                    "label": "Jaar",
+                    "name": "jaar",
+                    "type": "text",
+                    "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
+                        "width": "20",
                         "class": "",
                         "id": ""
                     }
                 },
                 {
-                    "key": "field_mk_eigenschappen_item_titel",
-                    "label": "Titel",
+                    "key": "field_mk_tijdlijn_item_titel",
+                    "label": "Tekst",
                     "name": "titel",
                     "type": "text",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
-                        "width": "",
-                        "class": "",
-                        "id": ""
-                    }
-                },
-                {
-                    "key": "field_mk_eigenschappen_item_tekst",
-                    "label": "Tekst",
-                    "name": "tekst",
-                    "type": "textarea",
-                    "rows": 3,
-                    "instructions": "",
-                    "required": 0,
-                    "conditional_logic": 0,
-                    "wrapper": {
-                        "width": "",
+                        "width": "80",
                         "class": "",
                         "id": ""
                     }
@@ -137,7 +125,7 @@
             {
                 "param": "block",
                 "operator": "==",
-                "value": "mk/eigenschappen"
+                "value": "mk/tijdlijn"
             }
         ]
     ],
@@ -150,5 +138,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787138856
+    "modified": 1787140791
 }

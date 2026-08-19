@@ -2,6 +2,7 @@
     $achtergrond_type = isset($mk_eigenschappen_achtergrond_type) ? $mk_eigenschappen_achtergrond_type : (get_field('achtergrond_type') ?: 'grijs');
     $label            = isset($mk_eigenschappen_label) ? $mk_eigenschappen_label : get_field('label');
     $titel            = isset($mk_eigenschappen_titel) ? $mk_eigenschappen_titel : get_field('titel');
+    $afbeelding       = isset($mk_eigenschappen_afbeelding) ? $mk_eigenschappen_afbeelding : get_field('afbeelding');
     $eigenschappen    = isset($mk_eigenschappen_items) ? $mk_eigenschappen_items : get_field('eigenschappen');
 
     if (!$eigenschappen) {
@@ -27,7 +28,7 @@
             <?php endif; ?>
 
             <div class="mk-eigenschappen__grid">
-                <?php foreach ($eigenschappen as $item) :
+                <?php foreach ($eigenschappen as $index => $item) :
                     $icoon = $item['icoon'];
                 ?>
                     <div class="mk-eigenschappen__grid__card">
@@ -45,6 +46,11 @@
                             <p class="mk-eigenschappen__grid__card__tekst"><?php echo esc_html($item['tekst']); ?></p>
                         <?php endif; ?>
                     </div>
+                    <?php if ($index === 0 && $afbeelding) : ?>
+                        <div class="mk-eigenschappen__grid__media">
+                            <img src="<?php echo esc_url($afbeelding['url']); ?>" alt="<?php echo esc_attr($afbeelding['alt']); ?>">
+                        </div>
+                    <?php endif; ?>
                 <?php endforeach; ?>
             </div>
 

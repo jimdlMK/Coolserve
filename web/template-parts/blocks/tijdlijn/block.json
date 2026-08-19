@@ -1,0 +1,14 @@
+{
+  "name": "mk/tijdlijn",
+  "title": "Tijdlijn",
+  "description": "Label, titel en tekst naast een verticale tijdlijn met jaartallen die oplicht tijdens scrollen.",
+  "category": "mediakanjers",
+  "icon": "backup",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}
