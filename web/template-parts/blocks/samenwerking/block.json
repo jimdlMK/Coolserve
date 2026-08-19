@@ -1,0 +1,14 @@
+{
+  "name": "mk/samenwerking",
+  "title": "Samenwerking",
+  "description": "Twee logo's naast elkaar met een X, label, titel, tekst en USP's op een donkere gradient-achtergrond.",
+  "category": "mediakanjers",
+  "icon": "groups",
+  "acf": {
+    "mode": "edit",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}

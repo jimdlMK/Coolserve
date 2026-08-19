@@ -49,7 +49,22 @@ $(window).on('resize', setSubmenuTop);
         }
     });
 
-    $(document).on('click', '.mk-mobile-menu__inner__menu .menu-mobielmenu-container .menu li .sub-menu .go-back', function(e) {
+    // Klikbaar pijltje op menu-items met een submenu
+    $('.mk-mobile-menu__inner__menu .menu li.menu-item-has-children').each(function() {
+        var $link = $(this).children('a');
+        if (!$link.find('.submenu-toggle').length) {
+            $link.append('<span class="submenu-toggle" aria-label="Submenu openen"></span>');
+        }
+    });
+
+    $(document).on('click', '.mk-mobile-menu__inner__menu .menu li.menu-item-has-children > a .submenu-toggle', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        $(this).closest('li').children('.sub-menu').addClass('is-visible');
+        $('body').addClass('freeze');
+    });
+
+    $(document).on('click', '.mk-mobile-menu__inner__menu .sub-menu .go-back', function(e) {
         e.preventDefault();
         $(this).closest('.sub-menu').removeClass('is-visible');
     });

@@ -1,0 +1,147 @@
+{
+    "key": "group_mk_samenwerking",
+    "title": "Samenwerking block",
+    "fields": [
+        {
+            "key": "field_mk_samenwerking_logo_1",
+            "label": "Logo 1",
+            "name": "logo_1",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Bijv. het eigen logo, witte/lichte versie voor op de donkere achtergrond.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_samenwerking_logo_2",
+            "label": "Logo 2",
+            "name": "logo_2",
+            "type": "image",
+            "return_format": "array",
+            "instructions": "Bijv. het logo van de samenwerkingspartner.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_samenwerking_label",
+            "label": "Label",
+            "name": "label",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_samenwerking_titel",
+            "label": "Titel",
+            "name": "titel",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_samenwerking_tekst",
+            "label": "Tekst",
+            "name": "tekst",
+            "type": "wysiwyg",
+            "tabs": "text",
+            "media_upload": 0,
+            "toolbar": "basic",
+            "instructions": "Elke alinea wordt apart getoond.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_samenwerking_usps",
+            "label": "USP's",
+            "name": "usps",
+            "type": "repeater",
+            "button_label": "USP toevoegen",
+            "layout": "table",
+            "min": 0,
+            "sub_fields": [
+                {
+                    "key": "field_mk_samenwerking_usp_titel",
+                    "label": "Titel",
+                    "name": "titel",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "40",
+                        "class": "",
+                        "id": ""
+                    }
+                },
+                {
+                    "key": "field_mk_samenwerking_usp_tekst",
+                    "label": "Tekst",
+                    "name": "tekst",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "60",
+                        "class": "",
+                        "id": ""
+                    }
+                }
+            ],
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "block",
+                "operator": "==",
+                "value": "mk/samenwerking"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1787144796
+}
