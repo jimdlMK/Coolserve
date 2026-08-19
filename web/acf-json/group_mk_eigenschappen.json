@@ -26,6 +26,27 @@
             }
         },
         {
+            "key": "field_mk_eigenschappen_layout",
+            "label": "Layout",
+            "name": "layout",
+            "type": "select",
+            "choices": {
+                "grid": "Grid (kaarten met titel + tekst, optionele afbeelding tussen items)",
+                "tekst_badge": "Tekst + afbeelding met cijfer-badge (grid eronder toont alleen titels)"
+            },
+            "default_value": "grid",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_eigenschappen_label",
             "label": "Label",
             "name": "label",
@@ -54,14 +75,61 @@
             }
         },
         {
+            "key": "field_mk_eigenschappen_tekst",
+            "label": "Tekst",
+            "name": "tekst",
+            "type": "textarea",
+            "rows": 4,
+            "instructions": "Alleen gebruikt bij layout 'Tekst + afbeelding met cijfer-badge'.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_eigenschappen_layout",
+                        "operator": "==",
+                        "value": "tekst_badge"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_eigenschappen_afbeelding",
             "label": "Afbeelding",
             "name": "afbeelding",
             "type": "image",
             "return_format": "array",
-            "instructions": "Optioneel. Wordt getoond als 2e item in het grid (rechtsboven op desktop).",
+            "instructions": "Bij layout 'Grid': optioneel, getoond als 2e item in het grid. Bij layout 'Tekst + afbeelding': verplicht, getoond naast de tekst met de cijfer-badge erop.",
             "required": 0,
             "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_eigenschappen_toon_cijfer_badge",
+            "label": "Cijfer-badge tonen",
+            "name": "toon_cijfer_badge",
+            "type": "true_false",
+            "ui": 1,
+            "default_value": 1,
+            "instructions": "Toont een badge linksboven op de afbeelding die roteert door de cijfers uit Website instellingen → Cijfers.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_eigenschappen_layout",
+                        "operator": "==",
+                        "value": "tekst_badge"
+                    }
+                ]
+            ],
             "wrapper": {
                 "width": "",
                 "class": "",
@@ -150,5 +218,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787138856
+    "modified": 1787149720
 }
