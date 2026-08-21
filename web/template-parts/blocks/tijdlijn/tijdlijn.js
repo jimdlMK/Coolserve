@@ -39,7 +39,7 @@
 
             window.setTimeout(function () {
                 burstSparks(item.querySelector('[data-mk-tijdlijn-sparks]'));
-            }, 350);
+            }, 650);
 
             var connector = item.querySelector('.mk-tijdlijn__item__connector');
             if (!connector) return;
@@ -50,7 +50,7 @@
 
             window.setTimeout(function () {
                 revealItem(next);
-            }, 550);
+            }, 1500);
         }
 
         if (!('IntersectionObserver' in window)) {
