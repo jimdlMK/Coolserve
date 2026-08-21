@@ -37,7 +37,9 @@
 
     &__slider {
         margin-top: 24px;
-        width: 100%;
+        width: auto;
+        margin-right: calc((100% - 100vw) / 2);
+        padding-right: 24px;
         overflow: hidden;
         cursor: grab;
 
@@ -53,6 +55,7 @@
     &__slider__track {
         display: flex;
         align-items: stretch;
+        gap: 20px;
         transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 
         &.is-dragging {
@@ -61,8 +64,8 @@
     }
 
     &__card {
-        flex: 0 0 100%;
-        width: 100%;
+        flex: 0 0 auto;
+        width: min(85vw, 340px);
         display: flex;
         flex-direction: column;
         background: #F6FDFF 0% 0% no-repeat padding-box;
@@ -127,6 +130,14 @@
                 background-color: $color-white;
                 transform: scale(1.25);
             }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .mk-reviews {
+        &__card {
+            width: 613px;
         }
     }
 }

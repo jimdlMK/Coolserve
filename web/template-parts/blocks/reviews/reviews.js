@@ -17,9 +17,13 @@
         var startX = 0;
         var currentDelta = 0;
 
+        function cardOffset(i) {
+            return cards[i].offsetLeft;
+        }
+
         function goTo(newIndex) {
             index = Math.max(0, Math.min(cards.length - 1, newIndex));
-            track.style.transform = 'translateX(' + (-index * 100) + '%)';
+            track.style.transform = 'translateX(' + (-cardOffset(index)) + 'px)';
 
             dots.forEach(function (dot, i) {
                 dot.classList.toggle('is-active', i === index);
@@ -37,8 +41,7 @@
         function move(pageX) {
             if (!isDown) return;
             currentDelta = pageX - startX;
-            var percent = (currentDelta / slider.offsetWidth) * 100;
-            track.style.transform = 'translateX(calc(' + (-index * 100) + '% + ' + currentDelta + 'px))';
+            track.style.transform = 'translateX(' + (-cardOffset(index) + currentDelta) + 'px)';
         }
 
         function end() {
