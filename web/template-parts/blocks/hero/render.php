@@ -23,6 +23,12 @@
     if ($is_front) {
         $classes[] = 'mk-hero--home';
     }
+    if ($toon_cijfers) {
+        $classes[] = 'mk-hero--met-cijfers';
+    }
+    if ($layout === 'contact') {
+        $classes[] = 'mk-hero--met-contact';
+    }
 ?>
 
 <section class="<?php echo esc_attr(implode(' ', $classes)); ?>">

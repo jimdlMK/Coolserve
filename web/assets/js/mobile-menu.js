@@ -34,11 +34,13 @@ jQuery(document).ready(function($) {
         }
     });
 
-    // Klikbaar pijltje op menu-items met een submenu
+    // Klikbaar pijltje op menu-items met een submenu.
+    // De toggle wordt als sibling na de <a> geplaatst (niet erin genest) zodat
+    // er geen ambiguïteit is tussen de link-navigatie en de toggle-klik op touch.
     $('.mk-mobile-menu__inner__menu .menu li.menu-item-has-children').each(function() {
-        var $link = $(this).children('a');
-        if (!$link.find('.submenu-toggle').length) {
-            $link.append('<span class="submenu-toggle" aria-label="Submenu openen"></span>');
+        var $li = $(this);
+        if (!$li.children('.submenu-toggle').length) {
+            $li.children('a').after('<span class="submenu-toggle" aria-label="Submenu openen"></span>');
         }
     });
 
@@ -54,11 +56,11 @@ jQuery(document).ready(function($) {
 
         submenuCounter++;
         var id = 'mk-submenu-' + submenuCounter;
-        $li.children('a').find('.submenu-toggle').attr('data-submenu-target', id);
+        $li.children('.submenu-toggle').attr('data-submenu-target', id);
         $submenu.attr('data-submenu-id', id).appendTo('body');
     });
 
-    $(document).on('click', '.mk-mobile-menu__inner__menu .menu li.menu-item-has-children > a .submenu-toggle', function(e) {
+    $(document).on('click', '.mk-mobile-menu__inner__menu .menu li.menu-item-has-children > .submenu-toggle', function(e) {
         e.preventDefault();
         e.stopPropagation();
         var id = $(this).attr('data-submenu-target');

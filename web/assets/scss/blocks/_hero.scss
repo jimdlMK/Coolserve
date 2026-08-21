@@ -401,11 +401,19 @@
 @media screen and (max-width: 980px) {
     .mk-hero {
         height: auto;
-        min-height: 500px;
+        min-height: 340px;
         border-radius: 30px;
 
-        &--home {
-            min-height: 560px;
+        &--met-cijfers,
+        &--met-contact {
+            min-height: 480px;
+        }
+
+        &.mk-hero--home {
+            &.mk-hero--met-cijfers,
+            &.mk-hero--met-contact {
+                min-height: 540px;
+            }
         }
 
         &__content {
