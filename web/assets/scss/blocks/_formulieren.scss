@@ -138,7 +138,7 @@
     }
 
     &__panels {
-        width: 80%;
+        width: 100%;
     }
 
     &__panel {
@@ -157,6 +157,10 @@
     .mk-formulieren {
         &__grid {
             grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__panels {
+            width: 80%;
         }
     }
 }

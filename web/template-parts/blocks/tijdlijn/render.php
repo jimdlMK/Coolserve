@@ -36,10 +36,15 @@
             <div class="mk-tijdlijn__lijn" data-mk-tijdlijn>
                 <?php foreach ($tijdlijn as $index => $item) : ?>
                     <div class="mk-tijdlijn__item" data-mk-tijdlijn-item>
-                        <span class="mk-tijdlijn__item__jaar"><?php echo esc_html($item['jaar']); ?></span>
+                        <span class="mk-tijdlijn__item__jaar">
+                            <?php echo esc_html($item['jaar']); ?>
+                            <span class="mk-tijdlijn__item__sparks" data-mk-tijdlijn-sparks aria-hidden="true"></span>
+                        </span>
                         <span class="mk-tijdlijn__item__titel"><?php echo esc_html($item['titel']); ?></span>
                         <?php if ($index < count($tijdlijn) - 1) : ?>
-                            <span class="mk-tijdlijn__item__connector"></span>
+                            <span class="mk-tijdlijn__item__connector">
+                                <span class="mk-tijdlijn__item__connector__pulse"></span>
+                            </span>
                         <?php endif; ?>
                     </div>
                 <?php endforeach; ?>

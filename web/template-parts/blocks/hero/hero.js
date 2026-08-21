@@ -38,6 +38,25 @@
         });
     }
 
+    function initScrollLink() {
+        var links = document.querySelectorAll('[data-mk-hero-scroll]');
+        if (!links.length) return;
+
+        links.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                var section = link.closest('.mk-hero');
+                var next = section ? section.nextElementSibling : null;
+                if (!next) return;
+
+                e.preventDefault();
+
+                var offset = 24;
+                var top = next.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({ top: top, behavior: 'smooth' });
+            });
+        });
+    }
+
     function initVimeoLightbox() {
         var triggers = document.querySelectorAll('[data-vimeo-lightbox]');
         if (!triggers.length) return;
@@ -73,6 +92,7 @@
 
     document.addEventListener('DOMContentLoaded', function () {
         initCountUps();
+        initScrollLink();
         initVimeoLightbox();
     });
 })();

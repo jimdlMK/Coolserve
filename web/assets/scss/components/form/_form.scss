@@ -112,9 +112,10 @@
         margin: 0;
         padding: 0;
         display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        gap: 10px 24px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        align-items: flex-start;
+        gap: 12px;
         text-align: left;
 
         li {
@@ -364,6 +365,18 @@
                 grid-column-start: 1;
                 grid-column-end: 2;
             }
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .gform_wrapper {
+        .gfield_checkbox,
+        .gfield_radio {
+            flex-direction: row;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 24px;
         }
     }
 }

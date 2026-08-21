@@ -163,7 +163,7 @@
 
     <?php if ($layout !== 'split') : ?>
         <?php if ($is_front) : ?>
-            <a href="#main-content" class="mk-hero__scroll">
+            <a href="#main-content" class="mk-hero__scroll" data-mk-hero-scroll>
                 <span class="mk-hero__scroll__mouse"><span></span></span>
                 <span class="mk-hero__scroll__label">Scroll verder</span>
             </a>
