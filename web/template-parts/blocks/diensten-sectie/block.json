@@ -5,7 +5,7 @@
   "category": "mediakanjers",
   "icon": "screenoptions",
   "acf": {
-    "mode": "edit",
+    "mode": "preview",
     "renderTemplate": "render.php"
   },
   "supports": {

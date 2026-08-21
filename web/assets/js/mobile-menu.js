@@ -42,14 +42,31 @@ jQuery(document).ready(function($) {
         }
     });
 
+    // Submenu's koppelen aan hun toggle via een uniek ID, dan verplaatsen naar <body>
+    // zodat position:fixed weer relatief is aan de viewport i.p.v. aan .mk-mobile-menu
+    // (die zelf een transform heeft, wat anders een nieuw containing block voor
+    // fixed-elementen zou vormen — daardoor opende het submenu niet volledig scherm).
+    var submenuCounter = 0;
+    $('.mk-mobile-menu__inner__menu li.menu-item-has-children').each(function() {
+        var $li = $(this);
+        var $submenu = $li.children('.sub-menu');
+        if (!$submenu.length) return;
+
+        submenuCounter++;
+        var id = 'mk-submenu-' + submenuCounter;
+        $li.children('a').find('.submenu-toggle').attr('data-submenu-target', id);
+        $submenu.attr('data-submenu-id', id).appendTo('body');
+    });
+
     $(document).on('click', '.mk-mobile-menu__inner__menu .menu li.menu-item-has-children > a .submenu-toggle', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        $(this).closest('li').children('.sub-menu').addClass('is-visible');
+        var id = $(this).attr('data-submenu-target');
+        $('body > .sub-menu[data-submenu-id="' + id + '"]').addClass('is-visible');
         $('body').addClass('freeze');
     });
 
-    $(document).on('click', '.mk-mobile-menu__inner__menu .sub-menu .go-back', function(e) {
+    $(document).on('click', 'body > .sub-menu .go-back', function(e) {
         e.preventDefault();
         $(this).closest('.sub-menu').removeClass('is-visible');
     });

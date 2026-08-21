@@ -83,18 +83,20 @@
     .mk-hero__content__contact-grid .contact-card {
         flex-direction: row;
         align-items: center;
-        gap: 12px;
-        padding: 14px 16px;
-        border-radius: 12px;
+        gap: 10px;
+        padding: 10px 12px;
+        background-color: rgba(255, 255, 255, 0.06);
+        border-color: rgba(255, 255, 255, 0.1);
+        border-radius: 10px;
 
         &__icon {
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             margin-bottom: 0;
 
             svg {
-                width: 16px;
-                height: 16px;
+                width: 14px;
+                height: 14px;
             }
         }
 

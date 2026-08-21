@@ -226,6 +226,8 @@
 
             @media screen and (max-width: 600px) {
                 grid-template-columns: 1fr;
+                gap: 10px;
+                margin-top: 12px;
             }
         }
     }
@@ -398,15 +400,12 @@
 
 @media screen and (max-width: 980px) {
     .mk-hero {
-        height: 500px;
+        height: auto;
+        min-height: 500px;
         border-radius: 30px;
 
         &--home {
-            height: 560px;
-        }
-
-        &--split {
-            height: auto;
+            min-height: 560px;
         }
 
         &__content {
