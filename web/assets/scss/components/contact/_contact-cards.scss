@@ -79,7 +79,7 @@
 }
 
 // Compacte weergave binnen de hero op mobiel: alleen icoon + belangrijkste waarde
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
     .mk-hero__content__contact-grid .contact-card {
         flex-direction: row;
         align-items: center;
