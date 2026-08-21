@@ -61,7 +61,7 @@
                         <div id="<?php echo esc_attr($item_uid); ?>" class="mk-formulieren__panel" data-mk-formulieren-panel hidden>
                             <div class="mk-formulieren__panel__inner">
                                 <?php if ($form_id && function_exists('gravity_form')) : ?>
-                                    <?php gravity_form($form_id, false, false, false, '', true, 0, true); ?>
+                                    <?php gravity_form($form_id, true, false, false, '', true, 0, true); ?>
                                 <?php endif; ?>
                             </div>
                         </div>
