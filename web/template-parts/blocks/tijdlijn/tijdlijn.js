@@ -68,12 +68,18 @@
                 }
             });
         }, {
-            threshold: 0.4,
-            rootMargin: '0px 0px -10% 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px 0px 0px'
         });
 
         items.forEach(function (item) {
             observer.observe(item);
+
+            var rect = item.getBoundingClientRect();
+            if (rect.top < window.innerHeight && rect.bottom > 0) {
+                revealItem(item);
+                observer.unobserve(item);
+            }
         });
     }
 
