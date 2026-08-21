@@ -43,7 +43,8 @@
         overflow-x: auto;
         overflow-y: hidden;
         cursor: grab;
-        scroll-snap-type: x proximity;
+        scroll-snap-type: x mandatory;
+        scroll-behavior: smooth;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
 
@@ -54,6 +55,7 @@
         &.is-dragging {
             cursor: grabbing;
             scroll-snap-type: none;
+            scroll-behavior: auto;
 
             .mk-reviews__card {
                 pointer-events: none;
@@ -110,6 +112,40 @@
             &__functie {
                 font: normal normal 400 15px/20px $font-family-standard-font;
             }
+        }
+    }
+
+    &__pagination {
+        display: none;
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+
+        &__dot {
+            flex-shrink: 0;
+            width: 8px;
+            height: 8px;
+            padding: 0;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.4);
+            cursor: pointer;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+
+            &.is-active {
+                background-color: $color-white;
+                transform: scale(1.25);
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 699px) {
+    .mk-reviews {
+        &__pagination {
+            display: flex;
         }
     }
 }

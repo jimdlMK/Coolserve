@@ -53,6 +53,14 @@
                 </div>
             </div>
 
+            <?php if (count($review_ids) > 1) : ?>
+                <div class="mk-reviews__pagination" data-mk-slider-pagination>
+                    <?php foreach ($review_ids as $index => $review_id) : ?>
+                        <button type="button" class="mk-reviews__pagination__dot<?php echo $index === 0 ? ' is-active' : ''; ?>" data-mk-slider-dot="<?php echo esc_attr($index); ?>" aria-label="Ga naar review <?php echo esc_attr($index + 1); ?>"></button>
+                    <?php endforeach; ?>
+                </div>
+            <?php endif; ?>
+
         </div>
     </div>
 </section>

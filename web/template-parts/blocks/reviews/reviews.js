@@ -55,7 +55,50 @@
         }, true);
     }
 
+    function initPagination(section) {
+        var slider = section.querySelector('[data-mk-drag-slider]');
+        var pagination = section.querySelector('[data-mk-slider-pagination]');
+        if (!slider || !pagination) return;
+
+        var cards = Array.prototype.slice.call(slider.querySelectorAll('.mk-reviews__card'));
+        var dots = Array.prototype.slice.call(pagination.querySelectorAll('[data-mk-slider-dot]'));
+        if (!cards.length || !dots.length) return;
+
+        dots.forEach(function (dot, index) {
+            dot.addEventListener('click', function () {
+                var card = cards[index];
+                slider.scrollTo({
+                    left: card.offsetLeft - slider.offsetLeft,
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        if (!('IntersectionObserver' in window)) return;
+
+        var observer = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (!entry.isIntersecting) return;
+                var index = cards.indexOf(entry.target);
+                if (index === -1) return;
+
+                dots.forEach(function (dot) {
+                    dot.classList.remove('is-active');
+                });
+                dots[index].classList.add('is-active');
+            });
+        }, {
+            root: slider,
+            threshold: 0.6
+        });
+
+        cards.forEach(function (card) {
+            observer.observe(card);
+        });
+    }
+
     document.addEventListener('DOMContentLoaded', function () {
         document.querySelectorAll('[data-mk-drag-slider]').forEach(initDragSlider);
+        document.querySelectorAll('.mk-reviews').forEach(initPagination);
     });
 })();

@@ -1,7 +1,6 @@
 .mk-hero {
     position: relative;
     width: 95%;
-    max-width: $layout-wide-size;
     margin: 0 auto $layout-block-spacing;
     border-radius: 60px;
     overflow: hidden;
@@ -444,9 +443,6 @@
 
 @media screen and (max-width: 560px) {
     .mk-hero {
-        &__scroll__label {
-            display: none;
-        }
 
         &__bottom-bar__video-btn span {
             display: none;

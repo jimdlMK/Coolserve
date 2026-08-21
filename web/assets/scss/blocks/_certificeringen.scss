@@ -129,6 +129,10 @@
                     height: 16px;
                 }
             }
+
+            &__track__item img {
+                min-width: 90px;
+            }
         }
     }
 }
