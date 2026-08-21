@@ -112,7 +112,7 @@
         }
 
         &__value--compact {
-            display: block;
+            display: block !important;
 
             &__extra {
                 color: $color-secondary;
