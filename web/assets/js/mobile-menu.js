@@ -9,21 +9,6 @@ jQuery(document).ready(function($) {
         $('.mk-mobile-menu').css('padding-top', adminBarHeight + 'px');
     }
 
-function setSubmenuTop() {
-
-    var adminBarHeight = $('#wpadminbar').length ? $('#wpadminbar').outerHeight() : 0;
-    var topHeight = $('.mk-mobile-menu__inner__menu').offset().top || 0;
-
-    var totalTop = topHeight + adminBarHeight;
-
-    // zet top op ALLE sub-menus (ook nested)
-    $('.mk-mobile-menu__inner__menu > .menu-mobielmenu-container > .menu > li > .sub-menu ')
-        .css({
-            'top': totalTop + 'px'
-        });
-}
-setSubmenuTop();
-$(window).on('resize', setSubmenuTop);
     // Open menu
     $('.open-mobile-menu').on('click', function(e) {
         e.preventDefault();

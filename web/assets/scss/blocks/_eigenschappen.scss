@@ -77,14 +77,15 @@
             }
 
             &__titel {
-                font: normal normal 600 30px/37px $font-family-standard-font;
+                min-width: 0;
+                font: normal normal 600 clamp(1.25rem, 1.05rem + 0.85vw, 1.875rem)/1.25 $font-family-standard-font;
                 letter-spacing: 0px;
                 color: #072F55;
                 opacity: 1;
             }
 
             &__tekst {
-                font: normal normal 400 18px/33px $font-family-standard-font;
+                font: normal normal 400 clamp(1rem, 0.93rem + 0.32vw, 1.125rem)/1.6 $font-family-standard-font;
                 letter-spacing: 0px;
                 color: #072F55;
                 opacity: 1;
@@ -227,7 +228,7 @@
     }
 
     .mk-eigenschappen__grid--titels {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: 1fr;
         gap: 16px;
         margin-top: 32px;
 
@@ -257,6 +258,10 @@
         .mk-eigenschappen__intro {
             grid-template-columns: 1fr 1fr;
             gap: 60px;
+        }
+
+        .mk-eigenschappen__grid--titels {
+            grid-template-columns: repeat(2, 1fr);
         }
     }
 }

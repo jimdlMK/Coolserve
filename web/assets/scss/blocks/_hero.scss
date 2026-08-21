@@ -1,6 +1,6 @@
 .mk-hero {
     position: relative;
-    width: $layout-maxwidth;
+    width: 95%;
     max-width: $layout-wide-size;
     margin: 0 auto $layout-block-spacing;
     border-radius: 60px;
@@ -97,6 +97,8 @@
             color: $color-white;
             width: 75%;
             max-width: 100%;
+            overflow-wrap: break-word;
+            word-break: break-word;
 
             span {
                 color: $color-secondary;
@@ -401,6 +403,10 @@
 
         &--home {
             height: 560px;
+        }
+
+        &--split {
+            height: auto;
         }
 
         &__content {

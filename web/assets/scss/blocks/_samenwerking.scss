@@ -26,20 +26,22 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: clamp(1rem, 0.8rem + 1vw, 2rem);
+        gap: clamp(0.75rem, 0.4rem + 1.5vw, 2rem);
         margin-bottom: 12px;
 
         &__logo {
-            max-width: 220px;
-            max-height: 70px;
+            flex-shrink: 1;
+            min-width: 0;
             width: auto;
+            max-width: clamp(90px, 70px + 20vw, 220px);
+            max-height: clamp(36px, 28px + 6vw, 70px);
             height: auto;
             object-fit: contain;
         }
 
         &__x {
             flex-shrink: 0;
-            font: normal normal 300 32px/1 $font-family-standard-font;
+            font: normal normal 300 clamp(1.25rem, 1rem + 1vw, 2rem)/1 $font-family-standard-font;
             color: rgba(255, 255, 255, 0.5);
         }
     }

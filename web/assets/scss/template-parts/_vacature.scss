@@ -30,9 +30,8 @@
     &__sub {
         width: 100%;
         display: flex;
-        flex-direction: row;
+        flex-direction: column;
         align-items: flex-start;
-        justify-content: space-between;
         gap: 16px;
         margin-top: 8px;
 
@@ -255,6 +254,16 @@
 
         span {
             color: $color-secondary;
+        }
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .mk-vacature-kop {
+        &__sub {
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
         }
     }
 }

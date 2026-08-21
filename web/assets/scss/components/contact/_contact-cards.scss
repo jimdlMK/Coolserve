@@ -68,8 +68,54 @@
         }
     }
 
+    &__value--compact {
+        display: none;
+    }
+
     &:hover {
         background-color: rgba(255, 255, 255, 0.14);
         border-color: rgba(255, 255, 255, 0.3);
+    }
+}
+
+// Compacte weergave binnen de hero op mobiel: alleen icoon + belangrijkste waarde
+@media screen and (max-width: 600px) {
+    .mk-hero__content__contact-grid .contact-card {
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        padding: 14px 16px;
+        border-radius: 12px;
+
+        &__icon {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 0;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+
+        &__title,
+        &__note,
+        &__locations {
+            display: none;
+        }
+
+        &__value {
+            font-size: 15px;
+            line-height: 1.3;
+        }
+
+        &__value--compact {
+            display: block;
+
+            &__extra {
+                color: $color-secondary;
+                font-weight: 600;
+            }
+        }
     }
 }
