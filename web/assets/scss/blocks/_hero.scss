@@ -310,6 +310,23 @@
         &:hover &__mouse {
             border-color: $color-secondary;
         }
+
+        &__hand {
+            display: none;
+            align-items: center;
+            justify-content: center;
+
+            svg {
+                width: 24px;
+                height: 24px;
+                animation: mk-hero-scroll-tap 1.6s ease-in-out infinite;
+            }
+
+            path {
+                fill: $color-white;
+                opacity: 1;
+            }
+        }
     }
 
     &__bottom-bar {
@@ -365,6 +382,12 @@
     25% { transform: translateY(-2px) rotate(-2deg); }
     50% { transform: translateY(5px) rotate(0deg); }
     75% { transform: translateY(-2px) rotate(2deg); }
+}
+
+@keyframes mk-hero-scroll-tap {
+    0%, 20%, 100% { transform: translateY(0) scale(1); }
+    35% { transform: translateY(6px) scale(0.94); }
+    50% { transform: translateY(0) scale(1); }
 }
 
 // ===== Video lightbox modal =====
@@ -431,6 +454,15 @@
             }
         }
 
+        &__container {
+            height: auto;
+            min-height: 100%;
+
+            &__inner {
+                height: auto;
+            }
+        }
+
         &__content {
             padding: 30px 0;
         }
@@ -446,8 +478,22 @@
         }
 
         &__scroll {
-            left: 20px;
-            bottom: 20px;
+            position: static;
+            justify-content: flex-start;
+            width: 100%;
+            padding: 0 0 20px 20px;
+
+            &__mouse {
+                display: none;
+            }
+
+            &__hand {
+                display: flex;
+            }
+
+            &__label {
+                display: block;
+            }
         }
 
         &__bottom-bar {

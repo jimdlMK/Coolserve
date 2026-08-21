@@ -18,6 +18,7 @@
     $is_front = is_front_page();
 
     $arrow_icon = file_get_contents(get_stylesheet_directory() . '/assets/images/Icon awesome-arrow-right.svg');
+    $hand_pointer_icon = file_get_contents(get_stylesheet_directory() . '/assets/images/hand-pointer-solid-full.svg');
 
     $classes = ['mk-hero', 'mk-hero--' . esc_attr($layout)];
     if ($is_front) {
@@ -165,6 +166,9 @@
         <?php if ($is_front) : ?>
             <a href="#main-content" class="mk-hero__scroll" data-mk-hero-scroll>
                 <span class="mk-hero__scroll__mouse"><span></span></span>
+                <span class="mk-hero__scroll__hand">
+                    <?php echo $hand_pointer_icon; ?>
+                </span>
                 <span class="mk-hero__scroll__label">Scroll verder</span>
             </a>
         <?php endif; ?>
