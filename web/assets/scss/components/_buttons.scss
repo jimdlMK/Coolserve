@@ -2,18 +2,18 @@
     display: inline-flex;
     flex-direction: row;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     text-decoration: none;
     border-radius: $button-radius;
     font: normal normal 600 #{$button-font-size}/#{$button-line-height} $font-family-standard-font;
     letter-spacing: 0px;
-    padding: 8px 24px;
+    padding: 7px 20px;
     width: fit-content;
     transition: box-shadow 0.2s ease;
 
     svg {
         flex-shrink: 0;
-        width: 14px;
+        width: 13px;
         height: auto;
         transition: transform 0.2s ease;
     }
