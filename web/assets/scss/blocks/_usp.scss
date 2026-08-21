@@ -5,19 +5,40 @@
 
     &__container {
         &__inner {
+            position: relative;
             max-width: $layout-content-size;
             width: $layout-maxwidth;
             margin: 0 auto;
             display: flex;
             flex-direction: column;
+            align-items: center;
             padding: 24px 0;
+            min-height: 60px;
+            overflow: hidden;
         }
     }
 
     &__item {
         display: flex;
         align-items: center;
+        justify-content: center;
         gap: 12px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+
+        &.is-active {
+            position: relative;
+            top: auto;
+            left: auto;
+            opacity: 1;
+            pointer-events: auto;
+            transform: translate(0, 0);
+        }
 
         &__icon {
             flex-shrink: 0;
@@ -46,6 +67,18 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 16px;
+            min-height: 0;
+            overflow: visible;
+        }
+
+        &__item {
+            position: relative;
+            top: auto;
+            left: auto;
+            opacity: 1;
+            pointer-events: auto;
+            transform: none;
+            transition: none;
         }
     }
 }
