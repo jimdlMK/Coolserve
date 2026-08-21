@@ -42,7 +42,8 @@
                         </span>
                         <span class="mk-tijdlijn__item__titel"><?php echo esc_html($item['titel']); ?></span>
                         <?php if ($index < count($tijdlijn) - 1) : ?>
-                            <span class="mk-tijdlijn__item__connector">
+                            <span class="mk-tijdlijn__item__connector" data-mk-tijdlijn-connector>
+                                <span class="mk-tijdlijn__item__connector__fill" data-mk-tijdlijn-connector-fill></span>
                                 <span class="mk-tijdlijn__item__connector__pulse"></span>
                             </span>
                         <?php endif; ?>

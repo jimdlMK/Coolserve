@@ -32,6 +32,7 @@
 
     function initTijdlijn(lijn) {
         var items = Array.prototype.slice.call(lijn.querySelectorAll('[data-mk-tijdlijn-item]'));
+        var connectors = Array.prototype.slice.call(lijn.querySelectorAll('[data-mk-tijdlijn-connector]'));
 
         function revealItem(item) {
             if (item.classList.contains('is-visible')) return;
@@ -53,9 +54,30 @@
             }, 1500);
         }
 
+        // De lijn tussen twee jaartallen vult zich live mee met de scrollpositie,
+        // zodat hij precies 'vastklikt' op het moment dat het volgende jaartal
+        // in beeld komt, in plaats van in één keer te groeien.
+        function updateConnectors() {
+            connectors.forEach(function (connector) {
+                var fill = connector.querySelector('[data-mk-tijdlijn-connector-fill]');
+                if (!fill) return;
+
+                var rect = connector.getBoundingClientRect();
+                var viewportAnchor = window.innerHeight * 0.75;
+                var progress = (viewportAnchor - rect.top) / rect.height;
+                progress = Math.max(0, Math.min(1, progress));
+
+                fill.style.transform = 'scaleY(' + progress + ')';
+            });
+        }
+
         if (!('IntersectionObserver' in window)) {
             items.forEach(function (item) {
                 item.classList.add('is-visible');
+            });
+            connectors.forEach(function (connector) {
+                var fill = connector.querySelector('[data-mk-tijdlijn-connector-fill]');
+                if (fill) fill.style.transform = 'scaleY(1)';
             });
             return;
         }
@@ -68,8 +90,7 @@
                 }
             });
         }, {
-            threshold: 0.15,
-            rootMargin: '0px 0px 0px 0px'
+            threshold: 0.15
         });
 
         items.forEach(function (item) {
@@ -81,6 +102,20 @@
                 observer.unobserve(item);
             }
         });
+
+        if (connectors.length) {
+            var ticking = false;
+            window.addEventListener('scroll', function () {
+                if (ticking) return;
+                ticking = true;
+                window.requestAnimationFrame(function () {
+                    updateConnectors();
+                    ticking = false;
+                });
+            }, { passive: true });
+
+            updateConnectors();
+        }
     }
 
     document.addEventListener('DOMContentLoaded', function () {
