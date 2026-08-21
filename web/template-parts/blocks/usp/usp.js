@@ -3,6 +3,7 @@
 
     var BREAKPOINT = 769;
     var INTERVAL = 3000;
+    var TRANSITION_DURATION = 500;
 
     function initUspSlider(container) {
         var items = Array.prototype.slice.call(container.querySelectorAll('.mk-usp__item'));
@@ -11,13 +12,22 @@
         var index = 0;
         var timer = null;
 
+        function next() {
+            var current = items[index];
+            current.classList.remove('is-active');
+            current.classList.add('is-leaving');
+
+            index = (index + 1) % items.length;
+            items[index].classList.add('is-active');
+
+            window.setTimeout(function () {
+                current.classList.remove('is-leaving');
+            }, TRANSITION_DURATION);
+        }
+
         function start() {
             if (timer || window.innerWidth >= BREAKPOINT) return;
-            timer = window.setInterval(function () {
-                items[index].classList.remove('is-active');
-                index = (index + 1) % items.length;
-                items[index].classList.add('is-active');
-            }, INTERVAL);
+            timer = window.setInterval(next, INTERVAL);
         }
 
         function stop() {
@@ -32,6 +42,7 @@
                 stop();
                 items.forEach(function (item) {
                     item.classList.add('is-active');
+                    item.classList.remove('is-leaving');
                 });
             }
         }
