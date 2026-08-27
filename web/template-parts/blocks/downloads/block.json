@@ -1,0 +1,14 @@
+{
+  "name": "mk/downloads",
+  "title": "Downloads",
+  "description": "Titel met eventueel tekst eronder, en een grid van 3 downloadkaarten (titel + PDF) via een repeater.",
+  "category": "mediakanjers",
+  "icon": "media-document",
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "render.php"
+  },
+  "supports": {
+    "align": ["full"]
+  }
+}
