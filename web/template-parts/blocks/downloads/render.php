@@ -43,27 +43,36 @@
 
                     $bestandsgrootte = !empty($bestand['filesize']) ? size_format($bestand['filesize'], 1) : '';
                 ?>
-                    <a class="mk-downloads__grid__card" href="<?php echo esc_url($bestand['url']); ?>" download target="_blank" rel="noopener">
-                        <span class="mk-downloads__grid__card__icoon">
-                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                <path d="M7 3h7l5 5v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                                <path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
-                                <path d="M12 11v6m0 0-2.5-2.5M12 17l2.5-2.5" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
-                            </svg>
-                        </span>
+                    <div class="mk-downloads__grid__card">
+                        <a class="mk-downloads__grid__card__main" href="<?php echo esc_url($bestand['url']); ?>" target="_blank" rel="noopener" aria-label="Bekijk <?php echo esc_attr($item_titel); ?>">
+                            <span class="mk-downloads__grid__card__icoon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M7 3h7l5 5v10a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                    <path d="M14 3v5h5" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/>
+                                </svg>
+                            </span>
 
-                        <span class="mk-downloads__grid__card__body">
-                            <span class="mk-downloads__grid__card__titel"><?php echo esc_html($item_titel); ?></span>
-                            <span class="mk-downloads__grid__card__meta">PDF<?php echo $bestandsgrootte ? ' &middot; ' . esc_html($bestandsgrootte) : ''; ?></span>
-                        </span>
+                            <span class="mk-downloads__grid__card__body">
+                                <span class="mk-downloads__grid__card__titel"><?php echo esc_html($item_titel); ?></span>
+                                <span class="mk-downloads__grid__card__meta">PDF<?php echo $bestandsgrootte ? ' &middot; ' . esc_html($bestandsgrootte) : ''; ?></span>
+                            </span>
+                        </a>
 
-                        <span class="mk-downloads__grid__card__arrow">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
-                                <path d="M12 4v13m0 0 5-5m-5 5-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                <path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                            </svg>
+                        <span class="mk-downloads__grid__card__acties">
+                            <a class="mk-downloads__grid__card__actie" href="<?php echo esc_url($bestand['url']); ?>" target="_blank" rel="noopener" aria-label="Bekijk <?php echo esc_attr($item_titel); ?>" title="Bekijken">
+                                <svg width="17" height="17" viewBox="0 0 24 24" fill="none">
+                                    <path d="M1.5 12S5 5 12 5s10.5 7 10.5 7-3.5 7-10.5 7S1.5 12 1.5 12Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                                    <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/>
+                                </svg>
+                            </a>
+                            <a class="mk-downloads__grid__card__actie" href="<?php echo esc_url($bestand['url']); ?>" download aria-label="Download <?php echo esc_attr($item_titel); ?>" title="Downloaden">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 4v13m0 0 5-5m-5 5-5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    <path d="M5 20h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                </svg>
+                            </a>
                         </span>
-                    </a>
+                    </div>
                 <?php endforeach; ?>
             </div>
 
