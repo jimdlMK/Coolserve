@@ -9,6 +9,12 @@
         </div>
         <div class="mk-mobile-menu__inner__menu">
             <?php wp_nav_menu( array( 'menu' => 'Hoofdmenu' ) ); ?>
+
+            <?php if (has_nav_menu('top_menu')) : ?>
+                <div class="mk-mobile-menu__inner__menu__top">
+                    <?php wp_nav_menu( array( 'menu' => 'Topmenu' ) ); ?>
+                </div>
+            <?php endif; ?>
         </div>
     </div>
 </div>

@@ -180,6 +180,58 @@
             .menu {
                 @include mk-mobile-menu-items;
             }
+
+            &__top {
+                margin-top: 20px;
+                padding-top: 16px;
+                border-top: 1px solid #E5EAF0;
+
+                .menu {
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    gap: 8px 20px;
+                }
+
+                li {
+                    list-style: none;
+
+                    &::marker {
+                        content: "";
+                        display: none;
+                    }
+
+                    > a {
+                        display: inline-flex;
+                        min-height: 0;
+                        padding: 4px 0;
+                        background-color: transparent;
+                        border-radius: 0;
+                        color: $font-color-normal;
+                        font: normal normal 500 14px/1.3 $font-family-standard-font;
+                    }
+
+                    &:hover > a,
+                    &:active > a {
+                        background-color: transparent;
+                        color: $color-secondary;
+                    }
+
+                    &:last-child > a {
+                        background: none;
+                        box-shadow: none;
+                        color: $font-color-normal;
+                        justify-content: flex-start;
+                        padding: 4px 0;
+                    }
+
+                    &:last-child:hover > a,
+                    &:last-child:active > a {
+                        color: $color-secondary;
+                        transform: none;
+                    }
+                }
+            }
         }
     }
 
