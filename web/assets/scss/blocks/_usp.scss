@@ -2,6 +2,9 @@
     width: 100%;
     background-color: $color-white;
     margin-bottom: $layout-block-spacing;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 20px 40px rgba(7, 47, 85, 0.12);
 
     &__container {
         &__inner {
