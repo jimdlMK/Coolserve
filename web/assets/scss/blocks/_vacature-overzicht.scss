@@ -98,6 +98,26 @@
             text-decoration: none;
             transition: transform 0.2s ease, box-shadow 0.2s ease;
 
+            &__bullet {
+                flex-shrink: 0;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 32px;
+                height: 32px;
+                border-radius: 50%;
+                background-color: $label-blue-bg;
+
+                svg {
+                    width: 12px;
+                    height: auto;
+
+                    path {
+                        fill: $color-secondary;
+                    }
+                }
+            }
+
             &__main {
                 display: flex;
                 flex-direction: column;
@@ -191,6 +211,11 @@
             justify-content: space-between;
             gap: 24px;
             min-height: 230px;
+
+            &__bullet {
+                align-self: flex-start;
+                margin-top: 4px;
+            }
 
             &__link {
                 align-self: end;

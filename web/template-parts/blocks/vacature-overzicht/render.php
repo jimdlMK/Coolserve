@@ -50,6 +50,8 @@
                         $locaties   = $locatie ? array_map('trim', explode(',', $locatie)) : [];
                     ?>
                         <a class="mk-vacature-overzicht__grid__card" href="<?php the_permalink(); ?>">
+                            <span class="mk-vacature-overzicht__grid__card__bullet"><?php echo $arrow_icon; ?></span>
+
                             <div class="mk-vacature-overzicht__grid__card__main">
                                 <h3 class="mk-vacature-overzicht__grid__card__main__titel"><?php the_title(); ?></h3>
 
