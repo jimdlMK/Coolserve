@@ -191,44 +191,44 @@
                     flex-direction: row;
                     flex-wrap: wrap;
                     gap: 8px 20px;
-                }
 
-                li {
-                    list-style: none;
+                    li {
+                        list-style: none;
 
-                    &::marker {
-                        content: "";
-                        display: none;
-                    }
+                        &::marker {
+                            content: "";
+                            display: none;
+                        }
 
-                    > a {
-                        display: inline-flex;
-                        min-height: 0;
-                        padding: 4px 0;
-                        background-color: transparent;
-                        border-radius: 0;
-                        color: $font-color-normal;
-                        font: normal normal 500 14px/1.3 $font-family-standard-font;
-                    }
+                        > a {
+                            display: inline-flex;
+                            min-height: 0;
+                            padding: 2px 0;
+                            background-color: transparent;
+                            border-radius: 0;
+                            color: $font-color-normal;
+                            font: normal normal 500 14px/1.3 $font-family-standard-font;
+                        }
 
-                    &:hover > a,
-                    &:active > a {
-                        background-color: transparent;
-                        color: $color-secondary;
-                    }
+                        &:hover > a,
+                        &:active > a {
+                            background-color: transparent;
+                            color: $color-secondary;
+                        }
 
-                    &:last-child > a {
-                        background: none;
-                        box-shadow: none;
-                        color: $font-color-normal;
-                        justify-content: flex-start;
-                        padding: 4px 0;
-                    }
+                        &:last-child > a {
+                            background: none;
+                            box-shadow: none;
+                            color: $font-color-normal;
+                            justify-content: flex-start;
+                            padding: 2px 0;
+                        }
 
-                    &:last-child:hover > a,
-                    &:last-child:active > a {
-                        color: $color-secondary;
-                        transform: none;
+                        &:last-child:hover > a,
+                        &:last-child:active > a {
+                            color: $color-secondary;
+                            transform: none;
+                        }
                     }
                 }
             }
