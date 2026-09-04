@@ -1,5 +1,29 @@
 <?php
     /**
+     * Geeft een <img> met automatische srcset/sizes terug voor een ACF image-array
+     * (return_format => array), zodat elk scherm (incl. retina/HiDPI) de scherpste
+     * passende variant laadt i.p.v. altijd dezelfde vaste resolutie.
+     */
+    function mk_image($image, $size = 'full', $attrs = []) {
+        if (empty($image) || !is_array($image)) {
+            return '';
+        }
+
+        $id = $image['ID'] ?? $image['id'] ?? 0;
+
+        if ($id) {
+            $html = wp_get_attachment_image((int) $id, $size, false, $attrs);
+            if ($html) {
+                return $html;
+            }
+        }
+
+        // Fallback zonder attachment-ID (bv. handmatig ingevoerde URL): normale <img>.
+        $class = isset($attrs['class']) ? ' class="' . esc_attr($attrs['class']) . '"' : '';
+        return '<img src="' . esc_url($image['url'] ?? '') . '" alt="' . esc_attr($image['alt'] ?? '') . '"' . $class . '>';
+    }
+
+    /**
      * Custom nav menu walker: top-level items met kinderen krijgen een
      * mega-menu wrapper (grid van submenu-items met icoon + pijltje),
      * i.p.v. een standaard geneste dropdown-lijst.

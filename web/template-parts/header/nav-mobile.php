@@ -1,7 +1,7 @@
 <div class="mk-mobile-menu">
     <div class="mk-mobile-menu__inner">
         <div class="mk-mobile-menu__inner__top">
-            <img src="<?php echo esc_url(get_field('logo' , 'option')['url']);?>">
+            <?php echo mk_image(get_field('logo', 'option'), 'full'); ?>
             <div class="close">
                 <span class="lineone"></span>
                 <span class="linetwo"></span>

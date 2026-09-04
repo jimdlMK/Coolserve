@@ -4,6 +4,16 @@
         register_nav_menu('top_menu', 'Topmenu');
     });
 
+    // Hogere compressiekwaliteit voor nieuw gegenereerde thumbnail-formaten
+    // (WordPress-standaard is 82) — scherpere foto's, geldt alleen voor
+    // afbeeldingen die na deze wijziging worden geüpload/geregenereerd.
+    add_filter('jpeg_quality', function() {
+        return 90;
+    });
+    add_filter('wp_editor_set_quality', function() {
+        return 90;
+    });
+
     // Editor-only comfort styling (witruimte rond ACF-blokken in Gutenberg)
     add_action('after_setup_theme', function() {
         add_editor_style('assets/css/editor.css');

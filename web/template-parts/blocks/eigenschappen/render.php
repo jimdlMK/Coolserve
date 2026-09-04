@@ -63,7 +63,7 @@
 
                     <?php if ($afbeelding) : ?>
                         <div class="mk-eigenschappen__intro__media">
-                            <img src="<?php echo esc_url($afbeelding['url']); ?>" alt="<?php echo esc_attr($afbeelding['alt']); ?>">
+                            <?php echo mk_image($afbeelding, 'full'); ?>
 
                             <?php if (!empty($cijfers)) : ?>
                                 <div class="mk-eigenschappen__badge" data-mk-cijfer-badge>
@@ -90,7 +90,7 @@
                             <div class="mk-eigenschappen__grid__card__head">
                                 <?php if ($icoon) : ?>
                                     <span class="mk-eigenschappen__grid__card__icoon">
-                                        <img src="<?php echo esc_url($icoon['url']); ?>" alt="<?php echo esc_attr($icoon['alt']); ?>">
+                                        <?php echo mk_image($icoon, 'medium'); ?>
                                     </span>
                                 <?php endif; ?>
                                 <?php if (!empty($item['titel'])) : ?>
@@ -119,7 +119,7 @@
                             <div class="mk-eigenschappen__grid__card__head">
                                 <?php if ($icoon) : ?>
                                     <span class="mk-eigenschappen__grid__card__icoon">
-                                        <img src="<?php echo esc_url($icoon['url']); ?>" alt="<?php echo esc_attr($icoon['alt']); ?>">
+                                        <?php echo mk_image($icoon, 'medium'); ?>
                                     </span>
                                 <?php endif; ?>
                                 <?php if (!empty($item['titel'])) : ?>
@@ -132,7 +132,7 @@
                         </div>
                         <?php if ($index === 0 && $afbeelding) : ?>
                             <div class="mk-eigenschappen__grid__media">
-                                <img src="<?php echo esc_url($afbeelding['url']); ?>" alt="<?php echo esc_attr($afbeelding['alt']); ?>">
+                                <?php echo mk_image($afbeelding, 'full'); ?>
                             </div>
                         <?php endif; ?>
                     <?php endforeach; ?>

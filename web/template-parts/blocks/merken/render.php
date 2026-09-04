@@ -35,7 +35,7 @@
                                 if (!$logo) continue;
                             ?>
                                 <div class="mk-merken__slider__track__item">
-                                    <img src="<?php echo esc_url($logo['url']); ?>" alt="<?php echo esc_attr($merk['naam']); ?>">
+                                    <?php echo mk_image($logo, 'medium', ['alt' => $merk['naam']]); ?>
                                 </div>
                             <?php endforeach; ?>
                         <?php endfor; ?>

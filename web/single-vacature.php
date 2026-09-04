@@ -94,7 +94,7 @@
 									<?php endif; ?>
 									<?php if ($rol_afbeelding) : ?>
 										<div class="mk-vacature-sectie__media">
-											<img src="<?php echo esc_url($rol_afbeelding['url']); ?>" alt="<?php echo esc_attr($rol_afbeelding['alt']); ?>">
+											<?php echo mk_image($rol_afbeelding, 'full'); ?>
 										</div>
 									<?php endif; ?>
 								</div>
@@ -135,7 +135,7 @@
 									</div>
 									<?php if ($aanbod_afbeelding) : ?>
 										<div class="mk-vacature-sectie__media">
-											<img src="<?php echo esc_url($aanbod_afbeelding['url']); ?>" alt="<?php echo esc_attr($aanbod_afbeelding['alt']); ?>">
+											<?php echo mk_image($aanbod_afbeelding, 'full'); ?>
 										</div>
 									<?php endif; ?>
 								</div>

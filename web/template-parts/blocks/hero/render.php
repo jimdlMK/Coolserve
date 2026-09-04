@@ -37,14 +37,14 @@
     <?php if ($layout === 'split') : ?>
         <div class="mk-hero__media mk-hero__media--split<?php echo $achtergrond_afbeelding ? '' : ' mk-hero__media--fallback'; ?>">
             <?php if ($achtergrond_afbeelding) : ?>
-                <img class="mk-hero__media__image" src="<?php echo esc_url($achtergrond_afbeelding['url']); ?>" alt="<?php echo esc_attr($achtergrond_afbeelding['alt']); ?>">
+                <?php echo mk_image($achtergrond_afbeelding, 'full', ['class' => 'mk-hero__media__image']); ?>
                 <div class="mk-hero__media__overlay"></div>
             <?php endif; ?>
         </div>
     <?php else : ?>
         <div class="mk-hero__media">
             <?php if ($achtergrond_afbeelding) : ?>
-                <img class="mk-hero__media__image" src="<?php echo esc_url($achtergrond_afbeelding['url']); ?>" alt="<?php echo esc_attr($achtergrond_afbeelding['alt']); ?>">
+                <?php echo mk_image($achtergrond_afbeelding, 'full', ['class' => 'mk-hero__media__image']); ?>
             <?php endif; ?>
 
             <?php if ($vimeo_id) : ?>
@@ -154,7 +154,7 @@
                             ></iframe>
                         </div>
                     <?php elseif ($split_afbeelding) : ?>
-                        <img src="<?php echo esc_url($split_afbeelding['url']); ?>" alt="<?php echo esc_attr($split_afbeelding['alt']); ?>">
+                        <?php echo mk_image($split_afbeelding, 'full'); ?>
                     <?php endif; ?>
                 </div>
             <?php endif; ?>

@@ -21,7 +21,7 @@
 		<div class="mk-header__main__inner">
 			<div class="mk-header__main__logo">
 				<a class="mk-header__logo" href="<?php echo esc_url(home_url('/')); ?>">
-					<img src="<?php echo esc_url(get_field('logo' , 'option')['url']);?>" alt="<?php bloginfo('name'); ?>">
+					<?php echo mk_image(get_field('logo', 'option'), 'full', ['alt' => get_bloginfo('name')]); ?>
 				</a>
 			</div>
 			<div class="mk-header__main__nav">
