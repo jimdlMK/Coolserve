@@ -153,8 +153,8 @@
                                 title="Video"
                             ></iframe>
                             <button type="button" class="mk-hero__split-media__video__trigger" data-vimeo-lightbox="<?php echo esc_attr($split_vimeo_id); ?>" aria-label="Bekijk volledige video">
-                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M8 5v14l11-7-11-7Z" fill="currentColor"/></svg>
                                 <span>Bekijk volledige video</span>
+                                <?php echo $arrow_icon; ?>
                             </button>
                         </div>
                     <?php elseif ($split_afbeelding) : ?>

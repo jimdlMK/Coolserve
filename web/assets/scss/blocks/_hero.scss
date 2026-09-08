@@ -291,15 +291,18 @@
 
                 svg {
                     flex-shrink: 0;
-
-                    path {
-                        fill: $color-white;
-                    }
+                    width: 12px;
+                    height: auto;
+                    transition: transform 0.2s ease;
                 }
 
                 &:hover {
                     background-color: rgba(255, 255, 255, 0.3);
                     transform: scale(1.03);
+
+                    svg {
+                        transform: translateX(4px);
+                    }
                 }
             }
         }
