@@ -71,6 +71,21 @@
         }
     }
 
+    // ===== Layout "Overzicht" (teampagina): content bovenin, daarna alle
+    // medewerkers per categorie in een bredere grid eronder i.p.v. naast elkaar. =====
+    &--overzicht {
+        .mk-team__content {
+            max-width: 700px;
+        }
+    }
+
+    &__groep {
+        &__titel {
+            margin-bottom: 20px;
+            // Erft de globale H3-stijl uit theme.json
+        }
+    }
+
     &__grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -148,6 +163,24 @@
         &__container__inner {
             grid-template-columns: 40fr 60fr;
             gap: 60px;
+        }
+
+        &--overzicht &__container__inner {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        &__grid--overzicht {
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .mk-team {
+        &__grid--overzicht {
+            grid-template-columns: repeat(5, 1fr);
         }
     }
 }

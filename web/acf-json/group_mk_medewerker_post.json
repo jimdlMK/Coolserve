@@ -15,6 +15,20 @@
                 "class": "",
                 "id": ""
             }
+        },
+        {
+            "key": "field_mk_medewerker_categorie",
+            "label": "Categorie",
+            "name": "categorie",
+            "type": "text",
+            "instructions": "Bijv. \"Heerenveen\" of \"Haaksbergen\". Wordt gebruikt als groepstitel op de teampagina-indeling (layout \"Overzicht\" van het team-blok) — laat leeg als dit niet van toepassing is. De volgorde van de groepen op die pagina volgt de volgorde van de medewerkers zelf (dezelfde drag & drop-sortering als op Diensten).",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
         }
     ],
     "location": [
@@ -35,5 +49,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787000000
+    "modified": 1787000001
 }
