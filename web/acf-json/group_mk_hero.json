@@ -53,6 +53,67 @@
             }
         },
         {
+            "key": "field_mk_hero_achtergrond_positie",
+            "label": "Achtergrond positie",
+            "name": "achtergrond_positie",
+            "type": "select",
+            "choices": {
+                "top left": "Linksboven",
+                "top": "Boven",
+                "top right": "Rechtsboven",
+                "left": "Links",
+                "center": "Midden",
+                "right": "Rechts",
+                "bottom left": "Linksonder",
+                "bottom": "Onder",
+                "bottom right": "Rechtsonder"
+            },
+            "default_value": "center",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Welk deel van de foto zichtbaar blijft bij het bijsnijden. Verandert niets aan de foto zelf, alleen aan de weergave in dit hero-blok.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_achtergrond_afbeelding",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_hero_achtergrond_zoom",
+            "label": "Achtergrond zoom",
+            "name": "achtergrond_zoom",
+            "type": "range",
+            "min": 100,
+            "max": 200,
+            "step": 5,
+            "default_value": 100,
+            "append": "%",
+            "instructions": "Inzoomen om een ongewenste rand weg te snijden. 100% = geen zoom.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_hero_achtergrond_afbeelding",
+                        "operator": "!=empty"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_hero_vimeo_id",
             "label": "Vimeo video-ID",
             "name": "vimeo_id",
@@ -318,5 +379,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786608747
+    "modified": 1786608748
 }

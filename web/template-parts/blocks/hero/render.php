@@ -10,7 +10,16 @@
     $toon_cijfers = get_field('toon_cijfers');
 
     $achtergrond_afbeelding = get_field('achtergrond_afbeelding');
+    $achtergrond_positie    = get_field('achtergrond_positie') ?: 'center';
+    $achtergrond_zoom       = (int) (get_field('achtergrond_zoom') ?: 100);
     $vimeo_id               = get_field('vimeo_id');
+
+    // Positie/zoom passen alleen de weergave in dit hero-blok aan, niet de foto zelf.
+    $achtergrond_style = 'object-position: ' . esc_attr($achtergrond_positie) . ';';
+    if ($achtergrond_zoom > 100) {
+        $achtergrond_style .= ' transform: scale(' . esc_attr($achtergrond_zoom / 100) . ');';
+    }
+    $achtergrond_attrs = ['class' => 'mk-hero__media__image', 'style' => $achtergrond_style];
 
     $split_afbeelding = get_field('split_afbeelding');
     $split_vimeo_id   = get_field('split_vimeo_id');
@@ -37,14 +46,14 @@
     <?php if ($layout === 'split') : ?>
         <div class="mk-hero__media mk-hero__media--split<?php echo $achtergrond_afbeelding ? '' : ' mk-hero__media--fallback'; ?>">
             <?php if ($achtergrond_afbeelding) : ?>
-                <?php echo mk_image($achtergrond_afbeelding, 'full', ['class' => 'mk-hero__media__image']); ?>
+                <?php echo mk_image($achtergrond_afbeelding, 'full', $achtergrond_attrs); ?>
                 <div class="mk-hero__media__overlay"></div>
             <?php endif; ?>
         </div>
     <?php else : ?>
         <div class="mk-hero__media">
             <?php if ($achtergrond_afbeelding) : ?>
-                <?php echo mk_image($achtergrond_afbeelding, 'full', ['class' => 'mk-hero__media__image']); ?>
+                <?php echo mk_image($achtergrond_afbeelding, 'full', $achtergrond_attrs); ?>
             <?php endif; ?>
 
             <?php if ($vimeo_id) : ?>
