@@ -114,6 +114,22 @@
             }
         },
         {
+            "key": "field_mk_hero_toon_gradient",
+            "label": "Blauwe gradient over foto",
+            "name": "toon_gradient",
+            "type": "true_false",
+            "instructions": "Legt de blauwe overlay-gradient over de achtergrondfoto (links blauw, naar rechts uitfaseren).",
+            "ui": 1,
+            "default_value": 0,
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_hero_vimeo_id",
             "label": "Vimeo video-ID",
             "name": "vimeo_id",
@@ -379,5 +395,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1786608748
+    "modified": 1786608749
 }

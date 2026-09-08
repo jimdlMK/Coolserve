@@ -12,6 +12,7 @@
     $achtergrond_afbeelding = get_field('achtergrond_afbeelding');
     $achtergrond_positie    = get_field('achtergrond_positie') ?: 'center';
     $achtergrond_zoom       = (int) (get_field('achtergrond_zoom') ?: 100);
+    $toon_gradient          = get_field('toon_gradient');
     $vimeo_id               = get_field('vimeo_id');
 
     // Positie/zoom passen alleen de weergave in dit hero-blok aan, niet de foto zelf.
@@ -47,7 +48,9 @@
         <div class="mk-hero__media mk-hero__media--split<?php echo $achtergrond_afbeelding ? '' : ' mk-hero__media--fallback'; ?>">
             <?php if ($achtergrond_afbeelding) : ?>
                 <?php echo mk_image($achtergrond_afbeelding, 'full', $achtergrond_attrs); ?>
-                <div class="mk-hero__media__overlay"></div>
+                <?php if ($toon_gradient) : ?>
+                    <div class="mk-hero__media__overlay"></div>
+                <?php endif; ?>
             <?php endif; ?>
         </div>
     <?php else : ?>
@@ -67,7 +70,9 @@
                 </div>
             <?php endif; ?>
 
-            <div class="mk-hero__media__overlay"></div>
+            <?php if ($toon_gradient) : ?>
+                <div class="mk-hero__media__overlay"></div>
+            <?php endif; ?>
         </div>
     <?php endif; ?>
 
