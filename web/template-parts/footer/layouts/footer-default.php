@@ -20,9 +20,9 @@
                     $voorwaarden_z = get_field('voorwaarden_zakelijk', 'options');
                 ?>
                 <div class="mk-footer__bottom__legal__links">
-                    <?php if ($privacy) : ?><a href="<?php echo esc_url(get_permalink($privacy)); ?>">Privacyverklaring</a><?php endif; ?>
-                    <?php if ($voorwaarden_p) : ?><a href="<?php echo esc_url(get_permalink($voorwaarden_p)); ?>">Algemene voorwaarden particulier</a><?php endif; ?>
-                    <?php if ($voorwaarden_z) : ?><a href="<?php echo esc_url(get_permalink($voorwaarden_z)); ?>">Algemene voorwaarden zakelijk</a><?php endif; ?>
+                    <?php if ($privacy) : ?><a href="<?php echo esc_url($privacy); ?>">Privacyverklaring</a><?php endif; ?>
+                    <?php if ($voorwaarden_p) : ?><a href="<?php echo esc_url($voorwaarden_p); ?>" target="_blank" rel="noopener">Algemene voorwaarden particulier</a><?php endif; ?>
+                    <?php if ($voorwaarden_z) : ?><a href="<?php echo esc_url($voorwaarden_z); ?>" target="_blank" rel="noopener">Algemene voorwaarden zakelijk</a><?php endif; ?>
                 </div>
                 <span class="mk-footer__bottom__legal__copyright">&copy; <?php echo esc_html(date('Y')); ?> <?php echo esc_html(get_field('bedrijfsnaam', 'option')); ?>. Alle rechten voorbehouden.</span>
             </div>

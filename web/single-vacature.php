@@ -32,7 +32,7 @@
 								<h1 class="mk-vacature-kop__titel"><?php the_title(); ?></h1>
 
 								<?php
-									$overzicht_url = $overzicht_pagina ? get_permalink($overzicht_pagina) : '';
+									$overzicht_url = $overzicht_pagina ?: '';
 									if (!$overzicht_url) {
 										$werken_bij_fallback = get_page_by_path('werken-bij');
 										if ($werken_bij_fallback) {
