@@ -21,6 +21,12 @@
             display: flex;
             align-items: center;
             gap: 8px;
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+
+            &:hover {
+                opacity: 0.8;
+            }
 
             &__icon {
                 flex-shrink: 0;
@@ -55,7 +61,7 @@
             }
 
             &__score {
-                font: normal normal 400 clamp(0.9375rem, 0.89rem + 0.24vw, 1.0625rem)/1.18 $font-family-standard-font;
+                font: normal normal bold clamp(0.9375rem, 0.89rem + 0.24vw, 1.0625rem)/1.18 $font-family-standard-font;
                 letter-spacing: 0px;
                 color: #014A99;
             }
