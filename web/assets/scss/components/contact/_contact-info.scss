@@ -26,6 +26,64 @@
     h5 {
         margin-bottom: 0;
     }
+
+    &__toggle {
+        display: none;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        padding: 0;
+        background: none;
+        border: none;
+        font: inherit;
+        color: inherit;
+        cursor: pointer;
+        text-align: left;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
+// Op mobiel klapt elke locatie standaard dicht (alleen de naam zichtbaar) om de
+// footer korter te maken; op desktop blijft alles gewoon volledig zichtbaar.
+@media screen and (max-width: 600px) {
+    .location-info {
+        &__toggle {
+            display: flex;
+            gap: 12px;
+
+            &::after {
+                content: "";
+                flex-shrink: 0;
+                width: 8px;
+                height: 8px;
+                border-right: 2px solid $color-primary;
+                border-bottom: 2px solid $color-primary;
+                transform: rotate(45deg);
+                transition: transform 0.2s ease;
+            }
+
+            &[aria-expanded="true"]::after {
+                transform: rotate(-135deg);
+            }
+        }
+
+        &__body {
+            max-height: 0;
+            overflow: hidden;
+            gap: 0;
+            transition: max-height 0.3s ease, gap 0.3s ease;
+
+            &.is-open {
+                max-height: 300px;
+                gap: 10px;
+            }
+        }
+    }
 }
 
 .contact-info {
