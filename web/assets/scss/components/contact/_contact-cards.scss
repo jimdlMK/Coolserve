@@ -52,6 +52,7 @@
         &__item {
             display: flex;
             flex-direction: column;
+            justify-content: space-between;
             gap: 2px;
             font: normal normal 400 14px/1.5 $font-family-standard-font;
 
@@ -61,8 +62,10 @@
             }
 
             a {
+                display: inline-block;
                 color: $color-secondary;
                 text-decoration: underline;
+                white-space: nowrap;
                 margin-top: 4px;
             }
         }

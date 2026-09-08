@@ -54,7 +54,7 @@
                         $foto_url = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
                         $functie  = get_field('functie', get_the_ID());
                     ?>
-                        <div class="mk-team__grid__item" <?php if ($foto_url) : ?>style="background-image: url('<?php echo esc_url($foto_url); ?>');"<?php endif; ?>>
+                        <a class="mk-team__grid__item" href="<?php echo esc_url(home_url('/over-ons/')); ?>" <?php if ($foto_url) : ?>style="background-image: url('<?php echo esc_url($foto_url); ?>');"<?php endif; ?>>
                             <div class="mk-team__grid__item__overlay"></div>
                             <div class="mk-team__grid__item__info">
                                 <span class="mk-team__grid__item__info__naam"><?php the_title(); ?></span>
@@ -62,7 +62,7 @@
                                     <span class="mk-team__grid__item__info__functie"><?php echo esc_html($functie); ?></span>
                                 <?php endif; ?>
                             </div>
-                        </div>
+                        </a>
                     <?php endwhile; wp_reset_postdata(); ?>
                 </div>
             <?php endif; ?>

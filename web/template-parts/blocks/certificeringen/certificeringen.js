@@ -13,7 +13,7 @@
         function step(direction) {
             var item = track.querySelector('.mk-certificeringen__slider__track__item');
             var itemWidth = item ? item.getBoundingClientRect().width : 170;
-            var gap = 60;
+            var gap = 140;
             var distance = (itemWidth + gap) * direction;
 
             track.classList.add('is-paused');
