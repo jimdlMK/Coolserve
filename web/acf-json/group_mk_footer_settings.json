@@ -185,11 +185,13 @@
             "key": "field_mk_footer_voorwaarden_particulier",
             "label": "Algemene voorwaarden particulier",
             "name": "voorwaarden_particulier",
-            "type": "page_link",
+            "type": "file",
             "wrapper": {
                 "width": "33"
             },
-            "instructions": "",
+            "instructions": "Upload de NVKL-voorwaarden voor consumenten (PDF).",
+            "return_format": "url",
+            "mime_types": "pdf",
             "required": 0,
             "conditional_logic": 0
         },
@@ -197,11 +199,13 @@
             "key": "field_mk_footer_voorwaarden_zakelijk",
             "label": "Algemene voorwaarden zakelijk",
             "name": "voorwaarden_zakelijk",
-            "type": "page_link",
+            "type": "file",
             "wrapper": {
                 "width": "34"
             },
-            "instructions": "",
+            "instructions": "Upload de NVKL-voorwaarden voor zakelijke afnemers (PDF).",
+            "return_format": "url",
+            "mime_types": "pdf",
             "required": 0,
             "conditional_logic": 0
         }
