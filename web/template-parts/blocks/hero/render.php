@@ -152,6 +152,10 @@
                                 allow="autoplay; fullscreen"
                                 title="Video"
                             ></iframe>
+                            <button type="button" class="mk-hero__split-media__video__trigger" data-vimeo-lightbox="<?php echo esc_attr($split_vimeo_id); ?>" aria-label="Bekijk volledige video">
+                                <svg viewBox="0 0 24 24" width="16" height="16" fill="none"><path d="M8 5v14l11-7-11-7Z" fill="currentColor"/></svg>
+                                <span>Bekijk volledige video</span>
+                            </button>
                         </div>
                     <?php elseif ($split_afbeelding) : ?>
                         <?php echo mk_image($split_afbeelding, 'full'); ?>
@@ -185,7 +189,7 @@
 
 </section>
 
-<?php if ($vimeo_id) : ?>
+<?php if ($vimeo_id || $split_vimeo_id) : ?>
     <div class="mk-hero-video-lightbox" data-vimeo-lightbox-modal hidden>
         <div class="mk-hero-video-lightbox__backdrop" data-vimeo-lightbox-close></div>
         <div class="mk-hero-video-lightbox__inner">
