@@ -178,6 +178,9 @@
 
 @media screen and (max-width: 980px) {
     .mk-header {
+        position: sticky;
+        top: 0;
+
         &__topbar {
             display: none;
         }

@@ -34,8 +34,9 @@
                         $kleur    = $item['kleur'] ?: 'blauw';
                         $icoon    = $item['icoon'];
                         $item_uid = $block_uid . '-item-' . $index;
+                        $item_form_id = !empty($item['form_id']) ? (int) $item['form_id'] : 0;
                     ?>
-                        <button type="button" class="mk-formulieren__grid__card mk-formulieren__grid__card--<?php echo esc_attr($kleur); ?>" data-mk-formulieren-toggle="<?php echo esc_attr($item_uid); ?>" aria-expanded="false" aria-controls="<?php echo esc_attr($item_uid); ?>">
+                        <button type="button" class="mk-formulieren__grid__card mk-formulieren__grid__card--<?php echo esc_attr($kleur); ?>" data-mk-formulieren-toggle="<?php echo esc_attr($item_uid); ?>" data-mk-formulieren-form-id="<?php echo esc_attr($item_form_id); ?>" aria-expanded="false" aria-controls="<?php echo esc_attr($item_uid); ?>">
                             <?php if ($icoon) : ?>
                                 <img class="mk-formulieren__grid__card__icoon" src="<?php echo esc_url($icoon['url']); ?>" alt="<?php echo esc_attr($icoon['alt']); ?>">
                             <?php endif; ?>

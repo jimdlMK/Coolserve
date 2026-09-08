@@ -21,7 +21,7 @@
                 'all_items' => 'Alle diensten',
                 'menu_name' => 'Diensten',
             ],
-            'supports' => ['title', 'editor', 'thumbnail'],
+            'supports' => ['title', 'editor', 'thumbnail', 'page-attributes'],
             'show_in_rest' => true,
             'menu_icon' => 'dashicons-admin-tools',
             'menu_position' => 20,

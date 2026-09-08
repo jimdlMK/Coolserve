@@ -21,6 +21,13 @@
         }
     }
 
+    // Footermenu ("Algemeen") verbergen op mobiel om de footer korter te maken.
+    @media screen and (max-width: 600px) {
+        .mk-nav-footer {
+            display: none;
+        }
+    }
+
     &__bottom {
         position: relative;
         background: transparent linear-gradient(93deg, #004A99 0%, #004F9D 19%, #0078BD 71%, #008ACB 90%, #00ABE5 100%) 0% 0% no-repeat padding-box;

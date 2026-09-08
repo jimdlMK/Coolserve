@@ -49,7 +49,7 @@
         margin-top: 20px;
 
         &__card {
-            background: transparent linear-gradient(281deg, #3E0B58 0%, #061632 85%, #00162D 100%) 0% 0% no-repeat padding-box;
+            background: transparent linear-gradient(281deg, $color-usp 0%, $color-primary 85%, $color-primary 100%) 0% 0% no-repeat padding-box;
             border-radius: 25px;
             opacity: 1;
             padding: 24px;
