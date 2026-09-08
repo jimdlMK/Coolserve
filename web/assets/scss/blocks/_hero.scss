@@ -235,7 +235,7 @@
     &__container__inner {
         .mk-hero--split & {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 0.85fr 1.15fr;
             gap: 40px;
             align-items: center;
             padding: 60px 0;
