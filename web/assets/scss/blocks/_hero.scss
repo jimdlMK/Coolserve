@@ -432,6 +432,10 @@
     align-items: center;
     justify-content: center;
 
+    &[hidden] {
+        display: none;
+    }
+
     &__backdrop {
         position: absolute;
         inset: 0;
