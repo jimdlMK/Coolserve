@@ -28,7 +28,7 @@
     }
 
     &__toggle {
-        display: none;
+        display: flex;
         align-items: center;
         justify-content: space-between;
         width: 100%;
@@ -37,7 +37,7 @@
         border: none;
         font: inherit;
         color: inherit;
-        cursor: pointer;
+        cursor: default;
         text-align: left;
     }
 
@@ -53,8 +53,8 @@
 @media screen and (max-width: 600px) {
     .location-info {
         &__toggle {
-            display: flex;
             gap: 12px;
+            cursor: pointer;
 
             &::after {
                 content: "";
