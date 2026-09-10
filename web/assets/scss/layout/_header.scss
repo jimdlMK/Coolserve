@@ -32,34 +32,6 @@
                 flex-shrink: 0;
             }
 
-            &__stars {
-                position: relative;
-                display: inline-block;
-                overflow: hidden;
-                white-space: nowrap;
-                font-size: 14px;
-                line-height: 1;
-                letter-spacing: 2px;
-                color: #D1D5DB;
-
-                &::before {
-                    content: "\2605\2605\2605\2605\2605";
-                }
-
-                &__fg {
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 96%;
-                    overflow: hidden;
-                    color: #FBBF24;
-
-                    &::before {
-                        content: "\2605\2605\2605\2605\2605";
-                    }
-                }
-            }
-
             &__score {
                 font: normal normal bold clamp(0.9375rem, 0.89rem + 0.24vw, 1.0625rem)/1.18 $font-family-standard-font;
                 letter-spacing: 0px;

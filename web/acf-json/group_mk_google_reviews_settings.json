@@ -1,0 +1,53 @@
+{
+    "key": "group_mk_google_reviews_settings",
+    "title": "Google reviews instellingen",
+    "fields": [
+        {
+            "key": "field_mk_google_reviews_place_id",
+            "label": "Google Place ID",
+            "name": "google_reviews_place_id",
+            "type": "text",
+            "instructions": "Het Place ID van de vestiging Heerenveen (te vinden via de Google Place ID Finder). Wordt gebruikt voor zowel het reviews-blok als de score in de header.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_google_reviews_api_key",
+            "label": "Google API key",
+            "name": "google_reviews_api_key",
+            "type": "password",
+            "instructions": "API key met de Places API ingeschakeld (Google Cloud Console). Wordt alleen server-side gebruikt, nooit naar de browser gestuurd.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "50",
+                "class": "",
+                "id": ""
+            }
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "acf-options-website-instellingen"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": true,
+    "description": "",
+    "show_in_rest": 0,
+    "modified": 1789000000
+}

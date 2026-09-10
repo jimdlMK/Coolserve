@@ -73,6 +73,12 @@
         opacity: 1;
         padding: clamp(1.25rem, 1.1rem + 0.75vw, 1.75rem);
 
+        &__sterren {
+            margin-bottom: 10px;
+            font-size: 18px;
+            letter-spacing: 3px;
+        }
+
         &__titel {
             font: normal normal bold 29px/35px $font-family-standard-font;
             letter-spacing: 0px;

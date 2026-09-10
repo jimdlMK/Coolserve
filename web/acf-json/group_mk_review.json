@@ -3,6 +3,30 @@
     "title": "Review",
     "fields": [
         {
+            "key": "field_mk_review_sterren",
+            "label": "Sterren",
+            "name": "sterren",
+            "type": "select",
+            "choices": {
+                "5": "5",
+                "4": "4",
+                "3": "3",
+                "2": "2",
+                "1": "1"
+            },
+            "default_value": "5",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_review_tekst",
             "label": "Review tekst",
             "name": "tekst",
@@ -64,5 +88,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787121435
+    "modified": 1787121436
 }

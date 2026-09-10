@@ -2,6 +2,7 @@
     'use strict';
 
     var SWIPE_THRESHOLD = 40;
+    var AUTOPLAY_INTERVAL = 5000;
 
     function initSwiper(section) {
         var slider = section.querySelector('[data-mk-drag-slider]');
@@ -12,6 +13,8 @@
         if (cards.length < 2) return;
 
         var dots = Array.prototype.slice.call(section.querySelectorAll('[data-mk-slider-dot]'));
+        var autoplayEnabled = slider.hasAttribute('data-mk-autoplay');
+        var autoplayTimer = null;
         var index = 0;
         var isDown = false;
         var startX = 0;
@@ -22,12 +25,29 @@
         }
 
         function goTo(newIndex) {
-            index = Math.max(0, Math.min(cards.length - 1, newIndex));
+            // Loopt door naar het begin/einde i.p.v. te stoppen bij de randen,
+            // zodat autoplay eindeloos kan doorschuiven.
+            index = ((newIndex % cards.length) + cards.length) % cards.length;
             track.style.transform = 'translateX(' + (-cardOffset(index)) + 'px)';
 
             dots.forEach(function (dot, i) {
                 dot.classList.toggle('is-active', i === index);
             });
+        }
+
+        function stopAutoplay() {
+            if (autoplayTimer) {
+                window.clearInterval(autoplayTimer);
+                autoplayTimer = null;
+            }
+        }
+
+        function startAutoplay() {
+            if (!autoplayEnabled) return;
+            stopAutoplay();
+            autoplayTimer = window.setInterval(function () {
+                goTo(index + 1);
+            }, AUTOPLAY_INTERVAL);
         }
 
         function start(pageX) {
@@ -36,6 +56,7 @@
             startX = pageX;
             slider.classList.add('is-dragging');
             track.classList.add('is-dragging');
+            stopAutoplay();
         }
 
         function move(pageX) {
@@ -59,6 +80,7 @@
             }
 
             currentDelta = 0;
+            startAutoplay();
         }
 
         slider.addEventListener('mousedown', function (e) {
@@ -89,14 +111,19 @@
         dots.forEach(function (dot, i) {
             dot.addEventListener('click', function () {
                 goTo(i);
+                startAutoplay();
             });
         });
+
+        slider.addEventListener('mouseenter', stopAutoplay);
+        slider.addEventListener('mouseleave', startAutoplay);
 
         window.addEventListener('resize', function () {
             goTo(index);
         });
 
         goTo(0);
+        startAutoplay();
     }
 
     document.addEventListener('DOMContentLoaded', function () {

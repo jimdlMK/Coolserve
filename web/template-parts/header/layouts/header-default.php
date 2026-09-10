@@ -1,3 +1,12 @@
+<?php
+	$mk_google_place_id = get_field('google_reviews_place_id', 'option');
+	$mk_google_api_key  = get_field('google_reviews_api_key', 'option');
+	$mk_google_data     = mk_get_google_reviews($mk_google_place_id, $mk_google_api_key);
+
+	// Vaste fallback-waarde zolang Place ID/API key nog niet zijn ingesteld of de
+	// live ophaling mislukt — zelfde als het eerdere hardcoded cijfer.
+	$mk_header_rating = $mk_google_data ? $mk_google_data['rating'] : 4.9;
+?>
 <header class="mk-header">
 	<div class="mk-header__topbar">
 		<div class="mk-header__topbar__inner">
@@ -8,10 +17,8 @@
 					<path fill="#FBBC05" d="M5.284 14.278A7.19 7.19 0 0 1 4.91 12c0-.79.136-1.56.375-2.278V6.614H1.28A11.996 11.996 0 0 0 0 12c0 1.936.464 3.769 1.28 5.386l4.004-3.108Z"/>
 					<path fill="#EA4335" d="M12 4.773c1.762 0 3.344.606 4.59 1.795l3.442-3.442C17.951 1.19 15.236 0 12 0 7.31 0 3.256 2.698 1.28 6.614l4.004 3.108C6.229 6.884 8.874 4.773 12 4.773Z"/>
 				</svg>
-				<span class="mk-header__topbar__reviews__stars" aria-hidden="true">
-					<span class="mk-header__topbar__reviews__stars__fg"></span>
-				</span>
-				<strong class="mk-header__topbar__reviews__score">4,9</strong>
+				<?php echo mk_star_rating_html($mk_header_rating); ?>
+				<strong class="mk-header__topbar__reviews__score"><?php echo esc_html(number_format_i18n($mk_header_rating, 1)); ?></strong>
 			</a>
 			<?php get_template_part('template-parts/header/nav-top'); ?>
 		</div>

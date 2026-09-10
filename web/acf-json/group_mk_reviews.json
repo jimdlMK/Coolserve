@@ -56,6 +56,57 @@
             }
         },
         {
+            "key": "field_mk_reviews_bron",
+            "label": "Bron",
+            "name": "bron",
+            "type": "select",
+            "choices": {
+                "handmatig": "Handmatig (CPT reviews)",
+                "google": "Google reviews (live)"
+            },
+            "default_value": "handmatig",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Bij \"Google reviews\" worden live reviews opgehaald (Place ID/API key bij Mediakanjers → Website instellingen). Lukt dat niet (nog niet ingesteld, of de ophaling mislukt), dan toont dit blok automatisch de handmatige reviews hieronder als fallback.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
+            "key": "field_mk_reviews_google_min_sterren",
+            "label": "Minimaal aantal sterren",
+            "name": "google_min_sterren",
+            "type": "select",
+            "choices": {
+                "3": "3 sterren en hoger",
+                "4": "4 sterren en hoger",
+                "5": "Alleen 5 sterren"
+            },
+            "default_value": "4",
+            "return_format": "value",
+            "ui": 1,
+            "instructions": "Google levert maximaal 5 reviews per locatie (door Google zelf gekozen); hiermee filter je welke daarvan getoond worden.",
+            "required": 0,
+            "conditional_logic": [
+                [
+                    {
+                        "field": "field_mk_reviews_bron",
+                        "operator": "==",
+                        "value": "google"
+                    }
+                ]
+            ],
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            }
+        },
+        {
             "key": "field_mk_reviews_items",
             "label": "Reviews",
             "name": "reviews",
@@ -64,7 +115,7 @@
             "multiple": 1,
             "return_format": "id",
             "ui": 1,
-            "instructions": "Selecteer en sorteer de reviews die getoond worden. Reviews zelf beheer je bij Reviews in het menu.",
+            "instructions": "Selecteer en sorteer de reviews die getoond worden. Bij bron \"Google reviews\" dienen deze als fallback zolang de live ophaling niet lukt. Reviews zelf beheer je bij Reviews in het menu.",
             "required": 0,
             "conditional_logic": 0,
             "wrapper": {
@@ -92,5 +143,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "modified": 1787121435
+    "modified": 1787121436
 }

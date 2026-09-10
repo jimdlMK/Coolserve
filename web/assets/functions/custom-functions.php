@@ -1,5 +1,83 @@
 <?php
     /**
+     * Haalt live Google-reviews (+ overall rating) op voor een Place ID via de
+     * Google Places API, 1x per dag gecached in een transient (voorkomt onnodige
+     * API-kosten/traagheid bij elke paginaweergave). Geeft false terug zodra
+     * place_id/api_key ontbreken of de aanroep mislukt, zodat aanroepende code
+     * daarop kan terugvallen op de handmatige CPT-reviews.
+     *
+     * Let op: Google's Places API levert maximaal 5 "meest relevante" reviews per
+     * locatie — filteren op sterren gebeurt dus altijd binnen die maximaal 5.
+     *
+     * @return array{rating: float, user_ratings_total: int, reviews: array}|false
+     */
+    function mk_get_google_reviews($place_id, $api_key) {
+        if (empty($place_id) || empty($api_key)) {
+            return false;
+        }
+
+        $transient_key = 'mk_google_reviews_' . md5($place_id);
+        $cached = get_transient($transient_key);
+        if ($cached !== false) {
+            return $cached;
+        }
+
+        $url = add_query_arg([
+            'place_id' => rawurlencode($place_id),
+            'fields'   => 'name,rating,user_ratings_total,reviews',
+            'language' => 'nl',
+            'key'      => rawurlencode($api_key),
+        ], 'https://maps.googleapis.com/maps/api/place/details/json');
+
+        $response = wp_remote_get($url, ['timeout' => 8]);
+
+        if (is_wp_error($response) || wp_remote_retrieve_response_code($response) !== 200) {
+            return false;
+        }
+
+        $body = json_decode(wp_remote_retrieve_body($response), true);
+
+        if (empty($body['result']) || ($body['status'] ?? '') !== 'OK') {
+            return false;
+        }
+
+        $result = $body['result'];
+
+        $data = [
+            'rating'              => (float) ($result['rating'] ?? 0),
+            'user_ratings_total'  => (int) ($result['user_ratings_total'] ?? 0),
+            'reviews'             => array_map(function ($review) {
+                return [
+                    'auteur'      => $review['author_name'] ?? '',
+                    'sterren'     => (int) ($review['rating'] ?? 0),
+                    'tekst'       => $review['text'] ?? '',
+                    'relatief'    => $review['relative_time_description'] ?? '',
+                    'foto_url'    => $review['profile_photo_url'] ?? '',
+                ];
+            }, $result['reviews'] ?? []),
+        ];
+
+        set_transient($transient_key, $data, DAY_IN_SECONDS);
+
+        return $data;
+    }
+
+    /**
+     * Geeft de gedeelde ster-rating markup terug (leeg grijs 5-sterren-rijtje met
+     * een geel overlay-laagje dat op basis van het percentage wordt afgesneden) —
+     * gebruikt in zowel de header-topbar als het reviews-blok, zodat beide exact
+     * dezelfde visuele techniek delen i.p.v. los van elkaar CSS te dupliceren.
+     */
+    function mk_star_rating_html($rating, $extra_class = '') {
+        $rating  = max(0, min(5, (float) $rating));
+        $percent = ($rating / 5) * 100;
+
+        $class = 'mk-stars' . ($extra_class ? ' ' . $extra_class : '');
+
+        return '<span class="' . esc_attr($class) . '" aria-hidden="true"><span class="mk-stars__fg" style="width: ' . esc_attr($percent) . '%;"></span></span>';
+    }
+
+    /**
      * Geeft een <img> met automatische srcset/sizes terug voor een ACF image-array
      * (return_format => array), zodat elk scherm (incl. retina/HiDPI) de scherpste
      * passende variant laadt i.p.v. altijd dezelfde vaste resolutie.

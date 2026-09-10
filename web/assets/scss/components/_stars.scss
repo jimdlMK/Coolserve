@@ -1,0 +1,34 @@
+// Gedeelde ster-rating visual: een grijze 5-sterren-rij met een gele overlay
+// die via width% wordt afgesneden (zie mk_star_rating_html() in
+// custom-functions.php). Gebruikt in de header-topbar en het reviews-blok.
+.mk-stars {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 2px;
+    color: #D1D5DB;
+
+    &::before {
+        content: "\2605\2605\2605\2605\2605";
+    }
+
+    &__fg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        overflow: hidden;
+        color: #FBBF24;
+
+        &::before {
+            content: "\2605\2605\2605\2605\2605";
+        }
+    }
+
+    &--lg {
+        font-size: 20px;
+        letter-spacing: 3px;
+    }
+}
