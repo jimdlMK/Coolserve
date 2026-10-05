@@ -76,10 +76,8 @@ jQuery(document).ready(function($) {
     });
 })();
 
-// Header: klapt in bij scroll-down (volledig uit beeld) en schuift bij scroll-up
-// weer terug tot aan de hoofdbalk (topbar met Google reviews blijft verborgen
-// totdat je helemaal bovenaan de pagina bent). Op mobiel heeft de topbar al
-// display:none, dus daar is dit effectief gewoon "hele header in/uit".
+// Header: klapt in zijn geheel (topbar + hoofdbalk) in bij scroll-down, en
+// schuift bij scroll-up in zijn geheel weer terug in beeld.
 (function () {
     'use strict';
 
@@ -88,16 +86,7 @@ jQuery(document).ready(function($) {
 
     document.addEventListener('DOMContentLoaded', function () {
         var header = document.querySelector('.mk-header');
-        var topbar = header ? header.querySelector('.mk-header__topbar') : null;
         if (!header) return;
-
-        function setTopbarHeightVar() {
-            var height = (topbar && topbar.offsetParent !== null) ? topbar.getBoundingClientRect().height : 0;
-            header.style.setProperty('--mk-header-topbar-height', height + 'px');
-        }
-
-        setTopbarHeightVar();
-        window.addEventListener('resize', setTopbarHeightVar);
 
         var lastScrollY = window.scrollY;
         var ticking = false;
@@ -106,12 +95,10 @@ jQuery(document).ready(function($) {
             var currentScrollY = window.scrollY;
 
             if (currentScrollY <= TOP_THRESHOLD) {
-                header.classList.remove('is-hidden', 'is-peek');
+                header.classList.remove('is-hidden');
             } else if (currentScrollY > lastScrollY && currentScrollY > SCROLL_DOWN_THRESHOLD) {
                 header.classList.add('is-hidden');
-                header.classList.remove('is-peek');
             } else if (currentScrollY < lastScrollY) {
-                header.classList.add('is-peek');
                 header.classList.remove('is-hidden');
             }
 

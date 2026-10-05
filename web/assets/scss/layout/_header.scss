@@ -5,14 +5,9 @@
     transition: transform 0.3s ease;
 
     // Scroll-down: volledige header (topbar + hoofdbalk) schuift omhoog uit beeld.
+    // Scroll-up: schuift in zijn geheel weer terug (topbar gaat gewoon mee).
     &.is-hidden {
         transform: translateY(-100%);
-    }
-
-    // Scroll-up (niet bovenaan): schuift terug tot aan de hoofdbalk — de topbar
-    // (Google reviews/topmenu) blijft verborgen tot je weer helemaal bovenaan bent.
-    &.is-peek {
-        transform: translateY(calc(-1 * var(--mk-header-topbar-height, 0px)));
     }
 
     // ===== TOPBAR =====
