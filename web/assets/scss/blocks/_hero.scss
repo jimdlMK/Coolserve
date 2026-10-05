@@ -167,7 +167,11 @@
                 &:not(:first-of-type)::before {
                     content: "\2022";
                     display: inline-block;
-                    margin-right: 20px;
+                    position: static;
+                    width: auto;
+                    height: auto;
+                    margin-left: -14px;
+                    margin-right: 8px;
                     color: rgba(255, 255, 255, 0.5);
                     text-decoration: none;
                 }
