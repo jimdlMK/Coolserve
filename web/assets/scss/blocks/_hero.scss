@@ -172,8 +172,10 @@
                     height: auto;
                     margin-left: -14px;
                     margin-right: 8px;
+                    background-color: transparent;
                     color: rgba(255, 255, 255, 0.5);
                     text-decoration: none;
+                    transition: none;
                 }
 
                 &:hover {
