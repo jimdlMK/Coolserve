@@ -6,6 +6,13 @@
     z-index: 1;
     box-shadow: 0 20px 40px rgba(7, 47, 85, 0.12);
 
+    // Direct onder de hero: witruimte wegnemen zodat hero + usp als 1 geheel
+    // aanvoelen i.p.v. met een duidelijke tussenruimte (margin collapse van
+    // hero's margin-bottom + deze negatieve margin-top telt op tot 0).
+    .mk-hero + & {
+        margin-top: calc(-1 * #{$layout-block-spacing});
+    }
+
     &__container {
         &__inner {
             position: relative;
