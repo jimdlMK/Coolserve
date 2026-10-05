@@ -164,6 +164,14 @@
                 font: normal normal 600 15px/1.4 $font-family-standard-font;
                 text-decoration: underline;
 
+                &:not(:first-of-type)::before {
+                    content: "\2022";
+                    display: inline-block;
+                    margin-right: 20px;
+                    color: rgba(255, 255, 255, 0.5);
+                    text-decoration: none;
+                }
+
                 &:hover {
                     color: $color-white;
                 }
