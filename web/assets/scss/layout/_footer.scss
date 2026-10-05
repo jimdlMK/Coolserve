@@ -90,24 +90,5 @@
             display: flex;
             align-items: center;
         }
-
-        &__totop {
-            position: absolute;
-            top: 50%;
-            right: 20px;
-            transform: translateY(-50%);
-            display: block;
-            transition: transform 0.2s ease;
-
-            svg {
-                display: block;
-                width: 35px;
-                height: 35px;
-            }
-
-            &:hover {
-                transform: translateY(-50%) translateY(-4px);
-            }
-        }
     }
 }

@@ -1,6 +1,19 @@
 .mk-header {
-    position: relative;
+    position: sticky;
+    top: 0;
     z-index: 200;
+    transition: transform 0.3s ease;
+
+    // Scroll-down: volledige header (topbar + hoofdbalk) schuift omhoog uit beeld.
+    &.is-hidden {
+        transform: translateY(-100%);
+    }
+
+    // Scroll-up (niet bovenaan): schuift terug tot aan de hoofdbalk — de topbar
+    // (Google reviews/topmenu) blijft verborgen tot je weer helemaal bovenaan bent.
+    &.is-peek {
+        transform: translateY(calc(-1 * var(--mk-header-topbar-height, 0px)));
+    }
 
     // ===== TOPBAR =====
     &__topbar {
@@ -150,9 +163,6 @@
 
 @media screen and (max-width: 980px) {
     .mk-header {
-        position: sticky;
-        top: 0;
-
         &__topbar {
             display: none;
         }

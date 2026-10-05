@@ -45,6 +45,105 @@ jQuery(document).ready(function($) {
     });
 })();
 
+// Scroll-to-top knop: verschijnt rechtsonder zodra er voldoende gescrold is.
+(function () {
+    'use strict';
+
+    var SHOW_AFTER = 400;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var button = document.querySelector('[data-mk-scroll-top]');
+        if (!button) return;
+
+        var ticking = false;
+
+        function update() {
+            button.classList.toggle('is-visible', window.scrollY > SHOW_AFTER);
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(update);
+        }, { passive: true });
+
+        button.addEventListener('click', function () {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        update();
+    });
+})();
+
+// Header: klapt in bij scroll-down (volledig uit beeld) en schuift bij scroll-up
+// weer terug tot aan de hoofdbalk (topbar met Google reviews blijft verborgen
+// totdat je helemaal bovenaan de pagina bent). Op mobiel heeft de topbar al
+// display:none, dus daar is dit effectief gewoon "hele header in/uit".
+(function () {
+    'use strict';
+
+    var SCROLL_DOWN_THRESHOLD = 80;
+    var TOP_THRESHOLD = 10;
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var header = document.querySelector('.mk-header');
+        var topbar = header ? header.querySelector('.mk-header__topbar') : null;
+        if (!header) return;
+
+        function setTopbarHeightVar() {
+            var height = (topbar && topbar.offsetParent !== null) ? topbar.getBoundingClientRect().height : 0;
+            header.style.setProperty('--mk-header-topbar-height', height + 'px');
+        }
+
+        setTopbarHeightVar();
+        window.addEventListener('resize', setTopbarHeightVar);
+
+        var lastScrollY = window.scrollY;
+        var ticking = false;
+
+        function update() {
+            var currentScrollY = window.scrollY;
+
+            if (currentScrollY <= TOP_THRESHOLD) {
+                header.classList.remove('is-hidden', 'is-peek');
+            } else if (currentScrollY > lastScrollY && currentScrollY > SCROLL_DOWN_THRESHOLD) {
+                header.classList.add('is-hidden');
+                header.classList.remove('is-peek');
+            } else if (currentScrollY < lastScrollY) {
+                header.classList.add('is-peek');
+                header.classList.remove('is-hidden');
+            }
+
+            lastScrollY = currentScrollY;
+            ticking = false;
+        }
+
+        window.addEventListener('scroll', function () {
+            if (ticking) return;
+            ticking = true;
+            window.requestAnimationFrame(update);
+        }, { passive: true });
+    });
+})();
+
+// Footermenu: items met sub-items (bijv. "Diensten") worden een in/uitklapbare
+// dropdown i.p.v. een normale link.
+(function () {
+    'use strict';
+
+    document.addEventListener('DOMContentLoaded', function () {
+        var items = document.querySelectorAll('.mk-nav-footer .menu-item-has-children > a');
+
+        items.forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                link.parentElement.classList.toggle('is-open');
+            });
+        });
+    });
+})();
+
 // Mega-menu: positioneert het paneel exact onder de header, gecentreerd op het scherm,
 // en houdt het even open na het verlaten zodat de muis er makkelijk naartoe kan bewegen.
 (function () {

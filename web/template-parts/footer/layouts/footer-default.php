@@ -32,8 +32,4 @@
             <?php get_template_part('template-parts/contact/socials'); ?>
         </div>
     </div>
-
-    <a href="#page_container" class="mk-footer__bottom__totop" aria-label="Naar boven">
-        <?php echo file_get_contents(get_stylesheet_directory() . '/assets/images/up.svg'); ?>
-    </a>
   </div>

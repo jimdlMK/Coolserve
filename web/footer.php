@@ -10,6 +10,9 @@
 			<!-- Mobile menu -->
 			<?php get_template_part('template-parts/header/nav-mobile'); ?>
 
+			<!-- Scroll to top -->
+			<?php get_template_part('template-parts/scroll-to-top'); ?>
+
 		<?php wp_footer(); ?>
 	</body>
 </html>

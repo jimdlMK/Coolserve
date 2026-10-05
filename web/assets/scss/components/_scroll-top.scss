@@ -1,0 +1,44 @@
+.mk-scroll-top {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 48px;
+    height: 48px;
+    background-color: $color-primary;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 8px 20px rgba(7, 47, 85, 0.3);
+    color: $color-white;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(12px);
+    pointer-events: none;
+    transition: opacity 0.25s ease, transform 0.25s ease, background-color 0.2s ease;
+
+    svg {
+        display: block;
+    }
+
+    &:hover {
+        background-color: $color-secondary;
+    }
+
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .mk-scroll-top {
+        right: 16px;
+        bottom: 16px;
+        width: 42px;
+        height: 42px;
+    }
+}

@@ -26,7 +26,52 @@
                         color: $color-secondary;
                     }
                 }
-            }   
+
+                // Dropdown-item (bijv. "Diensten"): klikbare toggle i.p.v. link, met
+                // chevron die roteert bij openen — zelfde techniek als de
+                // in/uitklapbare vestigingen in de footer (location-info__toggle).
+                &.menu-item-has-children {
+                    > a {
+                        position: relative;
+                        display: inline-flex;
+                        align-items: center;
+                        gap: 8px;
+                        cursor: pointer;
+                        text-decoration: underline;
+
+                        &::after {
+                            content: "";
+                            flex-shrink: 0;
+                            width: 7px;
+                            height: 7px;
+                            border-right: 2px solid currentColor;
+                            border-bottom: 2px solid currentColor;
+                            transform: rotate(45deg);
+                            transition: transform 0.2s ease;
+                        }
+                    }
+
+                    &.is-open > a::after {
+                        transform: rotate(-135deg);
+                    }
+                }
+
+                .sub-menu {
+                    max-height: 0;
+                    overflow: hidden;
+                    list-style: none;
+                    padding-left: 16px;
+                    transition: max-height 0.3s ease;
+
+                    li {
+                        padding-top: 10px;
+                    }
+                }
+
+                &.is-open .sub-menu {
+                    max-height: 400px;
+                }
+            }
         }
     }
 }

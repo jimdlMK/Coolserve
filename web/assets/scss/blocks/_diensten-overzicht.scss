@@ -85,7 +85,7 @@
                 align-items: center;
                 gap: 8px;
                 font: normal normal 600 15px/1.4 $font-family-standard-font;
-                color: $color-secondary;
+                color: $color-accent;
 
                 svg {
                     width: 12px;
@@ -93,7 +93,7 @@
                     transition: transform 0.2s ease;
 
                     path {
-                        fill: $color-secondary;
+                        fill: $color-accent;
                     }
                 }
             }
