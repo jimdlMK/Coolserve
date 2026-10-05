@@ -43,25 +43,11 @@
             color: $color-secondary;
         }
 
+        // De hover-onderstreep (links-naar-rechts ingroeien) komt al van de
+        // site-brede a:not([class]) regel in theme/_theme.scss — hier alleen
+        // de kleur overschrijven, anders krijg je 2 onderstrepen over elkaar.
         a {
-            position: relative;
             color: $color-secondary;
-            text-decoration: none;
-
-            &::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                bottom: -2px;
-                width: 0%;
-                height: 1px;
-                background-color: $color-secondary;
-                transition: width 0.25s ease;
-            }
-
-            &:hover::after {
-                width: 100%;
-            }
         }
     }
 
