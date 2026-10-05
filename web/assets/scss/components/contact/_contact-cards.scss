@@ -23,7 +23,8 @@
         margin-bottom: 4px;
     }
 
-    &--phone &__icon {
+    &--phone &__icon,
+    &--location &__icon {
         background: $button-gradient;
         color: $color-white;
     }
@@ -41,38 +42,6 @@
     &__note {
         color: rgba(255, 255, 255, 0.7);
         font: normal normal 400 14px/1.4 $font-family-standard-font;
-    }
-
-    &__locations {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 16px;
-        width: 100%;
-
-        &__item {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            gap: 2px;
-            font: normal normal 400 14px/1.5 $font-family-standard-font;
-
-            &__naam {
-                color: $color-white;
-                font-weight: 700;
-            }
-
-            a {
-                display: inline-block;
-                color: $color-secondary;
-                text-decoration: underline;
-                white-space: nowrap;
-                margin-top: 4px;
-            }
-        }
-    }
-
-    &__value--compact {
-        display: none;
     }
 
     &:hover {
@@ -104,23 +73,13 @@
         }
 
         &__title,
-        &__note,
-        &__locations {
+        &__note {
             display: none;
         }
 
         &__value {
             font-size: 15px;
             line-height: 1.3;
-        }
-
-        &__value--compact {
-            display: block !important;
-
-            &__extra {
-                color: $color-secondary;
-                font-weight: 600;
-            }
         }
     }
 }
