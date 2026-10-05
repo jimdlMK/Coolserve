@@ -44,6 +44,8 @@
 
         &__card {
             position: relative;
+            border: none;
+            background-color: transparent;
             border-radius: 40px;
             box-shadow: 0 8px 24px rgba(7, 47, 85, 0.08);
             opacity: 1;

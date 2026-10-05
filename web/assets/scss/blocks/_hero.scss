@@ -230,7 +230,10 @@
         &__contact-grid {
             width: 100%;
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            // auto-fit i.p.v. een vast aantal kolommen: de rij vult zich altijd
+            // helemaal (geen eenzaam kaartje op een nieuwe regel), ongeacht of er
+            // nu 4, 5 of 6 kaartjes zijn (telefoon/e-mail/locaties/openingstijden).
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             gap: 20px;
             margin-top: 20px;
 
