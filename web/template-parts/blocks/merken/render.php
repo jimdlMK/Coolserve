@@ -23,34 +23,53 @@
             <?php endif; ?>
 
             <?php if ($merken) :
-                // Genoeg herhalingen zodat de track altijd breder is dan het scherm,
-                // ook bij weinig merken — voorkomt een lege gap aan het einde van de loop.
-                $herhalingen = max(2, (int) ceil(16 / count($merken)));
+                // Met weinig merken (<=3) is slepen/automatisch doorlopen niet
+                // nodig — dan gewoon statisch tonen, zonder pijltjes/animatie.
+                $kan_slepen = count($merken) > 3;
             ?>
-                <div class="mk-merken__slider">
-                    <button type="button" class="mk-merken__slider__arrow mk-merken__slider__arrow--prev" data-mk-merken-prev aria-label="Vorige">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
+                <?php if ($kan_slepen) :
+                    // Genoeg herhalingen zodat de track altijd breder is dan het scherm —
+                    // voorkomt een lege gap aan het einde van de loop.
+                    $herhalingen = max(2, (int) ceil(16 / count($merken)));
+                ?>
+                    <div class="mk-merken__slider">
+                        <button type="button" class="mk-merken__slider__arrow mk-merken__slider__arrow--prev" data-mk-merken-prev aria-label="Vorige">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
 
-                    <div class="mk-merken__slider__viewport" data-mk-logo-slider>
-                        <div class="mk-merken__slider__track" data-mk-merken-track style="--mk-merken-herhalingen: <?php echo esc_attr($herhalingen); ?>;">
-                            <?php for ($i = 0; $i < $herhalingen; $i++) : ?>
-                                <?php foreach ($merken as $merk) :
-                                    $logo = $merk['logo'];
-                                    if (!$logo) continue;
-                                ?>
-                                    <div class="mk-merken__slider__track__item">
-                                        <?php echo mk_image($logo, 'medium', ['alt' => $merk['naam']]); ?>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php endfor; ?>
+                        <div class="mk-merken__slider__viewport" data-mk-logo-slider>
+                            <div class="mk-merken__slider__track" data-mk-merken-track style="--mk-merken-herhalingen: <?php echo esc_attr($herhalingen); ?>;">
+                                <?php for ($i = 0; $i < $herhalingen; $i++) : ?>
+                                    <?php foreach ($merken as $merk) :
+                                        $logo = $merk['logo'];
+                                        if (!$logo) continue;
+                                    ?>
+                                        <div class="mk-merken__slider__track__item">
+                                            <?php echo mk_image($logo, 'medium', ['alt' => $merk['naam']]); ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endfor; ?>
+                            </div>
+                        </div>
+
+                        <button type="button" class="mk-merken__slider__arrow mk-merken__slider__arrow--next" data-mk-merken-next aria-label="Volgende">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                <?php else : ?>
+                    <div class="mk-merken__slider mk-merken__slider--static">
+                        <div class="mk-merken__slider__track mk-merken__slider__track--static">
+                            <?php foreach ($merken as $merk) :
+                                $logo = $merk['logo'];
+                                if (!$logo) continue;
+                            ?>
+                                <div class="mk-merken__slider__track__item">
+                                    <?php echo mk_image($logo, 'medium', ['alt' => $merk['naam']]); ?>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-
-                    <button type="button" class="mk-merken__slider__arrow mk-merken__slider__arrow--next" data-mk-merken-next aria-label="Volgende">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                </div>
+                <?php endif; ?>
             <?php endif; ?>
 
         </div>

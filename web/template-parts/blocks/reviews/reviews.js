@@ -3,6 +3,7 @@
 
     var SWIPE_THRESHOLD = 40;
     var AUTOPLAY_INTERVAL = 5000;
+    var TRANSITION_MS = 450;
 
     function initSwiper(section) {
         var slider = section.querySelector('[data-mk-drag-slider]');
@@ -30,8 +31,11 @@
         var cards = Array.prototype.slice.call(track.children);
 
         var dots = Array.prototype.slice.call(section.querySelectorAll('[data-mk-slider-dot]'));
+        var prevBtn = section.querySelector('[data-mk-reviews-prev]');
+        var nextBtn = section.querySelector('[data-mk-reviews-next]');
         var autoplayEnabled = slider.hasAttribute('data-mk-autoplay');
         var autoplayTimer = null;
+        var boundaryTimer = null;
         var displayIndex = 1;
         var isDown = false;
         var startX = 0;
@@ -48,8 +52,17 @@
             });
         }
 
+        function correctBoundary() {
+            if (displayIndex === 0) {
+                goTo(total, true);
+            } else if (displayIndex === total + 1) {
+                goTo(1, true);
+            }
+        }
+
         function goTo(newIndex, skipTransition) {
             displayIndex = newIndex;
+            window.clearTimeout(boundaryTimer);
 
             if (skipTransition) {
                 track.classList.add('is-dragging');
@@ -64,22 +77,18 @@
                 // eslint-disable-next-line no-unused-expressions
                 track.offsetHeight;
                 track.classList.remove('is-dragging');
+            } else {
+                // Een vaste timeout i.p.v. "transitionend" luisteren: dat event
+                // wordt gemist zodra een volgende beweging de lopende transitie
+                // onderbreekt (bv. autoplay + resize kort na elkaar), waardoor de
+                // loop-correctie soms wel en soms niet aansloeg.
+                boundaryTimer = window.setTimeout(correctBoundary, TRANSITION_MS);
             }
         }
 
         function goToReal(realIndex) {
             goTo(((realIndex % total) + total) % total + 1);
         }
-
-        track.addEventListener('transitionend', function (e) {
-            if (e.target !== track || e.propertyName !== 'transform') return;
-
-            if (displayIndex === 0) {
-                goTo(total, true);
-            } else if (displayIndex === total + 1) {
-                goTo(1, true);
-            }
-        });
 
         function stopAutoplay() {
             if (autoplayTimer) {
@@ -160,6 +169,19 @@
                 startAutoplay();
             });
         });
+
+        if (prevBtn) {
+            prevBtn.addEventListener('click', function () {
+                goTo(displayIndex - 1);
+                startAutoplay();
+            });
+        }
+        if (nextBtn) {
+            nextBtn.addEventListener('click', function () {
+                goTo(displayIndex + 1);
+                startAutoplay();
+            });
+        }
 
         slider.addEventListener('mouseenter', stopAutoplay);
         slider.addEventListener('mouseleave', startAutoplay);

@@ -148,21 +148,37 @@ jQuery(document).ready(function($) {
             panel.style.top = headerBottom + 'px';
         }
 
+        var controllers = [];
+
+        function closeImmediately(controller) {
+            window.clearTimeout(controller.closeTimer);
+            controller.item.classList.remove('is-open');
+        }
+
         items.forEach(function (item) {
             var panel = item.querySelector('.mk-mega-menu');
             if (!panel) return;
 
-            var closeTimer = null;
+            var controller = { item: item, closeTimer: null };
+            controllers.push(controller);
 
             function open() {
-                window.clearTimeout(closeTimer);
+                window.clearTimeout(controller.closeTimer);
+
+                // Andere open mega-menu's direct sluiten i.p.v. te wachten op hun
+                // eigen mouseleave-vertraging — anders vallen 2 panelen kort over
+                // elkaar heen bij snel over de menu-items heen hoveren.
+                controllers.forEach(function (other) {
+                    if (other !== controller) closeImmediately(other);
+                });
+
                 positionPanel(panel);
                 item.classList.add('is-open');
             }
 
             function scheduleClose() {
-                window.clearTimeout(closeTimer);
-                closeTimer = window.setTimeout(function () {
+                window.clearTimeout(controller.closeTimer);
+                controller.closeTimer = window.setTimeout(function () {
                     item.classList.remove('is-open');
                 }, CLOSE_DELAY);
             }

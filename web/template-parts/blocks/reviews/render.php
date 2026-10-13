@@ -104,10 +104,20 @@
             </div>
 
             <?php if ($aantal_kaarten > 1) : ?>
-                <div class="mk-reviews__pagination" data-mk-slider-pagination>
-                    <?php for ($index = 0; $index < $aantal_kaarten; $index++) : ?>
-                        <button type="button" class="mk-reviews__pagination__dot<?php echo $index === 0 ? ' is-active' : ''; ?>" data-mk-slider-dot="<?php echo esc_attr($index); ?>" aria-label="Ga naar review <?php echo esc_attr($index + 1); ?>"></button>
-                    <?php endfor; ?>
+                <div class="mk-reviews__pagination">
+                    <button type="button" class="mk-reviews__pagination__arrow mk-reviews__pagination__arrow--prev" data-mk-reviews-prev aria-label="Vorige review">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
+
+                    <div class="mk-reviews__pagination__dots" data-mk-slider-pagination>
+                        <?php for ($index = 0; $index < $aantal_kaarten; $index++) : ?>
+                            <button type="button" class="mk-reviews__pagination__dot<?php echo $index === 0 ? ' is-active' : ''; ?>" data-mk-slider-dot="<?php echo esc_attr($index); ?>" aria-label="Ga naar review <?php echo esc_attr($index + 1); ?>"></button>
+                        <?php endfor; ?>
+                    </div>
+
+                    <button type="button" class="mk-reviews__pagination__arrow mk-reviews__pagination__arrow--next" data-mk-reviews-next aria-label="Volgende review">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </button>
                 </div>
             <?php endif; ?>
 
