@@ -17,34 +17,53 @@
             <?php endif; ?>
 
             <?php if ($certificeringen) :
-                // Genoeg herhalingen zodat de track altijd breder is dan het scherm,
-                // ook bij weinig certificeringen — voorkomt een lege gap aan het einde van de loop.
-                $herhalingen = max(2, (int) ceil(16 / count($certificeringen)));
+                // Met weinig certificeringen (<=3) is slepen/automatisch doorlopen
+                // niet nodig — dan gewoon statisch tonen, zonder pijltjes/animatie.
+                $kan_slepen = count($certificeringen) > 3;
             ?>
-                <div class="mk-certificeringen__slider">
-                    <button type="button" class="mk-certificeringen__slider__arrow mk-certificeringen__slider__arrow--prev" data-mk-certificeringen-prev aria-label="Vorige">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
+                <?php if ($kan_slepen) :
+                    // Genoeg herhalingen zodat de track altijd breder is dan het scherm —
+                    // voorkomt een lege gap aan het einde van de loop.
+                    $herhalingen = max(2, (int) ceil(16 / count($certificeringen)));
+                ?>
+                    <div class="mk-certificeringen__slider">
+                        <button type="button" class="mk-certificeringen__slider__arrow mk-certificeringen__slider__arrow--prev" data-mk-certificeringen-prev aria-label="Vorige">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M15 5l-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
 
-                    <div class="mk-certificeringen__slider__viewport" data-mk-logo-slider>
-                        <div class="mk-certificeringen__slider__track" data-mk-certificeringen-track style="--mk-certificeringen-herhalingen: <?php echo esc_attr($herhalingen); ?>;">
-                            <?php for ($i = 0; $i < $herhalingen; $i++) : ?>
-                                <?php foreach ($certificeringen as $item) :
-                                    $logo = $item['logo'];
-                                    if (!$logo) continue;
-                                ?>
-                                    <div class="mk-certificeringen__slider__track__item">
-                                        <?php echo mk_image($logo, 'medium', ['alt' => $item['naam']]); ?>
-                                    </div>
-                                <?php endforeach; ?>
-                            <?php endfor; ?>
+                        <div class="mk-certificeringen__slider__viewport" data-mk-logo-slider>
+                            <div class="mk-certificeringen__slider__track" data-mk-certificeringen-track style="--mk-certificeringen-herhalingen: <?php echo esc_attr($herhalingen); ?>;">
+                                <?php for ($i = 0; $i < $herhalingen; $i++) : ?>
+                                    <?php foreach ($certificeringen as $item) :
+                                        $logo = $item['logo'];
+                                        if (!$logo) continue;
+                                    ?>
+                                        <div class="mk-certificeringen__slider__track__item">
+                                            <?php echo mk_image($logo, 'medium', ['alt' => $item['naam']]); ?>
+                                        </div>
+                                    <?php endforeach; ?>
+                                <?php endfor; ?>
+                            </div>
+                        </div>
+
+                        <button type="button" class="mk-certificeringen__slider__arrow mk-certificeringen__slider__arrow--next" data-mk-certificeringen-next aria-label="Volgende">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </button>
+                    </div>
+                <?php else : ?>
+                    <div class="mk-certificeringen__slider mk-certificeringen__slider--static">
+                        <div class="mk-certificeringen__slider__track mk-certificeringen__slider__track--static">
+                            <?php foreach ($certificeringen as $item) :
+                                $logo = $item['logo'];
+                                if (!$logo) continue;
+                            ?>
+                                <div class="mk-certificeringen__slider__track__item">
+                                    <?php echo mk_image($logo, 'medium', ['alt' => $item['naam']]); ?>
+                                </div>
+                            <?php endforeach; ?>
                         </div>
                     </div>
-
-                    <button type="button" class="mk-certificeringen__slider__arrow mk-certificeringen__slider__arrow--next" data-mk-certificeringen-next aria-label="Volgende">
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M9 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-                    </button>
-                </div>
+                <?php endif; ?>
             <?php endif; ?>
 
         </div>
